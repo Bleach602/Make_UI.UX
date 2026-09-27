@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Groupe Pékékue — Campus scolaire et universitaire au Cameroun. Éduquer, former, transformer.">
 <meta name="theme-color" content="#0F3D2E">
-<title>Groupe Pékékue — Éduquer · Former · Transformer</title>
+<title data-i18n="meta.title">Groupe Pékékue — Éduquer · Former · Transformer</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,20 +37,28 @@
     </a>
 
     <nav class="desktop-nav">
-      <a href="#groupe" data-nav="groupe">Le Groupe</a>
-      <a href="#parcours" data-nav="parcours">Parcours</a>
-      <a href="#etablissements" data-nav="etablissements">Établissements</a>
-      <a href="#campus" data-nav="campus">Campus</a>
-      <a href="#faq" data-nav="faq">FAQ</a>
+      <a href="#groupe" data-nav="groupe" data-i18n="nav.group">Le Groupe</a>
+      <a href="#parcours" data-nav="parcours" data-i18n="nav.paths">Parcours</a>
+      <a href="#etablissements" data-nav="etablissements" data-i18n="nav.institutes">Établissements</a>
+      <a href="#campus" data-nav="campus" data-i18n="nav.campus">Campus</a>
+      <a href="#faq" data-nav="faq" data-i18n="nav.faq">FAQ</a>
     </nav>
 
     <div class="header-actions">
+
+      <!-- Sélecteur de langue -->
+      <div class="lang-switcher" role="group" aria-label="Changer de langue">
+        <button type="button" class="lang-btn is-active" data-lang="fr" aria-label="Français">FR</button>
+        <span class="lang-sep" aria-hidden="true"></span>
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
+
       <a href="#login" class="btn-login">
         <i class="ri-user-line"></i>
-        <span>Se connecter</span>
+        <span data-i18n="nav.login">Se connecter</span>
       </a>
       <a href="#parcours" class="btn-apply">
-        <span>S'inscrire</span>
+        <span data-i18n="nav.apply">S'inscrire</span>
         <i class="ri-arrow-right-up-line"></i>
       </a>
       <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -60,15 +68,22 @@
   </div>
 
   <div class="mobile-menu" id="mobile" hidden>
-    <a href="#groupe">Le Groupe</a>
-    <a href="#parcours">Parcours</a>
-    <a href="#etablissements">Établissements</a>
-    <a href="#campus">Campus</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
+
+    <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Changer de langue">
+      <button type="button" class="lang-btn is-active" data-lang="fr">FR</button>
+      <span class="lang-sep" aria-hidden="true"></span>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <a href="#groupe" data-i18n="nav.group">Le Groupe</a>
+    <a href="#parcours" data-i18n="nav.paths">Parcours</a>
+    <a href="#etablissements" data-i18n="nav.institutes">Établissements</a>
+    <a href="#campus" data-i18n="nav.campus">Campus</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
     <div class="mobile-actions">
-      <a href="#login" class="btn-login">Se connecter</a>
-      <a href="#parcours" class="btn-apply">S'inscrire</a>
+      <a href="#login" class="btn-login" data-i18n="nav.login">Se connecter</a>
+      <a href="#parcours" class="btn-apply" data-i18n="nav.apply">S'inscrire</a>
     </div>
   </div>
 </header>
@@ -84,16 +99,16 @@
     <div class="hero-copy reveal">
       <div class="eyebrow light">
         <span></span>
-        CAMPUS SCOLAIRE & UNIVERSITAIRE
+        <span data-i18n="hero.tag">CAMPUS SCOLAIRE & UNIVERSITAIRE</span>
       </div>
 
       <h1>
-        L'excellence qui
+        <span data-i18n="hero.title1">L'excellence qui</span>
         <br>
-        <em>ouvre des horizons.</em>
+        <em data-i18n="hero.title2">ouvre des horizons.</em>
       </h1>
 
-      <p>
+      <p data-i18n="hero.desc">
         Du secondaire à l'enseignement supérieur, de la formation
         professionnelle à la formation des enseignants : un même
         élan pour apprendre, progresser et bâtir l'avenir.
@@ -101,11 +116,11 @@
 
       <div class="actions">
         <a href="#parcours" class="btn btn-copper">
-          Trouver mon parcours
+          <span data-i18n="hero.cta1">Trouver mon parcours</span>
           <i class="ri-arrow-right-up-line"></i>
         </a>
         <a href="#etablissements" class="btn btn-glass">
-          Explorer le campus
+          <span data-i18n="hero.cta2">Explorer le campus</span>
           <i class="ri-arrow-down-line"></i>
         </a>
       </div>
@@ -114,17 +129,17 @@
     <div class="hero-bottom">
       <div class="hero-stat">
         <b data-count="4">00</b>
-        <span>établissements</span>
+        <span data-i18n="hero.stat1">établissements</span>
       </div>
       <div class="hero-stat">
         <b data-count="2">00</b>
-        <span>implantations</span>
+        <span data-i18n="hero.stat2">implantations</span>
       </div>
       <div class="hero-stat">
         <b>FR·EN</b>
-        <span>Bilingue</span>
+        <span data-i18n="hero.stat3">Bilingue</span>
       </div>
-      <p>ÉDUQUER · FORMER · TRANSFORMER</p>
+      <p data-i18n="hero.motto">ÉDUQUER · FORMER · TRANSFORMER</p>
     </div>
   </div>
 </section>
@@ -157,27 +172,31 @@
 <section class="section" id="groupe">
   <div class="container intro-grid">
     <div class="intro-copy reveal">
-      <span class="eyebrow">LE GROUPE</span>
-      <h2>Une vision.<br><em>Quatre chemins.</em></h2>
-      <p>
+      <span class="eyebrow" data-i18n="group.tag">LE GROUPE</span>
+      <h2>
+        <span data-i18n="group.title1">Une vision.</span><br>
+        <em data-i18n="group.title2">Quatre chemins.</em>
+      </h2>
+      <p data-i18n="group.desc">
         Le Groupe Pékékue rassemble quatre établissements
         complémentaires autour d'une conviction : chaque
         étape du parcours éducatif mérite exigence, clarté
         et ambition.
       </p>
       <a href="#etablissements" class="link">
-        Découvrir nos établissements
+        <span data-i18n="group.link">Découvrir nos établissements</span>
         <i class="ri-arrow-right-line"></i>
       </a>
     </div>
 
     <figure class="intro-media reveal">
-      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1500&q=85"
-           alt="Étudiants sur un campus" loading="lazy" width="1500" height="1000">
-      <figcaption>Une communauté en mouvement</figcaption>
+      <img src="../img/fond1.jpeg"
+           alt="Étudiants du Groupe Pékékue sur le campus"
+           loading="lazy" width="1500" height="1000">
+      <figcaption data-i18n="group.caption">Une communauté en mouvement</figcaption>
       <aside>
         <b>04</b>
-        <span>Établissements réunis sous une même ambition éducative, à Foumban et à Yaoundé.</span>
+        <span data-i18n="group.aside">Établissements réunis sous une même ambition éducative, à Foumban et à Yaoundé.</span>
       </aside>
     </figure>
   </div>
@@ -187,9 +206,12 @@
 <section class="portal" id="parcours">
   <div class="container">
     <div class="center-head reveal">
-      <span class="eyebrow light">AVANT DE VOUS INSCRIRE</span>
-      <h2>Une question vous trotte en tête ?<br><em>Nous avons la réponse.</em></h2>
-      <p>
+      <span class="eyebrow light" data-i18n="portal.tag">AVANT DE VOUS INSCRIRE</span>
+      <h2>
+        <span data-i18n="portal.title1">Une question vous trotte en tête ?</span><br>
+        <em data-i18n="portal.title2">Nous avons la réponse.</em>
+      </h2>
+      <p data-i18n="portal.desc">
         Identifiez la situation qui vous ressemble.
         Nous vous orientons vers le bon établissement
         en quelques secondes.
@@ -197,59 +219,82 @@
     </div>
 
     <div class="journey">
+
       <button class="journey-card active" data-key="eleve">
         <div class="journey-head">
           <span class="journey-num">01</span>
-          <i class="ri-school-line"></i>
+          <div class="journey-logo">
+            <img src="../img/cologe_logo.jpeg" alt="Logo Collège Bilingue Pékékue" loading="lazy">
+          </div>
         </div>
-        <b>Je suis élève</b>
-        <small>« Où serai-je le mieux encadré pour réussir ? »</small>
-        <span class="journey-cta">Voir le parcours <i class="ri-arrow-right-line"></i></span>
+        <b data-i18n="journey1.title">Je suis élève</b>
+        <small data-i18n="journey1.question">« Où serai-je le mieux encadré pour réussir ? »</small>
+        <span class="journey-cta">
+          <span data-i18n="journey.cta">Voir le parcours</span>
+          <i class="ri-arrow-right-line"></i>
+        </span>
       </button>
 
       <button class="journey-card" data-key="etudiant">
         <div class="journey-head">
           <span class="journey-num">02</span>
-          <i class="ri-graduation-cap-line"></i>
+          <div class="journey-logo">
+            <img src="../img/logo_imsta.png" alt="Logo ISMTA" loading="lazy">
+          </div>
         </div>
-        <b>Je suis étudiant</b>
-        <small>« Quel diplôme m'ouvrira vraiment des portes ? »</small>
-        <span class="journey-cta">Voir le parcours <i class="ri-arrow-right-line"></i></span>
+        <b data-i18n="journey2.title">Je suis étudiant</b>
+        <small data-i18n="journey2.question">« Quel diplôme m'ouvrira vraiment des portes ? »</small>
+        <span class="journey-cta">
+          <span data-i18n="journey.cta">Voir le parcours</span>
+          <i class="ri-arrow-right-line"></i>
+        </span>
       </button>
 
       <button class="journey-card" data-key="pro">
         <div class="journey-head">
           <span class="journey-num">03</span>
-          <i class="ri-briefcase-4-line"></i>
+          <div class="journey-logo">
+            <img src="../img/ifp_logo.png" alt="Logo IFP-P" loading="lazy">
+          </div>
         </div>
-        <b>Je veux me former</b>
-        <small>« Comment apprendre un métier qui nourrit ? »</small>
-        <span class="journey-cta">Voir le parcours <i class="ri-arrow-right-line"></i></span>
+        <b data-i18n="journey3.title">Je veux me former</b>
+        <small data-i18n="journey3.question">« Comment apprendre un métier qui nourrit ? »</small>
+        <span class="journey-cta">
+          <span data-i18n="journey.cta">Voir le parcours</span>
+          <i class="ri-arrow-right-line"></i>
+        </span>
       </button>
 
       <button class="journey-card" data-key="teacher">
         <div class="journey-head">
           <span class="journey-num">04</span>
-          <i class="ri-presentation-line"></i>
+          <div class="journey-logo">
+            <img src="../img/eniege_logo.png" alt="Logo ENIEG Pékékue" loading="lazy">
+          </div>
         </div>
-        <b>Je veux enseigner</b>
-        <small>« Comment transmettre ce que je sais ? »</small>
-        <span class="journey-cta">Voir le parcours <i class="ri-arrow-right-line"></i></span>
+        <b data-i18n="journey4.title">Je veux enseigner</b>
+        <small data-i18n="journey4.question">« Comment transmettre ce que je sais ? »</small>
+        <span class="journey-cta">
+          <span data-i18n="journey.cta">Voir le parcours</span>
+          <i class="ri-arrow-right-line"></i>
+        </span>
       </button>
+
     </div>
 
     <div class="journey-result" id="journeyResult">
       <strong><i class="ri-school-line"></i></strong>
       <div>
-        <small>PARCOURS RECOMMANDÉ</small>
-        <h3 id="journeyTitle">Collège Bilingue Pékékue</h3>
-        <p id="journeyText">
+        <small data-i18n="journeyResult.tag">PARCOURS RECOMMANDÉ</small>
+        <h3 id="journeyTitle" data-i18n="journeyResult.title1">Collège Bilingue Pékékue</h3>
+        <p id="journeyText" data-i18n="journeyResult.text1">
           Un cadre structuré pour accompagner les jeunes
           dans les étapes fondatrices de leur parcours.
         </p>
       </div>
       <a href="#etablissements" class="btn btn-copper small">
-        Découvrir <i class="ri-arrow-right-up-line"></i>
+        <span data-i18n="journeyResult.cta">Découvrir</span>
+        <i class="ri-arrow-right-up-line"></i>
       </a>
     </div>
   </div>
@@ -260,10 +305,13 @@
   <div class="container">
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">NOS ÉTABLISSEMENTS</span>
-        <h2>Quatre univers.<br><em>Un même cap.</em></h2>
+        <span class="eyebrow" data-i18n="inst.tag">NOS ÉTABLISSEMENTS</span>
+        <h2>
+          <span data-i18n="inst.title1">Quatre univers.</span><br>
+          <em data-i18n="inst.title2">Un même cap.</em>
+        </h2>
       </div>
-      <p>
+      <p data-i18n="inst.desc">
         Chaque établissement possède son identité, ses publics
         et ses parcours. Ensemble, ils composent un écosystème
         éducatif cohérent du secondaire au supérieur.
@@ -274,77 +322,81 @@
 
       <article class="inst inst-dark reveal">
         <div class="inst-img">
-          <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1400&q=85"
-               alt="Environnement scolaire" loading="lazy" width="1400" height="900">
+          <img src="../img/cologe_logo.jpeg"
+               alt="Environnement scolaire Collège Pékékue" loading="lazy" width="1400" height="900">
           <div class="inst-logo">
-            <img src="images/brand/logo-college.png" alt="Logo Collège Bilingue Pékékue"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-            <span class="inst-logo-fallback">CBP</span>
+            <img src="../img/cologe_logo.jpeg" alt="Logo Collège Bilingue Pékékue">
           </div>
         </div>
         <div class="inst-copy">
-          <small>01 · ENSEIGNEMENT SECONDAIRE</small>
-          <h3>Collège <em>Pékékue</em></h3>
-          <p class="inst-hook">Et si votre enfant trouvait ici le cadre qui révélera tout son potentiel ?</p>
-          <p>Savoirs solides, autonomie, ouverture bilingue et préparation sereine aux prochaines étapes.</p>
-          <a href="#contact">Découvrir l'établissement <i class="ri-arrow-right-up-line"></i></a>
+          <small data-i18n="inst1.cat">01 · ENSEIGNEMENT SECONDAIRE</small>
+          <h3><span data-i18n="inst1.name1">Collège</span> <em data-i18n="inst1.name2">Pékékue</em></h3>
+          <p class="inst-hook" data-i18n="inst1.hook">Et si votre enfant trouvait ici le cadre qui révélera tout son potentiel ?</p>
+          <p data-i18n="inst1.desc">Savoirs solides, autonomie, ouverture bilingue et préparation sereine aux prochaines étapes.</p>
+          <a href="#contact" class="inst-link">
+            <span data-i18n="inst1.cta">Découvrir l'établissement</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
       </article>
 
       <article class="inst inst-light reveal">
         <div class="inst-img">
-          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1400&q=85"
-               alt="Campus universitaire" loading="lazy" width="1400" height="900">
+          <img src="../img/fond1.jpeg"
+               alt="Campus ISMTA" loading="lazy" width="1400" height="900">
           <div class="inst-logo">
-            <img src="images/brand/logo-ismta.png" alt="Logo ISMTA"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-            <span class="inst-logo-fallback">ISMTA</span>
+            <img src="../img/logo_imsta.png" alt="Logo ISMTA">
           </div>
         </div>
         <div class="inst-copy">
-          <small>02 · ENSEIGNEMENT SUPÉRIEUR</small>
-          <h3>ISMTA <em>Management & technologies</em></h3>
-          <p class="inst-hook">Et si votre diplôme devenait votre meilleur atout sur le marché de l'emploi ?</p>
-          <p>Parcours professionnalisants en management, gestion, commerce, banque-finance et technologies.</p>
-          <a href="#contact">Découvrir l'ISMTA <i class="ri-arrow-right-up-line"></i></a>
+          <small data-i18n="inst2.cat">02 · ENSEIGNEMENT SUPÉRIEUR</small>
+          <h3><span data-i18n="inst2.name1">ISMTA</span> <em data-i18n="inst2.name2">Management & technologies</em></h3>
+          <p class="inst-hook" data-i18n="inst2.hook">Et si votre diplôme devenait votre meilleur atout sur le marché de l'emploi ?</p>
+          <p data-i18n="inst2.desc">Parcours professionnalisants en management, gestion, commerce, banque-finance et technologies.</p>
+          <a href="#contact" class="inst-link">
+            <span data-i18n="inst2.cta">Découvrir l'ISMTA</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
       </article>
 
       <article class="inst inst-dark reveal">
         <div class="inst-img">
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=85"
-               alt="Formation technique" loading="lazy" width="1400" height="900">
+          <img src="../img/glt_imsta.jpeg"
+               alt="Formation technique IFP-P" loading="lazy" width="1400" height="900">
           <div class="inst-logo">
-            <img src="images/brand/logo-ifp.png" alt="Logo IFP-P"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-            <span class="inst-logo-fallback">IFP-P</span>
+            <img src="../img/ifp_logo.png" alt="Logo IFP-P">
           </div>
         </div>
         <div class="inst-copy">
-          <small>03 · FORMATION PROFESSIONNELLE</small>
-          <h3>IFP-P <em>Compétences & insertion</em></h3>
-          <p class="inst-hook">Et si un vrai savoir-faire changeait votre avenir dès les prochains mois ?</p>
-          <p>Formations pratiques orientées vers l'emploi, l'entrepreneuriat et l'insertion professionnelle.</p>
-          <a href="#contact">Découvrir l'IFP-P <i class="ri-arrow-right-up-line"></i></a>
+          <small data-i18n="inst3.cat">03 · FORMATION PROFESSIONNELLE</small>
+          <h3><span data-i18n="inst3.name1">IFP-P</span> <em data-i18n="inst3.name2">Compétences & insertion</em></h3>
+          <p class="inst-hook" data-i18n="inst3.hook">Et si un vrai savoir-faire changeait votre avenir dès les prochains mois ?</p>
+          <p data-i18n="inst3.desc">Formations pratiques orientées vers l'emploi, l'entrepreneuriat et l'insertion professionnelle.</p>
+          <a href="#contact" class="inst-link">
+            <span data-i18n="inst3.cta">Découvrir l'IFP-P</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
       </article>
 
       <article class="inst inst-copper reveal">
         <div class="inst-img">
-          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1400&q=85"
-               alt="Formation des enseignants" loading="lazy" width="1400" height="900">
+          <img src="../img/enieg.jpeg"
+               alt="Formation des enseignants ENIEG" loading="lazy" width="1400" height="900">
           <div class="inst-logo">
-            <img src="images/brand/logo-enieg.png" alt="Logo ENIEG Pékékue"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-            <span class="inst-logo-fallback">ENIEG</span>
+            <img src="../img/eniege_logo.png" alt="Logo ENIEG Pékékue">
           </div>
         </div>
         <div class="inst-copy">
-          <small>04 · FORMATION DES ENSEIGNANTS</small>
-          <h3>ENIEG <em>Privée laïque bilingue</em></h3>
-          <p class="inst-hook">Et si vous deveniez celle ou celui qui transmet le savoir de demain ?</p>
-          <p>Formation exigeante des futurs enseignants, avec ouverture francophone et anglophone.</p>
-          <a href="#contact">Découvrir l'ENIEG <i class="ri-arrow-right-up-line"></i></a>
+          <small data-i18n="inst4.cat">04 · FORMATION DES ENSEIGNANTS</small>
+          <h3><span data-i18n="inst4.name1">ENIEG</span> <em data-i18n="inst4.name2">Privée laïque bilingue</em></h3>
+          <p class="inst-hook" data-i18n="inst4.hook">Et si vous deveniez celle ou celui qui transmet le savoir de demain ?</p>
+          <p data-i18n="inst4.desc">Formation exigeante des futurs enseignants, avec ouverture francophone et anglophone.</p>
+          <a href="#contact" class="inst-link">
+            <span data-i18n="inst4.cta">Découvrir l'ENIEG</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
       </article>
 
@@ -356,9 +408,12 @@
 <section class="section" id="adn">
   <div class="container">
     <div class="values-intro reveal">
-      <span class="eyebrow">NOTRE ADN</span>
-      <h2>Quatre principes<br><em>qui nous engagent.</em></h2>
-      <p>
+      <span class="eyebrow" data-i18n="adn.tag">NOTRE ADN</span>
+      <h2>
+        <span data-i18n="adn.title1">Quatre principes</span><br>
+        <em data-i18n="adn.title2">qui nous engagent.</em>
+      </h2>
+      <p data-i18n="adn.desc">
         Une pédagogie d'excellence se construit sur des valeurs
         claires, appliquées chaque jour dans chaque établissement.
       </p>
@@ -367,26 +422,26 @@
     <div class="values-grid">
       <article class="value-item reveal">
         <i class="ri-medal-2-line"></i>
-        <h3>Excellence</h3>
-        <p>Faire progresser chaque apprenant avec rigueur et constance.</p>
+        <h3 data-i18n="value1.title">Excellence</h3>
+        <p data-i18n="value1.desc">Faire progresser chaque apprenant avec rigueur et constance.</p>
       </article>
 
       <article class="value-item reveal">
         <i class="ri-lightbulb-flash-line"></i>
-        <h3>Ouverture</h3>
-        <p>Préparer les apprenants à évoluer dans un monde en transformation.</p>
+        <h3 data-i18n="value2.title">Ouverture</h3>
+        <p data-i18n="value2.desc">Préparer les apprenants à évoluer dans un monde en transformation.</p>
       </article>
 
       <article class="value-item reveal">
         <i class="ri-team-line"></i>
-        <h3>Accompagnement</h3>
-        <p>Placer l'humain et le parcours de l'apprenant au centre.</p>
+        <h3 data-i18n="value3.title">Accompagnement</h3>
+        <p data-i18n="value3.desc">Placer l'humain et le parcours de l'apprenant au centre.</p>
       </article>
 
       <article class="value-item reveal">
         <i class="ri-rocket-2-line"></i>
-        <h3>Avenir</h3>
-        <p>Construire des compétences utiles pour les défis de demain.</p>
+        <h3 data-i18n="value4.title">Avenir</h3>
+        <p data-i18n="value4.desc">Construire des compétences utiles pour les défis de demain.</p>
       </article>
     </div>
   </div>
@@ -396,17 +451,19 @@
 <section class="founder" id="fondateur">
   <div class="container founder-grid">
     <div class="founder-photo reveal">
-      <div>
-        <b>ZP</b>
-        <small>PHOTO OFFICIELLE DU FONDATEUR<br>À REMPLACER EN PRODUCTION</small>
+      <div class="founder-frame">
+        <img src="../img/raouf1.png" alt="Portrait du fondateur du Groupe Pékékue" loading="lazy">
       </div>
-      <span>FONDATEUR & PROMOTEUR</span>
+      <span data-i18n="founder.role">FONDATEUR & PROMOTEUR</span>
     </div>
 
     <div class="founder-copy reveal">
-      <span class="eyebrow light">MOT DU FONDATEUR</span>
-      <blockquote>« Construire aujourd'hui<br><em>l'élite de demain.</em> »</blockquote>
-      <p>
+      <span class="eyebrow light" data-i18n="founder.tag">MOT DU FONDATEUR</span>
+      <blockquote>
+        <span data-i18n="founder.quote1">« Construire aujourd'hui</span><br>
+        <em data-i18n="founder.quote2">l'élite de demain. »</em>
+      </blockquote>
+      <p data-i18n="founder.desc">
         Notre ambition : offrir à chaque apprenant les moyens
         de comprendre son environnement, de développer ses
         compétences et de participer pleinement à la
@@ -414,10 +471,10 @@
       </p>
       <strong class="signature">
         P. Pékékue
-        <small>Fondateur & promoteur</small>
+        <small data-i18n="founder.signature">Fondateur & promoteur</small>
       </strong>
       <button class="btn btn-copper" data-modal="founderModal">
-        Lire le message complet
+        <span data-i18n="founder.cta">Lire le message complet</span>
         <i class="ri-arrow-right-up-line"></i>
       </button>
     </div>
@@ -429,10 +486,13 @@
   <div class="container">
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">CORPS ADMINISTRATIF</span>
-        <h2>Les femmes et les hommes<br><em>au service du projet.</em></h2>
+        <span class="eyebrow" data-i18n="admin.tag">CORPS ADMINISTRATIF</span>
+        <h2>
+          <span data-i18n="admin.title1">Les femmes et les hommes</span><br>
+          <em data-i18n="admin.title2">au service du projet.</em>
+        </h2>
       </div>
-      <p>
+      <p data-i18n="admin.desc">
         Une équipe dirigeante engagée au service de la vision
         académique et institutionnelle du Groupe.
       </p>
@@ -452,16 +512,15 @@
     </div>
 
     <div class="admin-track" id="adminTrack">
+
       <article class="admin-card">
         <div class="admin-photo">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85"
-               alt="P. Pékékue" loading="lazy" width="800" height="1000"
-               onerror="this.style.display='none'; this.parentElement.classList.add('admin-photo-fallback');">
+          <img src="../img/raouf1.png" alt="P. Pékékue" loading="lazy">
         </div>
         <div class="admin-body">
           <h3>P. Pékékue <i class="ri-verified-badge-fill"></i></h3>
-          <p class="admin-role">Fondateur & Promoteur</p>
-          <p class="admin-bio">Vision stratégique et orientation institutionnelle du Groupe Pékékue.</p>
+          <p class="admin-role" data-i18n="admin1.role">Fondateur & Promoteur</p>
+          <p class="admin-bio" data-i18n="admin1.bio">Vision stratégique et orientation institutionnelle du Groupe.</p>
           <div class="admin-contact">
             <a href="https://wa.me/237682489434" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
             <a href="tel:+237699875882" aria-label="Téléphone"><i class="ri-phone-line"></i></a>
@@ -471,15 +530,13 @@
       </article>
 
       <article class="admin-card">
-        <div class="admin-photo">
-          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=85"
-               alt="Direction générale" loading="lazy" width="800" height="1000"
-               onerror="this.style.display='none'; this.parentElement.classList.add('admin-photo-fallback');">
+        <div class="admin-photo admin-photo-fallback">
+          <i class="ri-user-line"></i>
         </div>
         <div class="admin-body">
-          <h3>Direction Générale <i class="ri-verified-badge-fill"></i></h3>
-          <p class="admin-role">Coordination générale</p>
-          <p class="admin-bio">Pilotage opérationnel et coordination des quatre établissements.</p>
+          <h3 data-i18n="admin2.title">Direction Générale <i class="ri-verified-badge-fill"></i></h3>
+          <p class="admin-role" data-i18n="admin2.role">Coordination générale</p>
+          <p class="admin-bio" data-i18n="admin2.bio">Pilotage opérationnel des quatre établissements.</p>
           <div class="admin-contact">
             <a href="https://wa.me/237682489434" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
             <a href="tel:+237699875882" aria-label="Téléphone"><i class="ri-phone-line"></i></a>
@@ -489,15 +546,13 @@
       </article>
 
       <article class="admin-card">
-        <div class="admin-photo">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=85"
-               alt="Direction académique" loading="lazy" width="800" height="1000"
-               onerror="this.style.display='none'; this.parentElement.classList.add('admin-photo-fallback');">
+        <div class="admin-photo admin-photo-fallback">
+          <i class="ri-user-line"></i>
         </div>
         <div class="admin-body">
-          <h3>Direction Académique <i class="ri-verified-badge-fill"></i></h3>
-          <p class="admin-role">Pédagogie & programmes</p>
-          <p class="admin-bio">Suivi pédagogique, programmes et coordination des parcours.</p>
+          <h3 data-i18n="admin3.title">Direction Académique <i class="ri-verified-badge-fill"></i></h3>
+          <p class="admin-role" data-i18n="admin3.role">Pédagogie & programmes</p>
+          <p class="admin-bio" data-i18n="admin3.bio">Suivi pédagogique et coordination des parcours.</p>
           <div class="admin-contact">
             <a href="https://wa.me/237682489434" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
             <a href="tel:+237699875882" aria-label="Téléphone"><i class="ri-phone-line"></i></a>
@@ -507,15 +562,13 @@
       </article>
 
       <article class="admin-card">
-        <div class="admin-photo">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85"
-               alt="Admissions" loading="lazy" width="800" height="1000"
-               onerror="this.style.display='none'; this.parentElement.classList.add('admin-photo-fallback');">
+        <div class="admin-photo admin-photo-fallback">
+          <i class="ri-user-line"></i>
         </div>
         <div class="admin-body">
-          <h3>Admissions & Accueil <i class="ri-verified-badge-fill"></i></h3>
-          <p class="admin-role">Accueil & inscriptions</p>
-          <p class="admin-bio">Accueil des familles, inscriptions et accompagnement des candidats.</p>
+          <h3 data-i18n="admin4.title">Admissions & Accueil <i class="ri-verified-badge-fill"></i></h3>
+          <p class="admin-role" data-i18n="admin4.role">Accueil & inscriptions</p>
+          <p class="admin-bio" data-i18n="admin4.bio">Accueil des familles et accompagnement des candidats.</p>
           <div class="admin-contact">
             <a href="https://wa.me/237682489434" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
             <a href="tel:+237699875882" aria-label="Téléphone"><i class="ri-phone-line"></i></a>
@@ -523,6 +576,7 @@
           </div>
         </div>
       </article>
+
     </div>
 
     <div class="container admin-dots-wrap">
@@ -536,10 +590,13 @@
   <div class="container">
     <div class="creds-head reveal">
       <div>
-        <span class="eyebrow light">AGRÉMENTS & TUTELLES</span>
-        <h2>Un cadre institutionnel<br><em>officiellement reconnu.</em></h2>
+        <span class="eyebrow light" data-i18n="creds.tag">AGRÉMENTS & TUTELLES</span>
+        <h2>
+          <span data-i18n="creds.title1">Un cadre institutionnel</span><br>
+          <em data-i18n="creds.title2">officiellement reconnu.</em>
+        </h2>
       </div>
-      <p>
+      <p data-i18n="creds.desc">
         Toutes nos formations sont autorisées et agréées
         par les ministères camerounais compétents. Chaque
         établissement dispose d'un arrêté officiel de création.
@@ -547,62 +604,89 @@
     </div>
 
     <div class="creds-grid">
+
       <article class="cred-card reveal">
-        <div class="cred-icon"><i class="ri-government-line"></i></div>
+        <div class="cred-logo">
+          <img src="../img/Minnistere_secondaire.png" alt="MINESEC" loading="lazy">
+        </div>
         <div>
           <span class="cred-label">MINESEC</span>
-          <h3>Ministère des Enseignements Secondaires</h3>
-          <p class="cred-text">
+          <h3 data-i18n="cred1.title">Ministère des Enseignements Secondaires</h3>
+          <p class="cred-text" data-i18n="cred1.text">
             Tutelle officielle du Collège Bilingue Pékékue.
             Arrêté de création n° 213/21 du 09 mai 2021.
           </p>
-          <span class="cred-badge"><i class="ri-shield-check-fill"></i> Agrément actif</span>
+          <span class="cred-badge">
+            <i class="ri-shield-check-fill"></i>
+            <span data-i18n="cred.badge">Agrément actif</span>
+          </span>
         </div>
       </article>
 
       <article class="cred-card reveal">
-        <div class="cred-icon"><i class="ri-government-line"></i></div>
+        <div class="cred-logo">
+          <img src="../img/minisup.png" alt="MINESUP" loading="lazy">
+        </div>
         <div>
           <span class="cred-label">MINESUP</span>
-          <h3>Ministère de l'Enseignement Supérieur</h3>
-          <p class="cred-text">
+          <h3 data-i18n="cred2.title">Ministère de l'Enseignement Supérieur</h3>
+          <p class="cred-text" data-i18n="cred2.text">
             Tutelle officielle de l'ISMTA et de l'ENIEG.
             Autorisés par arrêté n° 13/0076/MINESUP.
           </p>
-          <span class="cred-badge"><i class="ri-shield-check-fill"></i> Agrément actif</span>
+          <span class="cred-badge">
+            <i class="ri-shield-check-fill"></i>
+            <span data-i18n="cred.badge">Agrément actif</span>
+          </span>
         </div>
       </article>
 
       <article class="cred-card reveal">
-        <div class="cred-icon"><i class="ri-award-line"></i></div>
+        <div class="cred-logo-dual">
+          <div class="cred-logo cred-logo--half">
+            <img src="../img/dschang.png" alt="Université de Dschang" loading="lazy">
+          </div>
+          <div class="cred-logo cred-logo--half">
+            <img src="../img/yde1.png" alt="Université de Yaoundé II" loading="lazy">
+          </div>
+        </div>
         <div>
-          <span class="cred-label">TUTELLE ACADÉMIQUE</span>
-          <h3>Universités partenaires</h3>
-          <p class="cred-text">
+          <span class="cred-label" data-i18n="cred3.label">TUTELLE ACADÉMIQUE</span>
+          <h3 data-i18n="cred3.title">Universités partenaires</h3>
+          <p class="cred-text" data-i18n="cred3.text">
             Partenariats académiques avec l'Université de
             Dschang et l'Université de Yaoundé II.
           </p>
-          <span class="cred-badge"><i class="ri-shield-check-fill"></i> Convention signée</span>
+          <span class="cred-badge">
+            <i class="ri-shield-check-fill"></i>
+            <span data-i18n="cred3.badge">Convention signée</span>
+          </span>
         </div>
       </article>
 
       <article class="cred-card reveal">
-        <div class="cred-icon"><i class="ri-file-shield-2-line"></i></div>
+        <div class="cred-logo">
+          <img src="../img/Minifop.png" alt="MINEFOP" loading="lazy">
+        </div>
         <div>
-          <span class="cred-label">CONFORMITÉ</span>
-          <h3>Établissements légalement enregistrés</h3>
-          <p class="cred-text">
-            Toutes nos implantations disposent des
-            autorisations d'ouverture et d'exploitation en règle.
+          <span class="cred-label">MINEFOP</span>
+          <h3 data-i18n="cred4.title">Ministère de la Formation Professionnelle</h3>
+          <p class="cred-text" data-i18n="cred4.text">
+            Tutelle officielle de l'IFP-P. Établissements
+            légalement enregistrés avec autorisations en règle.
           </p>
-          <span class="cred-badge"><i class="ri-shield-check-fill"></i> Documents disponibles</span>
+          <span class="cred-badge">
+            <i class="ri-shield-check-fill"></i>
+            <span data-i18n="cred4.badge">Documents disponibles</span>
+          </span>
         </div>
       </article>
+
     </div>
 
     <div class="creds-foot reveal">
       <i class="ri-information-line"></i>
-      <p>
+      <p data-i18n="creds.foot">
         Les arrêtés et agréments sont consultables sur demande
         auprès de l'administration. Nous encourageons toute
         famille à les vérifier avant inscription.
@@ -611,73 +695,104 @@
   </div>
 </section>
 
-<!-- EXPÉRIENCES — Section repensée -->
+<!-- EXPÉRIENCES -->
 <section class="experiences" id="experiences">
   <div class="container">
     <div class="experience-head reveal">
-      <span class="eyebrow light">EXPÉRIENCES</span>
-      <h2>Ils racontent<br><em>leur parcours.</em></h2>
-      <p>
-        Témoignages vidéo d'élèves, d'étudiants, de parents
-        et d'anciens apprenants — découvrez la vie du campus
-        à travers leurs voix.
+      <span class="eyebrow light" data-i18n="exp.tag">EXPÉRIENCES</span>
+      <h2>
+        <span data-i18n="exp.title1">Ils racontent</span><br>
+        <em data-i18n="exp.title2">leur parcours.</em>
+      </h2>
+      <p data-i18n="exp.desc">
+        Témoignages vidéo, photos et récits d'élèves, d'étudiants,
+        de parents et d'anciens apprenants — découvrez la vie du
+        campus à travers leurs voix.
       </p>
     </div>
 
-    <div class="experience-feature reveal">
-      <a href="temoignages.html" class="experience-hero">
-        <div class="experience-hero-media">
-          <img src="https://images.pexels.com/photos/5940830/pexels-photo-5940830.jpeg?auto=compress&cs=tinysrgb&w=1600"
-               alt="Étudiants et enseignant" loading="lazy" width="1600" height="1067">
-          <span class="experience-play"><i class="ri-play-fill"></i></span>
-          <span class="experience-tag">TÉMOIGNAGE PRINCIPAL</span>
+    <div class="experience-grid reveal">
+
+      <article class="exp-card exp-card--video">
+        <div class="exp-media">
+          <video
+            class="exp-video"
+            autoplay muted loop playsinline preload="metadata"
+            poster="../img/experience-poster.jpg">
+            <source src="../img/videos/temoignage-1.mp4" type="video/mp4">
+          </video>
+          <div class="exp-media-overlay"></div>
+          <span class="exp-badge" data-i18n="exp1.badge">TÉMOIGNAGE VIDÉO</span>
+          <span class="exp-play" aria-hidden="true"><i class="ri-play-fill"></i></span>
         </div>
-        <div class="experience-hero-info">
-          <h3>Une expérience qui se raconte mieux qu'elle ne se résume.</h3>
-          <p>Découvrez le parcours d'une étudiante de l'ISMTA et sa vision de la formation supérieure.</p>
-          <span class="experience-cta">
-            Voir tous les témoignages <i class="ri-arrow-right-line"></i>
-          </span>
+        <div class="exp-body">
+          <span class="exp-cat" data-i18n="exp1.cat">ISMTA · ÉTUDIANTE</span>
+          <h3 data-i18n="exp1.title">« Une expérience qui se raconte mieux qu'elle ne se résume. »</h3>
+          <p data-i18n="exp1.desc">
+            Découvrez le parcours d'une étudiante de l'ISMTA
+            et sa vision de la formation supérieure.
+          </p>
+          <a href="temoignages.html" class="exp-link">
+            <span data-i18n="exp.link">Voir plus</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
+      </article>
+
+      <article class="exp-card exp-card--photo">
+        <div class="exp-media">
+          <img src="../img/fond1.jpeg" alt="Élève au Collège Pékékue" loading="lazy">
+          <span class="exp-badge exp-badge--light" data-i18n="exp2.badge">PHOTO · ÉLÈVE</span>
+        </div>
+        <div class="exp-body">
+          <span class="exp-cat" data-i18n="exp2.cat">COLLÈGE · ÉLÈVE</span>
+          <h3 data-i18n="exp2.title">Mon parcours au Collège Pékékue</h3>
+          <p data-i18n="exp2.desc">Comment ce cadre m'a permis de progresser et de trouver confiance.</p>
+          <a href="temoignages.html" class="exp-link">
+            <span data-i18n="exp.link">Voir plus</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="exp-card exp-card--text">
+        <div class="exp-body">
+          <span class="exp-cat" data-i18n="exp3.cat">FAMILLE · PARENT</span>
+          <h3 data-i18n="exp3.title">Le regard d'un parent</h3>
+          <p data-i18n="exp3.desc">
+            « J'ai vu mon fils s'épanouir. Le bilinguisme n'est
+            pas un slogan ici, c'est une réalité quotidienne. »
+          </p>
+          <a href="temoignages.html" class="exp-link">
+            <span data-i18n="exp.link">Voir plus</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="exp-card exp-card--photo">
+        <div class="exp-media">
+          <img src="../img/enieg.jpeg" alt="Diplômée ENIEG" loading="lazy">
+          <span class="exp-badge exp-badge--light" data-i18n="exp4.badge">PHOTO · DIPLÔMÉE</span>
+        </div>
+        <div class="exp-body">
+          <span class="exp-cat" data-i18n="exp4.cat">ENIEG · DIPLÔMÉE</span>
+          <h3 data-i18n="exp4.title">Devenir enseignante aujourd'hui</h3>
+          <p data-i18n="exp4.desc">Une vocation préparée avec exigence et passion.</p>
+          <a href="temoignages.html" class="exp-link">
+            <span data-i18n="exp.link">Voir plus</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="experience-cta reveal">
+      <a href="temoignages.html" class="btn btn-copper">
+        <span data-i18n="exp.cta">Voir toutes les expériences</span>
+        <i class="ri-arrow-right-line"></i>
       </a>
-
-      <div class="experience-side">
-        <a href="temoignages.html" class="experience-mini">
-          <div class="experience-mini-icon"><i class="ri-play-circle-line"></i></div>
-          <div>
-            <small>COLLÈGE · ÉLÈVE</small>
-            <strong>Mon parcours au Collège Pékékue</strong>
-            <span>Vidéo · 1 min 24</span>
-          </div>
-        </a>
-
-        <a href="temoignages.html" class="experience-mini">
-          <div class="experience-mini-icon"><i class="ri-play-circle-line"></i></div>
-          <div>
-            <small>ISMTA · ÉTUDIANT</small>
-            <strong>L'ISMTA, une vraie opportunité</strong>
-            <span>Vidéo · 2 min 07</span>
-          </div>
-        </a>
-
-        <a href="temoignages.html" class="experience-mini">
-          <div class="experience-mini-icon"><i class="ri-play-circle-line"></i></div>
-          <div>
-            <small>FAMILLE · PARENT</small>
-            <strong>Le regard d'un parent</strong>
-            <span>Vidéo · 1 min 45</span>
-          </div>
-        </a>
-
-        <a href="temoignages.html" class="experience-mini">
-          <div class="experience-mini-icon"><i class="ri-play-circle-line"></i></div>
-          <div>
-            <small>ENIEG · DIPLÔMÉE</small>
-            <strong>Devenir enseignante aujourd'hui</strong>
-            <span>Vidéo · 1 min 58</span>
-          </div>
-        </a>
-      </div>
     </div>
   </div>
 </section>
@@ -687,10 +802,13 @@
   <div class="container">
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">LA VIE SUR NOS CAMPUS</span>
-        <h2>Voir. Entendre.<br><em>Vivre Pékékue.</em></h2>
+        <span class="eyebrow" data-i18n="campus.tag">LA VIE SUR NOS CAMPUS</span>
+        <h2>
+          <span data-i18n="campus.title1">Voir. Entendre.</span><br>
+          <em data-i18n="campus.title2">Vivre Pékékue.</em>
+        </h2>
       </div>
-      <p>
+      <p data-i18n="campus.desc">
         Une immersion visuelle pour découvrir les campus,
         les salles, les laboratoires et l'ambiance réelle
         de chaque implantation.
@@ -698,31 +816,36 @@
     </div>
 
     <div class="mosaic">
+
       <figure class="main-photo reveal">
-        <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1700&q=85"
-             alt="Campus universitaire" loading="lazy" width="1700" height="1100">
-        <figcaption><span>01</span><b>Le campus comme lieu de vie</b></figcaption>
+        <img src="../img/glt_imsta.jpeg"
+             alt="Campus du Groupe Pékékue" loading="lazy" width="1700" height="1100">
+        <figcaption>
+          <span>01</span>
+          <b data-i18n="campus1.caption">Le campus comme lieu de vie</b>
+        </figcaption>
       </figure>
 
       <figure class="small-photo reveal">
-        <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&w=1000&q=85"
-             alt="Salle de classe" loading="lazy" width="1000" height="800">
-        <figcaption>Apprendre ensemble</figcaption>
+        <img src="../img/fond1.jpeg"
+             alt="Étudiants en formation" loading="lazy" width="1000" height="800">
+        <figcaption data-i18n="campus2.caption">Apprendre ensemble</figcaption>
       </figure>
 
       <figure class="small-photo reveal">
-        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=85"
-             alt="Travail en groupe" loading="lazy" width="1000" height="800">
-        <figcaption>Collaborer & progresser</figcaption>
+        <img src="../img/enieg.jpeg"
+             alt="Vie académique sur le campus" loading="lazy" width="1000" height="800">
+        <figcaption data-i18n="campus3.caption">Collaborer & progresser</figcaption>
       </figure>
 
       <a href="galerie.html" class="campus-video reveal">
         <i class="ri-image-2-line"></i>
         <span>
-          <small>GALERIE COMPLÈTE</small>
-          <b>Voir tous nos campus en images</b>
+          <small data-i18n="campus.gallery.tag">GALERIE COMPLÈTE</small>
+          <b data-i18n="campus.gallery.title">Voir tous nos campus en images</b>
         </span>
       </a>
+
     </div>
   </div>
 </section>
@@ -731,43 +854,64 @@
 <section class="section" id="faq">
   <div class="container faq-grid">
     <div class="reveal">
-      <span class="eyebrow">QUESTIONS FRÉQUENTES</span>
-      <h2>Avant de vous inscrire,<br><em>voici l'essentiel.</em></h2>
-      <p>
+      <span class="eyebrow" data-i18n="faq.tag">QUESTIONS FRÉQUENTES</span>
+      <h2>
+        <span data-i18n="faq.title1">Avant de vous inscrire,</span><br>
+        <em data-i18n="faq.title2">voici l'essentiel.</em>
+      </h2>
+      <p data-i18n="faq.desc">
         Une réponse claire au bon moment peut faire toute
         la différence. Cette FAQ est pensée comme une
         porte d'entrée vers l'information utile.
       </p>
       <a href="#contact" class="btn btn-secondary-dark">
-        Une autre question ?
+        <span data-i18n="faq.cta">Une autre question ?</span>
         <i class="ri-chat-3-line"></i>
       </a>
     </div>
 
     <div class="faq reveal">
       <details open>
-        <summary>Comment choisir mon établissement ? <i class="ri-add-line"></i></summary>
-        <p>Commencez par le portail interactif « Avant de vous inscrire » et sélectionnez votre situation.</p>
+        <summary>
+          <span data-i18n="faq1.q">Comment choisir mon établissement ?</span>
+          <i class="ri-add-line"></i>
+        </summary>
+        <p data-i18n="faq1.a">Commencez par le portail interactif « Avant de vous inscrire » et sélectionnez votre situation.</p>
       </details>
       <details>
-        <summary>Quels sont les établissements du Groupe ? <i class="ri-add-line"></i></summary>
-        <p>Le Groupe réunit quatre univers : Collège Bilingue Pékékue, ISMTA, IFP-P et ENIEG Pékékue.</p>
+        <summary>
+          <span data-i18n="faq2.q">Quels sont les établissements du Groupe ?</span>
+          <i class="ri-add-line"></i>
+        </summary>
+        <p data-i18n="faq2.a">Le Groupe réunit quatre univers : Collège Bilingue Pékékue, ISMTA, IFP-P et ENIEG Pékékue.</p>
       </details>
       <details>
-        <summary>Où sont implantés les établissements ? <i class="ri-add-line"></i></summary>
-        <p>Le Groupe est présent à Foumban (Région de l'Ouest) et à Yaoundé (Région du Centre).</p>
+        <summary>
+          <span data-i18n="faq3.q">Où sont implantés les établissements ?</span>
+          <i class="ri-add-line"></i>
+        </summary>
+        <p data-i18n="faq3.a">Le Groupe est présent à Foumban (Région de l'Ouest) et à Yaoundé (Région du Centre).</p>
       </details>
       <details>
-        <summary>Comment obtenir les informations d'admission ? <i class="ri-add-line"></i></summary>
-        <p>Via WhatsApp, téléphone ou email. Notre équipe vous répond sous 24 heures ouvrées.</p>
+        <summary>
+          <span data-i18n="faq4.q">Comment obtenir les informations d'admission ?</span>
+          <i class="ri-add-line"></i>
+        </summary>
+        <p data-i18n="faq4.a">Via WhatsApp, téléphone ou email. Notre équipe vous répond sous 24 heures ouvrées.</p>
       </details>
       <details>
-        <summary>Puis-je demander une orientation avant de candidater ? <i class="ri-add-line"></i></summary>
-        <p>Oui. L'expérience est conçue pour orienter avant l'inscription.</p>
+        <summary>
+          <span data-i18n="faq5.q">Puis-je demander une orientation avant de candidater ?</span>
+          <i class="ri-add-line"></i>
+        </summary>
+        <p data-i18n="faq5.a">Oui. L'expérience est conçue pour orienter avant l'inscription.</p>
       </details>
       <details>
-        <summary>Quels sont les concours et dates d'admission ? <i class="ri-add-line"></i></summary>
-        <p>Pour le Collège Bilingue Pékékue : concours d'entrée en 6ᵉ, 5ᵉ et 4ᵉ les 16 mai, 08 juin, 24 août et 01 septembre 2026.</p>
+        <summary>
+          <span data-i18n="faq6.q">Quels sont les concours et dates d'admission ?</span>
+          <i class="ri-add-line"></i>
+        </summary>
+        <p data-i18n="faq6.a">Pour le Collège Bilingue Pékékue : concours d'entrée en 6ᵉ, 5ᵉ et 4ᵉ les 16 mai, 08 juin, 24 août et 01 septembre 2026.</p>
       </details>
     </div>
   </div>
@@ -778,10 +922,13 @@
   <div class="container">
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">NOS IMPLANTATIONS</span>
-        <h2>Deux territoires.<br><em>Un même élan.</em></h2>
+        <span class="eyebrow" data-i18n="loc.tag">NOS IMPLANTATIONS</span>
+        <h2>
+          <span data-i18n="loc.title1">Deux territoires.</span><br>
+          <em data-i18n="loc.title2">Un même élan.</em>
+        </h2>
       </div>
-      <p>
+      <p data-i18n="loc.desc">
         Retrouvez nos campus à Foumban et à Yaoundé.
         Cliquez sur un emplacement pour ouvrir l'itinéraire
         Google Maps.
@@ -799,10 +946,11 @@
         <div class="location-info">
           <span class="location-num">01</span>
           <h3>Foumban</h3>
-          <p>Noun · Région de l'Ouest</p>
+          <p data-i18n="loc1.region">Noun · Région de l'Ouest</p>
           <a href="https://www.google.com/maps/search/?api=1&query=5.729,10.908"
              target="_blank" rel="noopener" class="location-link">
-            Ouvrir dans Google Maps <i class="ri-arrow-right-up-line"></i>
+            <span data-i18n="loc.link">Ouvrir dans Google Maps</span>
+            <i class="ri-arrow-right-up-line"></i>
           </a>
         </div>
       </div>
@@ -817,10 +965,11 @@
         <div class="location-info">
           <span class="location-num">02</span>
           <h3>Yaoundé</h3>
-          <p>Mfoundi · Région du Centre</p>
+          <p data-i18n="loc2.region">Mfoundi · Région du Centre</p>
           <a href="https://www.google.com/maps/search/?api=1&query=3.861,11.531"
              target="_blank" rel="noopener" class="location-link">
-            Ouvrir dans Google Maps <i class="ri-arrow-right-up-line"></i>
+            <span data-i18n="loc.link">Ouvrir dans Google Maps</span>
+            <i class="ri-arrow-right-up-line"></i>
           </a>
         </div>
       </div>
@@ -834,19 +983,22 @@
   <div class="next-step-overlay"></div>
 
   <div class="container next-step-inner">
-    <span class="eyebrow light">VOTRE PROCHAINE ÉTAPE</span>
-    <h2>Et si votre <em>histoire</em><br><em>commençait ici ?</em></h2>
-    <p>
+    <span class="eyebrow light" data-i18n="next.tag">VOTRE PROCHAINE ÉTAPE</span>
+    <h2>
+      <span data-i18n="next.title1">Et si votre <em>histoire</em></span><br>
+      <em data-i18n="next.title2">commençait ici ?</em>
+    </h2>
+    <p data-i18n="next.desc">
       Découvrez les établissements, les formations, les conditions
       d'admission et les prochaines échéances.
     </p>
     <div class="next-step-actions">
       <a href="#parcours" class="btn btn-copper">
-        Commencer mon parcours
+        <span data-i18n="next.cta1">Commencer mon parcours</span>
         <i class="ri-arrow-right-up-line"></i>
       </a>
       <button class="btn btn-glass" data-modal="contactModal">
-        Nous contacter
+        <span data-i18n="next.cta2">Nous contacter</span>
       </button>
     </div>
   </div>
@@ -866,7 +1018,7 @@
             <strong>PÉKÉKUE</strong>
           </span>
         </a>
-        <p>
+        <p data-i18n="footer.about">
           Un écosystème éducatif camerounais engagé pour
           la formation, l'excellence et la préparation
           des talents de demain.
@@ -882,7 +1034,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Établissements</h4>
+        <h4 data-i18n="footer.inst.title">Établissements</h4>
         <a href="#etablissements">Collège Bilingue Pékékue</a>
         <a href="#etablissements">ISMTA</a>
         <a href="#etablissements">IFP-P</a>
@@ -890,23 +1042,23 @@
       </div>
 
       <div class="footer-col">
-        <h4>Découvrir</h4>
-        <a href="#groupe">Présentation</a>
-        <a href="#adn">Notre ADN</a>
-        <a href="#agrements">Agréments officiels</a>
-        <a href="temoignages.html">Expériences vidéo</a>
+        <h4 data-i18n="footer.discover.title">Découvrir</h4>
+        <a href="#groupe" data-i18n="footer.discover.about">Présentation</a>
+        <a href="#adn" data-i18n="footer.discover.dna">Notre ADN</a>
+        <a href="#agrements" data-i18n="footer.discover.creds">Agréments officiels</a>
+        <a href="temoignages.html" data-i18n="footer.discover.exp">Expériences vidéo</a>
       </div>
 
       <div class="footer-col">
-        <h4>Orientation</h4>
-        <a href="#parcours">Trouver mon parcours</a>
-        <a href="#faq">Questions fréquentes</a>
-        <a href="#implantations">Nos implantations</a>
-        <a href="#contact">Contact</a>
+        <h4 data-i18n="footer.or.title">Orientation</h4>
+        <a href="#parcours" data-i18n="footer.or.paths">Trouver mon parcours</a>
+        <a href="#faq" data-i18n="footer.or.faq">Questions fréquentes</a>
+        <a href="#implantations" data-i18n="footer.or.loc">Nos implantations</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
 
       <div class="footer-col">
-        <h4>Nous joindre</h4>
+        <h4 data-i18n="footer.contact.title">Nous joindre</h4>
         <span><i class="ri-map-pin-2-line"></i> Foumban · Région de l'Ouest</span>
         <span><i class="ri-map-pin-2-line"></i> Yaoundé · Région du Centre</span>
         <a href="tel:+237695241276"><i class="ri-phone-line"></i> +237 695 24 12 76</a>
@@ -915,12 +1067,12 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© <b id="year"></b> Groupe Pékékue. Tous droits réservés.</span>
+      <span>© <b id="year"></b> Groupe Pékékue. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
       <div class="footer-bottom-links">
-        <a href="#">Mentions légales</a>
-        <a href="#">Politique de confidentialité</a>
+        <a href="#" data-i18n="footer.legal">Mentions légales</a>
+        <a href="#" data-i18n="footer.privacy">Politique de confidentialité</a>
       </div>
-      <span>Cameroun · Éducation · Formation · Avenir</span>
+      <span data-i18n="footer.sig">Cameroun · Éducation · Formation · Avenir</span>
     </div>
   </div>
 </footer>
@@ -930,16 +1082,19 @@
   <div class="backdrop" data-close></div>
   <div class="modal-box">
     <button class="close" data-close aria-label="Fermer"><i class="ri-close-line"></i></button>
-    <span class="eyebrow">NOUS CONTACTER</span>
-    <h2>Parlons de votre <br><em>projet.</em></h2>
-    <p>Choisissez le canal qui vous convient. Notre équipe vous répond sous 24 h ouvrées.</p>
+    <span class="eyebrow" data-i18n="modal.contact.tag">NOUS CONTACTER</span>
+    <h2>
+      <span data-i18n="modal.contact.title1">Parlons de votre</span><br>
+      <em data-i18n="modal.contact.title2">projet.</em>
+    </h2>
+    <p data-i18n="modal.contact.desc">Choisissez le canal qui vous convient. Notre équipe vous répond sous 24 h ouvrées.</p>
 
     <div class="modal-links">
       <a href="https://wa.me/237682489434" target="_blank" rel="noopener">
         <i class="ri-whatsapp-line"></i>
         <span>
           <b>WhatsApp</b>
-          <small>Écrire à l'administration</small>
+          <small data-i18n="modal.contact.wa">Écrire à l'administration</small>
         </span>
         <i class="ri-arrow-right-up-line"></i>
       </a>
@@ -947,7 +1102,7 @@
       <a href="tel:+237695241276">
         <i class="ri-phone-line"></i>
         <span>
-          <b>Admissions ENIEG</b>
+          <b data-i18n="modal.contact.tel">Admissions ENIEG</b>
           <small>+237 695 24 12 76 · +237 653 06 92 96</small>
         </span>
         <i class="ri-arrow-right-up-line"></i>
@@ -956,7 +1111,7 @@
       <a href="mailto:contact@pekekue.cm">
         <i class="ri-mail-line"></i>
         <span>
-          <b>Email</b>
+          <b data-i18n="modal.contact.email">Email</b>
           <small>contact@pekekue.cm</small>
         </span>
         <i class="ri-arrow-right-up-line"></i>
@@ -969,15 +1124,18 @@
   <div class="backdrop" data-close></div>
   <div class="modal-box">
     <button class="close" data-close aria-label="Fermer"><i class="ri-close-line"></i></button>
-    <span class="eyebrow">MESSAGE DU FONDATEUR</span>
-    <h2>Construire par <br><em>l'éducation.</em></h2>
-    <blockquote>
+    <span class="eyebrow" data-i18n="modal.founder.tag">MESSAGE DU FONDATEUR</span>
+    <h2>
+      <span data-i18n="modal.founder.title1">Construire par</span><br>
+      <em data-i18n="modal.founder.title2">l'éducation.</em>
+    </h2>
+    <blockquote data-i18n="modal.founder.quote">
       « Notre engagement est de contribuer à la formation
       d'une jeunesse capable de comprendre son environnement,
       de développer ses compétences et de participer pleinement
       à la construction de son avenir. »
     </blockquote>
-    <strong>P. Pékékue <small>Fondateur & promoteur</small></strong>
+    <strong>P. Pékékue <small data-i18n="modal.founder.signature">Fondateur & promoteur</small></strong>
   </div>
 </div>
 
