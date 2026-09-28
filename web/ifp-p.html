@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IFP-P — Institut de Formation Professionnelle Pékékue, Groupe Pékékue. Formations professionnelles agréées MINEFOP à Foumban.">
+<meta name="theme-color" content="#050E0B">
+<title>IFP-P — Groupe Pékékue</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/ifp-p.css">
+</head>
+
+<body class="page-ifp">
+
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+<div class="progress" id="progress"></div>
+
+<!-- GROUP BAR -->
+<div class="group-bar">
+  <div class="container group-bar-inner">
+    <a href="index.html" class="group-brand" aria-label="Retour au portail Groupe Pékékue">
+      <span class="group-brand-mark">P</span>
+      <span>
+        <strong>Groupe Pékékue</strong>
+        <small>Campus scolaire &amp; supérieur</small>
+      </span>
+    </a>
+    <div class="campus-navigation">
+      <span class="campus-label">Nos établissements</span>
+      <a href="index.html#etablissements">01 · Collège</a>
+      <a href="index.html#etablissements">02 · ISMTA</a>
+      <a href="#" class="current">03 · IFP-P</a>
+      <a href="index.html#etablissements">04 · ENIEG</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#accueil" class="ifp-brand" aria-label="Accueil IFP-P">
+      <img src="img/logo_ifp.png" alt="Logo IFP-P" class="ifp-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <span class="ifp-logo-fallback">IFP</span>
+      <span class="ifp-brand-text">
+        <strong>IFP-P</strong>
+        <small>Institut de Formation Professionnelle<br>Pékékue</small>
+      </span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <i class="ri-menu-3-line"></i>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#accueil" class="nav-link active">Accueil</a>
+      <a href="#formations" class="nav-link">Formations</a>
+      <a href="#agrement" class="nav-link">Agrément</a>
+      <a href="#admission" class="nav-link">Admission</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#admission" class="nav-cta">
+        <i class="ri-user-add-line"></i>
+        S'inscrire
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="container hero-grid">
+    <div class="hero-content reveal">
+      <div class="breadcrumb">
+        <a href="index.html">Groupe Pékékue</a>
+        <i class="ri-arrow-right-s-line"></i>
+        <span>03 · IFP-P</span>
+      </div>
+      <span class="eyebrow">Formation professionnelle · Agréé MINEFOP</span>
+      <h1>
+        Apprenez un métier,
+        <em>construisez votre indépendance.</em>
+      </h1>
+      <p class="hero-text">
+        L'IFP-P forme aux métiers techniques, agricoles, numériques et de services. Des parcours courts et concrets pour entrer rapidement dans la vie active ou créer votre propre activité.
+      </p>
+      <div class="hero-actions">
+        <a href="#formations" class="btn btn-primary">
+          Découvrir les filières
+          <i class="ri-arrow-right-line"></i>
+        </a>
+        <a href="#admission" class="btn btn-copper">
+          S'inscrire
+          <i class="ri-arrow-right-up-line"></i>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><i class="ri-shield-check-line"></i><span>Agréé MINEFOP</span></div>
+        <div class="hero-meta-item"><i class="ri-map-pin-line"></i><span>Foumban · Kounga</span></div>
+        <div class="hero-meta-item"><i class="ri-award-line"></i><span>CQP · DQP</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="hero-image">
+        <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1600"
+             alt="Apprenants en formation professionnelle" fetchpriority="high"
+             onerror="this.classList.add('is-missing');">
+      </div>
+      <div class="hero-info-card">
+        <div class="hero-info-number">03</div>
+        <div>
+          <strong>Troisième branche</strong>
+          <span>du Groupe Pékékue</span>
+        </div>
+      </div>
+      <div class="hero-side-note">
+        <span class="status-dot"></span>
+        <div>
+          <strong>Agréé MINEFOP</strong>
+          <span>Formation professionnelle</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUP CONTEXT -->
+<section class="group-context">
+  <div class="container group-context-inner">
+    <div class="group-context-title">
+      <span>GROUPE PÉKÉKUE</span>
+      <strong>Un même complexe, plusieurs parcours.</strong>
+    </div>
+    <div class="branch-list">
+      <a href="index.html#etablissements"><span>01</span> Collège</a>
+      <a href="index.html#etablissements"><span>02</span> ISMTA</a>
+      <a href="#" class="selected"><span>03</span> IFP-P</a>
+      <a href="index.html#etablissements"><span>04</span> ENIEG</a>
+    </div>
+  </div>
+</section>
+
+<!-- AGRÉMENT MINEFOP -->
+<section class="section agrement-section" id="agrement">
+  <div class="container">
+    <div class="agrement-card reveal">
+      <div class="agrement-logos">
+        <div class="agrement-logo">
+          <img src="img/logo_minefop.png" alt="Ministère de l'Emploi et de la Formation Professionnelle"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <span class="agrement-logo-fallback">MINEFOP</span>
+        </div>
+        <div class="agrement-separator">+</div>
+        <div class="agrement-logo">
+          <img src="img/logo_ifp.png" alt="Institut de Formation Professionnelle Pékékue"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <span class="agrement-logo-fallback">IFP-P</span>
+        </div>
+      </div>
+      <div class="agrement-content">
+        <span class="section-kicker">AGRÉMENT OFFICIEL</span>
+        <h2>Un centre agréé par le MINEFOP.</h2>
+        <p>
+          L'IFP-P est un centre de formation professionnelle privé agréé par le Ministère de l'Emploi et de la Formation Professionnelle (MINEFOP). Cet agrément garantit la conformité de nos programmes aux normes nationales et la reconnaissance officielle des diplômes délivrés.
+        </p>
+        <div class="agrement-badges">
+          <span class="agrement-badge"><i class="ri-verified-badge-line"></i> Programmes officiels</span>
+          <span class="agrement-badge"><i class="ri-award-line"></i> CQP / DQP</span>
+          <span class="agrement-badge"><i class="ri-building-2-line"></i> Centre agréé</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="section intro-section">
+  <div class="container intro-grid">
+    <div class="section-heading reveal">
+      <span class="section-kicker">L'IFP-P EN QUELQUES MOTS</span>
+      <h2>Des métiers concrets, une insertion rapide.</h2>
+    </div>
+    <div class="intro-copy reveal">
+      <p>L'IFP-P constitue la branche de formation professionnelle du Groupe Pékékue. Son offre couvre quatre grands secteurs : l'agro-industrie, le bâtiment et travaux publics, l'énergie, le numérique et la santé.</p>
+      <p>Les formations sont orientées vers la pratique, avec des ateliers, des stages et une préparation aux métiers qui recrutent dans la région et au-delà.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTEURS AVEC IMAGES -->
+<section class="section sectors-section" id="formations">
+  <div class="container">
+    <div class="section-top reveal">
+      <div>
+        <span class="section-kicker">NOS FILIÈRES</span>
+        <h2>Six secteurs pour apprendre un métier.</h2>
+      </div>
+      <p>Chaque secteur regroupe des spécialités concrètes, préparant à des diplômes professionnels reconnus.</p>
+    </div>
+
+    <div class="sector-grid">
+      <!-- AGRO-INDUSTRIE -->
+      <article class="sector-card reveal">
+        <div class="sector-image">
+          <img src="https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Étudiants en agro-industrie" loading="lazy"
+               onerror="this.classList.add('is-missing');">
+          <span class="sector-number">01</span>
+        </div>
+        <div class="sector-body">
+          <h3>Agro-industrie</h3>
+          <p>Production, transformation et valorisation des produits agricoles locaux.</p>
+          <ul class="sector-specialties">
+            <li>Élevage bovin et petits ruminants</li>
+            <li>Production céréalière</li>
+            <li>Transformation du cacao</li>
+            <li>Transformation et production laitière</li>
+          </ul>
+          <div class="sector-footer">
+            <span class="sector-count">4 spécialités</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- BTP -->
+      <article class="sector-card reveal">
+        <div class="sector-image">
+          <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Étudiants en BTP sur un chantier" loading="lazy"
+               onerror="this.classList.add('is-missing');">
+          <span class="sector-number">02</span>
+        </div>
+        <div class="sector-body">
+          <h3>Bâtiment &amp; Travaux Publics</h3>
+          <p>Construction, maçonnerie et plomberie pour bâtir et entretenir les infrastructures.</p>
+          <ul class="sector-specialties">
+            <li>Maçonnerie</li>
+            <li>Électricité</li>
+            <li>Plomberie</li>
+            <li>Staffeur</li>
+          </ul>
+          <div class="sector-footer">
+            <span class="sector-count">4 spécialités</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ÉNERGIE -->
+      <article class="sector-card reveal">
+        <div class="sector-image">
+          <img src="https://images.pexels.com/photos/9875421/pexels-photo-9875421.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Installation de panneaux solaires" loading="lazy"
+               onerror="this.classList.add('is-missing');">
+          <span class="sector-number">03</span>
+        </div>
+        <div class="sector-body">
+          <h3>Énergie</h3>
+          <p>Installation et maintenance des systèmes solaires et hydrauliques.</p>
+          <ul class="sector-specialties">
+            <li>Installation système photovoltaïque</li>
+            <li>Maintenance des systèmes solaires</li>
+            <li>Pompeur des centrales hydrauliques</li>
+          </ul>
+          <div class="sector-footer">
+            <span class="sector-count">3 spécialités</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- NUMÉRIQUE -->
+      <article class="sector-card reveal">
+        <div class="sector-image">
+          <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Formation en informatique et développement web" loading="lazy"
+               onerror="this.classList.add('is-missing');">
+          <span class="sector-number">04</span>
+        </div>
+        <div class="sector-body">
+          <h3>Numérique</h3>
+          <p>Bureautique, informatique industrielle et développement web.</p>
+          <ul class="sector-specialties">
+            <li>Secrétariat bureautique</li>
+            <li>Maintenance informatique</li>
+            <li>Conception des logiciels</li>
+            <li>Développeur web</li>
+            <li>Infographie</li>
+            <li>Informatique industrielle</li>
+          </ul>
+          <div class="sector-footer">
+            <span class="sector-count">6 spécialités</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SANTÉ -->
+      <article class="sector-card reveal">
+        <div class="sector-image">
+          <img src="https://images.pexels.com/photos/5214958/pexels-photo-5214958.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Étudiants en santé et assistance médicale" loading="lazy"
+               onerror="this.classList.add('is-missing');">
+          <span class="sector-number">05</span>
+        </div>
+        <div class="sector-body">
+          <h3>Santé</h3>
+          <p>Assistance médicale et auxiliaire de vie pour accompagner les personnes.</p>
+          <ul class="sector-specialties">
+            <li>Assistant biomédical</li>
+            <li>Secrétaire médical</li>
+            <li>Vendeur en pharmacie</li>
+            <li>Délégué médical</li>
+            <li>Auxiliaire de vie</li>
+          </ul>
+          <div class="sector-footer">
+            <span class="sector-count">5 spécialités</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- AUTRES -->
+      <article class="sector-card reveal">
+        <div class="sector-image">
+          <img src="https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Réparation automobile et artisanat" loading="lazy"
+               onerror="this.classList.add('is-missing');">
+          <span class="sector-number">06</span>
+        </div>
+        <div class="sector-body">
+          <h3>Autres formations</h3>
+          <p>Réparation, artisanat et savoir-faire techniques complémentaires.</p>
+          <ul class="sector-specialties">
+            <li>Réparation automobile</li>
+            <li>Couture et tissage artisanal</li>
+          </ul>
+          <div class="sector-footer">
+            <span class="sector-count">2 spécialités</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI CHOISIR L'IFP-P -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-heading centered reveal">
+      <span class="section-kicker">POURQUOI L'IFP-P</span>
+      <h2>Une formation tournée vers l'action.</h2>
+      <p>Nous préparons à des métiers qui existent sur le marché, avec des compétences immédiatement utilisables.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="ri-time-line"></i></div>
+        <h3>Formations courtes</h3>
+        <p>Des parcours accessibles et rapides pour entrer rapidement dans la vie active.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="ri-hammer-line"></i></div>
+        <h3>Apprentissage pratique</h3>
+        <p>Ateliers, travaux pratiques et stages au cœur de chaque formation.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="ri-briefcase-line"></i></div>
+        <h3>Insertion professionnelle</h3>
+        <p>Des métiers recherchés dans le Noun, l'Ouest et sur l'ensemble du territoire.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="ri-user-star-line"></i></div>
+        <h3>Encadrement de proximité</h3>
+        <p>Des formateurs qualifiés et un suivi individualisé des apprenants.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSION -->
+<section class="section admission-section" id="admission">
+  <div class="container">
+    <div class="section-heading centered reveal">
+      <span class="section-kicker">ADMISSION</span>
+      <h2>Rejoindre l'IFP-P.</h2>
+      <p>Les modalités d'inscription sont simples. Un dossier, un entretien, et vous pouvez commencer.</p>
+    </div>
+
+    <div class="admission-grid">
+      <article class="admission-card reveal">
+        <span class="admission-index">01</span>
+        <div class="admission-label">CONDITIONS</div>
+        <h3>Qui peut postuler ?</h3>
+        <p>Les formations de l'IFP-P sont accessibles aux jeunes et adultes souhaitant acquérir un métier.</p>
+        <ul class="check-list">
+          <li><i class="ri-checkbox-circle-line"></i> Niveau 3ème minimum</li>
+          <li><i class="ri-checkbox-circle-line"></i> Ou expérience professionnelle</li>
+          <li><i class="ri-checkbox-circle-line"></i> Motivation et projet clair</li>
+          <li><i class="ri-checkbox-circle-line"></i> Aptitude physique selon filière</li>
+        </ul>
+      </article>
+
+      <article class="admission-card reveal">
+        <span class="admission-index">02</span>
+        <div class="admission-label">DOSSIER</div>
+        <h3>Les pièces à fournir</h3>
+        <p>Un dossier complet permet un traitement rapide de votre candidature.</p>
+        <ul class="check-list">
+          <li><i class="ri-checkbox-circle-line"></i> Demande manuscrite</li>
+          <li><i class="ri-checkbox-circle-line"></i> Copie acte de naissance</li>
+          <li><i class="ri-checkbox-circle-line"></i> Copie CNI</li>
+          <li><i class="ri-checkbox-circle-line"></i> Photos 4×4</li>
+          <li><i class="ri-checkbox-circle-line"></i> Diplômes / attestations</li>
+        </ul>
+      </article>
+
+      <article class="admission-card reveal">
+        <span class="admission-index">03</span>
+        <div class="admission-label">PROCESSUS</div>
+        <h3>Comment s'inscrire ?</h3>
+        <p>Un parcours simple pour intégrer la formation choisie.</p>
+        <ul class="check-list">
+          <li><i class="ri-checkbox-circle-line"></i> Choix de la filière</li>
+          <li><i class="ri-checkbox-circle-line"></i> Dépôt du dossier</li>
+          <li><i class="ri-checkbox-circle-line"></i> Entretien de motivation</li>
+          <li><i class="ri-checkbox-circle-line"></i> Validation et inscription</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="admission-note reveal">
+      <i class="ri-file-list-3-line"></i>
+      <div>
+        <strong>Une question sur votre éligibilité ?</strong>
+        <p>Contactez l'administration pour confirmer les conditions spécifiques à la filière qui vous intéresse.</p>
+      </div>
+      <a href="#contact" class="btn btn-secondary">Poser ma question</a>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPUS -->
+<section class="section campus-section">
+  <div class="container campus-grid">
+    <div class="campus-image reveal">
+      <img src="https://images.pexels.com/photos/19805876/pexels-photo-19805876.jpeg?auto=compress&cs=tinysrgb&w=1200"
+           alt="Atelier de formation professionnelle" loading="lazy"
+           onerror="this.classList.add('is-missing');">
+    </div>
+    <div class="campus-content reveal">
+      <span class="section-kicker">APPRENDRE AUTREMENT</span>
+      <h2>Des ateliers, des machines, des gestes.</h2>
+      <p>La formation professionnelle s'apprend par la pratique. Nos ateliers sont équipés pour que chaque apprenant puisse manipuler, fabriquer, réparer et construire.</p>
+      <div class="campus-facts">
+        <div><i class="ri-map-pin-2-line"></i><span>Foumban · site Kounga</span></div>
+        <div><i class="ri-shield-check-line"></i><span>Agréé MINEFOP</span></div>
+        <div><i class="ri-tools-line"></i><span>Ateliers techniques</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="container faq-layout">
+    <div class="faq-intro reveal">
+      <span class="section-kicker">QUESTIONS FRÉQUENTES</span>
+      <h2>Tout savoir sur l'IFP-P.</h2>
+      <p>Retrouvez ici les réponses aux questions les plus courantes sur la formation professionnelle.</p>
+      <a href="#contact" class="btn btn-copper">
+        Poser ma question <i class="ri-chat-3-line"></i>
+      </a>
+    </div>
+
+    <div class="faq-list reveal">
+      <details class="faq-item" open>
+        <summary>Qu'est-ce que l'agrément MINEFOP ? <i class="ri-add-line"></i></summary>
+        <div class="faq-answer">L'agrément MINEFOP est la reconnaissance officielle délivrée par le Ministère de l'Emploi et de la Formation Professionnelle. Il garantit que le centre respecte les normes nationales et que les diplômes délivrés sont reconnus.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Quels diplômes délivre l'IFP-P ? <i class="ri-add-line"></i></summary>
+        <div class="faq-answer">L'IFP-P prépare aux diplômes professionnels : CQP (Certificat de Qualification Professionnelle) et DQP (Diplôme de Qualification Professionnelle), selon les filières.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Combien de temps durent les formations ? <i class="ri-add-line"></i></summary>
+        <div class="faq-answer">Les durées varient selon les spécialités. La plupart des parcours se déroulent sur 1 à 2 ans. Contactez l'administration pour les détails par filière.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Les formations sont-elles pratiques ? <i class="ri-add-line"></i></summary>
+        <div class="faq-answer">Oui. La pédagogie de l'IFP-P repose sur l'apprentissage par la pratique : ateliers, travaux pratiques et stages en entreprise.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Puis-je travailler après ma formation ? <i class="ri-add-line"></i></summary>
+        <div class="faq-answer">Les formations préparent à des métiers recherchés. L'insertion peut se faire par emploi salarié ou par création d'activité indépendante.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container contact-layout">
+    <div class="contact-intro reveal">
+      <span class="section-kicker">CONTACT</span>
+      <h2>Une question ? Parlons-en.</h2>
+      <p>L'administration de l'IFP-P est disponible pour vous accompagner dans votre projet de formation.</p>
+
+      <div class="contact-details">
+        <a href="https://wa.me/237682489434" target="_blank" rel="noopener" class="contact-detail">
+          <span class="contact-icon contact-icon--wa"><i class="ri-whatsapp-line"></i></span>
+          <span><small>WhatsApp</small><strong>+237 682 489 434</strong></span>
+        </a>
+        <a href="tel:+237699875882" class="contact-detail">
+          <span class="contact-icon"><i class="ri-phone-line"></i></span>
+          <span><small>Téléphone</small><strong>+237 699 875 882</strong></span>
+        </a>
+        <div class="contact-detail">
+          <span class="contact-icon"><i class="ri-map-pin-line"></i></span>
+          <span><small>Localisation</small><strong>Foumban · Noun · Kounga</strong></span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-icon"><i class="ri-mail-send-line"></i></span>
+          <span><small>Courrier</small><strong>B.P. 26</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" id="ifpContactForm">
+      <div class="form-header">
+        <span>CONTACTER L'ADMINISTRATION</span>
+        <h3>Décrivez simplement votre projet.</h3>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" name="phone" placeholder="+237..." required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sector">Filière concernée</label>
+        <select id="sector" name="sector">
+          <option value="">Sélectionner une filière</option>
+          <option>Agro-industrie</option>
+          <option>Bâtiment &amp; Travaux Publics</option>
+          <option>Énergie</option>
+          <option>Numérique</option>
+          <option>Santé</option>
+          <option>Autres formations</option>
+          <option>Je ne sais pas encore</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Votre demande</label>
+        <textarea id="message" name="message" rows="5" placeholder="Écrivez votre question..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-copper form-submit">
+        Envoyer ma demande <i class="ri-arrow-right-line"></i>
+      </button>
+
+      <div class="form-success" id="formSuccess" hidden>
+        <i class="ri-checkbox-circle-line"></i>
+        <div>
+          <strong>Demande enregistrée.</strong>
+          <span>Nous vous répondons sous 24h ouvrées.</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="img/logo_ifp.png" alt="Logo IFP-P" loading="lazy"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <span class="footer-logo-fallback">IFP</span>
+        <div>
+          <strong>IFP-P</strong>
+          <p>Institut de Formation Professionnelle Pékékue</p>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>IFP-P</h4>
+        <a href="#formations">Filières</a>
+        <a href="#agrement">Agrément</a>
+        <a href="#admission">Admission</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Groupe Pékékue</h4>
+        <a href="index.html#etablissements">01 · Collège</a>
+        <a href="index.html#etablissements">02 · ISMTA</a>
+        <a href="#">03 · IFP-P</a>
+        <a href="index.html#etablissements">04 · ENIEG</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <a href="https://wa.me/237682489434" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="tel:+237699875882">+237 699 875 882</a>
+        <span>Foumban · Kounga</span>
+        <span>B.P. 26</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="currentYear"></span> Groupe Pékékue · IFP-P</span>
+      <a href="index.html">← Retour au portail Groupe Pékékue</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp-float"
+   href="https://wa.me/237682489434?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20l%27IFP-P."
+   target="_blank" rel="noopener"
+   aria-label="Contacter l'IFP-P sur WhatsApp">
+  <i class="ri-whatsapp-line"></i>
+  <span class="whatsapp-float__pulse" aria-hidden="true"></span>
+</a>
+
+<script src="../js/ifp-p.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
