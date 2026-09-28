@@ -1,0 +1,38 @@
+:root {
+    /* 🎨 Couleurs Principales (IFP-P / Pôle Formation Professionnelle) */
+    --ifpp-blue-primary:  #0d47a1;   /* Bleu Toque Académique */
+    --ifpp-blue-hover:    #083378;   /* Bleu Profond survol */
+    --ifpp-blue-soft:     #eef4ff;   /* Fond d'accentuation bleu très clair */
+
+    --ifpp-green-group:   #155d27;   /* Vert Laurier Groupe Pékékue */
+    --ifpp-green-soft:    #eaf4ed;   
+
+    --ifpp-red-accent:    #c82333;   /* Red Star (Badges & Alertes) */
+    --ifpp-red-soft:      #fdf2f2;
+
+    /* 🖤 Neutres High-Tech & Professionnels */
+    --ifpp-dark:        #161917;   /* Texte principal */
+    --ifpp-gray-body:   #495057;   /* Texte secondaire */
+    --ifpp-border:      #dce2e6;   /* Bordures de cartes */
+    --ifpp-bg-surface:  #f8f9fa;   /* Fond de section clair */
+    --ifpp-white:       #ffffff;
+
+    /* 🖋 Typographie */
+    --font-heading: 'Fraunces', 'Playfair Display', Georgia, serif;
+    --font-sans:    'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* 📐 Layout & Formes */
+    --radius-sm:   6px;
+    --radius-md:   12px;
+    --radius-lg:   20px;
+    --radius-pill: 9999px;
+
+    /* ☁️ Ombres Élégantes sans Jaune */
+    --shadow-sm:   0 2px 8px rgba(13, 71, 161, 0.04);
+    --shadow-card: 0 10px 30px rgba(13, 71, 161, 0.08);
+    --shadow-hover: 0 16px 36px rgba(13, 71, 161, 0.14);
+
+    /* ⚡ Animations */
+    --transition-fast: 200ms ease;
+    --transition-base: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}

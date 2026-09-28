@@ -72,63 +72,63 @@
 
 <main id="main-content">
 
-<!-- HERO -->
-<section class="hero" id="accueil">
-  <div class="container hero-grid">
-    <div class="hero-content reveal">
-      <div class="breadcrumb">
-        <a href="index.html">Groupe Pékékue</a>
-        <i class="ri-arrow-right-s-line"></i>
-        <span>02 · ISMTA</span>
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="breadcrumb">
+          <a href="index.html">Groupe Pékékue</a>
+          <i class="ri-arrow-right-s-line"></i>
+          <span>02 · ISMTA</span>
+        </div>
+        <span class="eyebrow">Enseignement supérieur</span>
+        <h1>
+          Trouvez le parcours qui
+          <em>prépare votre avenir.</em>
+        </h1>
+        <p class="hero-text">
+          L'ISMTA accompagne les étudiants dans des formations orientées vers le commerce, la gestion, l'ingénierie et les métiers de la santé.
+        </p>
+        <div class="hero-actions">
+          <a href="#formations" class="btn btn-primary">
+            Découvrir les formations
+            <i class="ri-arrow-right-line"></i>
+          </a>
+          <a href="#admission" class="btn btn-copper">
+            S'inscrire
+            <i class="ri-arrow-right-up-line"></i>
+          </a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><i class="ri-school-line"></i><span>Groupe Pékékue</span></div>
+          <div class="hero-meta-item"><i class="ri-map-pin-line"></i><span>Foumban · Kounga</span></div>
+          <div class="hero-meta-item"><i class="ri-book-open-line"></i><span>BTS · LIPRO</span></div>
+        </div>
       </div>
-      <span class="eyebrow">Enseignement supérieur</span>
-      <h1>
-        Trouvez le parcours qui
-        <em>prépare votre avenir.</em>
-      </h1>
-      <p class="hero-text">
-        L'ISMTA accompagne les étudiants dans des formations orientées vers le commerce, la gestion, l'ingénierie et les métiers de la santé.
-      </p>
-      <div class="hero-actions">
-        <a href="#formations" class="btn btn-primary">
-          Découvrir les formations
-          <i class="ri-arrow-right-line"></i>
-        </a>
-        <a href="#admission" class="btn btn-copper">
-          S'inscrire
-          <i class="ri-arrow-right-up-line"></i>
-        </a>
-      </div>
-      <div class="hero-meta">
-        <div class="hero-meta-item"><i class="ri-school-line"></i><span>Groupe Pékékue</span></div>
-        <div class="hero-meta-item"><i class="ri-map-pin-line"></i><span>Foumban · Kounga</span></div>
-        <div class="hero-meta-item"><i class="ri-book-open-line"></i><span>BTS · LIPRO</span></div>
-      </div>
-    </div>
 
-    <div class="hero-visual reveal">
-      <div class="hero-image">
-        <img src="https://images.pexels.com/photos/30714883/pexels-photo-30714883.jpeg?auto=compress&cs=tinysrgb&w=1600"
-             alt="Étudiantes sur le campus universitaire" fetchpriority="high"
-             onerror="this.classList.add('is-missing');">
-      </div>
-      <div class="hero-info-card">
-        <div class="hero-info-number">02</div>
-        <div>
-          <strong>Deuxième branche</strong>
-          <span>du Groupe Pékékue</span>
+      <div class="hero-visual reveal">
+        <div class="hero-image">
+          <img src="https://images.pexels.com/photos/30714883/pexels-photo-30714883.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Étudiantes sur le campus universitaire" fetchpriority="high"
+              onerror="this.classList.add('is-missing');">
         </div>
-      </div>
-      <div class="hero-side-note">
-        <span class="status-dot"></span>
-        <div>
-          <strong>ISMTA</strong>
-          <span>Enseignement supérieur</span>
+        <div class="hero-info-card">
+          <div class="hero-info-number">02</div>
+          <div>
+            <strong>Deuxième branche</strong>
+            <span>du Groupe Pékékue</span>
+          </div>
+        </div>
+        <div class="hero-side-note">
+          <span class="status-dot"></span>
+          <div>
+            <strong>ISMTA</strong>
+            <span>Enseignement supérieur</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- GROUP CONTEXT -->
 <section class="group-context">
@@ -621,5 +621,108 @@
 
 <script src="../js/imsta.js"></script>
 <script src="../js/main.js"></script>
+
+<script>
+/* =========================================================
+   ISMTA — Scripts: scroll-spy, header, reveal, menu mobile
+========================================================= */
+(function () {
+  'use strict';
+
+  /* ---------- 1. HEADER SCROLL STATE ---------- */
+  const header = document.getElementById('siteHeader');
+  const progressBar = document.getElementById('progress');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.main-nav .nav-link[href^="#"]');
+
+  function onScroll() {
+    const y = window.scrollY;
+
+    if (header) header.classList.toggle('scrolled', y > 20);
+
+    if (progressBar) {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    }
+
+    updateActiveLink();
+  }
+
+  /* ---------- 2. SCROLL-SPY ---------- */
+  function updateActiveLink() {
+    if (!sections.length || !navLinks.length) return;
+
+    // Point de référence : ~25% du viewport depuis le haut
+    const trigger = window.innerHeight * 0.28;
+    let currentId = sections[0].id;
+
+    sections.forEach((sec) => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top - trigger <= 0) {
+        currentId = sec.id;
+      }
+    });
+
+    // Cas particulier : tout en bas → dernière section
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
+      currentId = sections[sections.length - 1].id;
+    }
+
+    navLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === '#' + currentId);
+    });
+  }
+
+  /* ---------- 3. MENU MOBILE ---------- */
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open);
+      menuToggle.innerHTML = open
+        ? '<i class="ri-close-line"></i>'
+        : '<i class="ri-menu-3-line"></i>';
+    });
+
+    mainNav.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '<i class="ri-menu-3-line"></i>';
+      });
+    });
+  }
+
+  /* ---------- 4. REVEAL ANIMATIONS ---------- */
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+
+  /* ---------- 5. ANNÉE FOOTER ---------- */
+  const y = document.getElementById('currentYear');
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* ---------- 6. INIT ---------- */
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateActiveLink);
+  window.addEventListener('load', updateActiveLink);
+  onScroll();
+})();
+</script>
+
 </body>
 </html>
