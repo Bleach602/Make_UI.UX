@@ -1,8 +1,9 @@
 /* =========================================================
    ISMTA — JavaScript
+   Groupe Pékékue
 ========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
+  "use strict";
 
   /* =====================================================
      DONNÉES DES FORMATIONS
@@ -73,53 +74,80 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   /* =====================================================
-     ÉLÉMENTS
+     DOM
   ===================================================== */
+  const body = document.body;
+  const loader = document.getElementById("ismtaLoader");
   const header = document.getElementById("siteHeader");
   const menuToggle = document.getElementById("menuToggle");
   const mainNav = document.getElementById("mainNav");
+  const progress = document.getElementById("progress");
   const programGrid = document.getElementById("programGrid");
   const modal = document.getElementById("programModal");
   const modalClose = document.getElementById("modalClose");
-  const progress = document.getElementById("progress");
 
-  /* Année */
+  function lockBody() { body.style.overflow = "hidden"; }
+  function unlockBody() { body.style.overflow = ""; }
+
+  /* =====================================================
+     ANNÉE
+  ===================================================== */
   const currentYear = document.getElementById("currentYear");
   if (currentYear) currentYear.textContent = new Date().getFullYear();
 
   /* =====================================================
-     HEADER AU SCROLL + PROGRESS
+     LOADER
   ===================================================== */
-  const handleScroll = () => {
-    if (header) header.classList.toggle("scrolled", window.scrollY > 20);
+  let loaderHidden = false;
+  function finishLoader() {
+    if (loaderHidden || !loader) return;
+    loaderHidden = true;
+    loader.classList.add("done");
+    loader.setAttribute("aria-hidden", "true");
+    setTimeout(() => { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 900);
+  }
+
+  if (document.readyState === "complete") {
+    setTimeout(finishLoader, 650);
+  } else {
+    window.addEventListener("load", () => setTimeout(finishLoader, 650), { once: true });
+  }
+  /* Filet de sécurité : le loader disparaît TOUJOURS après 2.5s max */
+  setTimeout(finishLoader, 2500);
+
+  /* =====================================================
+     HEADER + PROGRESS
+  ===================================================== */
+  function updateScrollUI() {
+    const y = window.scrollY;
+    if (header) header.classList.toggle("scrolled", y > 24);
     if (progress) {
-      const dh = document.documentElement.scrollHeight - window.innerHeight;
-      const p = dh > 0 ? (window.scrollY / dh) * 100 : 0;
-      progress.style.width = p + "%";
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = h > 0 ? (y / h) * 100 : 0;
+      progress.style.width = pct + "%";
     }
-  };
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  handleScroll();
+  }
+  window.addEventListener("scroll", updateScrollUI, { passive: true });
+  updateScrollUI();
 
   /* =====================================================
      MENU MOBILE
   ===================================================== */
+  function closeMobileMenu() {
+    if (!mainNav || !menuToggle) return;
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.innerHTML = '<i class="ri-menu-3-line"></i>';
+  }
   if (menuToggle && mainNav) {
     menuToggle.addEventListener("click", () => {
-      const isOpen = mainNav.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.innerHTML = isOpen
+      const open = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.innerHTML = open
         ? '<i class="ri-close-line"></i>'
         : '<i class="ri-menu-3-line"></i>';
     });
-
-    mainNav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mainNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.innerHTML = '<i class="ri-menu-3-line"></i>';
-      });
-    });
+    mainNav.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMobileMenu));
   }
 
   /* =====================================================
@@ -133,27 +161,54 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!target) return;
       event.preventDefault();
       const headerHeight = header ? header.offsetHeight : 0;
-      const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 15;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
       window.scrollTo({ top, behavior: "smooth" });
     });
   });
 
   /* =====================================================
+     NAVIGATION ACTIVE (scroll-spy sur .nav-link)
+  ===================================================== */
+  const navLinks = document.querySelectorAll(".main-nav .nav-link[href^='#']");
+  const sections = document.querySelectorAll("main section[id]");
+
+  function updateActiveNavigation() {
+    if (!navLinks.length || !sections.length) return;
+    const trigger = window.innerHeight * 0.30;
+    let current = sections[0].id;
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= trigger) current = section.id;
+    });
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
+      current = sections[sections.length - 1].id;
+    }
+    navLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      link.classList.toggle("active", href === "#" + current);
+    });
+  }
+  window.addEventListener("scroll", updateActiveNavigation, { passive: true });
+  window.addEventListener("resize", updateActiveNavigation);
+  window.addEventListener("load", updateActiveNavigation);
+  updateActiveNavigation();
+
+  /* =====================================================
      REVEAL
   ===================================================== */
-  const revealElements = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          obs.unobserve(entry.target);
+  const reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && reveals.length) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08 });
-    revealElements.forEach(el => obs.observe(el));
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    reveals.forEach(el => io.observe(el));
   } else {
-    revealElements.forEach(el => el.classList.add("visible"));
+    reveals.forEach(el => el.classList.add("visible"));
   }
 
   /* =====================================================
@@ -166,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
       : programs.filter(p => p.school === filter);
 
     programGrid.innerHTML = filtered.map(program => `
-      <article class="program-card reveal visible">
+      <article class="program-card">
         <div class="program-school">
           <span>${program.schoolName}</span>
           <span class="program-duration">${program.duration}</span>
@@ -175,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${program.description}</p>
         <div class="program-footer">
           <span class="program-type">${program.type}</span>
-          <button class="program-view" data-program-id="${program.id}">
+          <button class="program-view" type="button" data-program-id="${program.id}">
             Voir le parcours <i class="ri-arrow-right-line"></i>
           </button>
         </div>
@@ -194,9 +249,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =====================================================
      FILTRES
   ===================================================== */
-  document.querySelectorAll(".filter-button").forEach(button => {
+  const filterButtons = document.querySelectorAll(".filter-button");
+  filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-      document.querySelectorAll(".filter-button").forEach(b => b.classList.remove("active"));
+      filterButtons.forEach(b => b.classList.remove("active"));
       button.classList.add("active");
       renderPrograms(button.dataset.filter);
     });
@@ -206,28 +262,32 @@ document.addEventListener("DOMContentLoaded", () => {
      MODAL
   ===================================================== */
   function openProgramModal(program) {
-    document.getElementById("modalSchool").textContent = program.schoolName;
-    document.getElementById("modalDuration").textContent = program.duration;
-    document.getElementById("modalTitle").textContent = program.title;
-    document.getElementById("modalDescription").textContent = program.description;
+    if (!modal) return;
+    const elSchool = document.getElementById("modalSchool");
+    const elDuration = document.getElementById("modalDuration");
+    const elTitle = document.getElementById("modalTitle");
+    const elDesc = document.getElementById("modalDescription");
+    const elSubjects = document.getElementById("modalSubjects");
+    const elOutlets = document.getElementById("modalOutlets");
 
-    document.getElementById("modalSubjects").innerHTML =
-      program.subjects.map(item => `<li>${item}</li>`).join("");
-    document.getElementById("modalOutlets").innerHTML =
-      program.outlets.map(item => `<li>${item}</li>`).join("");
+    if (elSchool) elSchool.textContent = program.schoolName;
+    if (elDuration) elDuration.textContent = program.duration;
+    if (elTitle) elTitle.textContent = program.title;
+    if (elDesc) elDesc.textContent = program.description;
+    if (elSubjects) elSubjects.innerHTML = program.subjects.map(item => `<li>${item}</li>`).join("");
+    if (elOutlets) elOutlets.innerHTML = program.outlets.map(item => `<li>${item}</li>`).join("");
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+    lockBody();
+    setTimeout(() => { if (modalClose) modalClose.focus(); }, 50);
   }
-
   function closeProgramModal() {
     if (!modal) return;
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+    unlockBody();
   }
-
   if (modalClose) modalClose.addEventListener("click", closeProgramModal);
   if (modal) {
     modal.addEventListener("click", event => {
@@ -242,24 +302,24 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const school = button.dataset.school;
       const filter = document.querySelector(`.filter-button[data-filter="${school}"]`);
-      if (filter) {
-        filter.click();
-        document.getElementById("programGrid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (!filter) return;
+      filter.click();
+      const grid = document.getElementById("programGrid");
+      if (grid) {
+        const headerHeight = header ? header.offsetHeight : 0;
+        const top = grid.getBoundingClientRect().top + window.scrollY - headerHeight - 35;
+        window.scrollTo({ top, behavior: "smooth" });
       }
     });
   });
 
   /* =====================================================
-     ESC
+     ESCAPE
   ===================================================== */
   document.addEventListener("keydown", event => {
     if (event.key !== "Escape") return;
     closeProgramModal();
-    if (mainNav) mainNav.classList.remove("open");
-    if (menuToggle) {
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.innerHTML = '<i class="ri-menu-3-line"></i>';
-    }
+    closeMobileMenu();
   });
 
   /* =====================================================
@@ -274,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =====================================================
-     ORIENTATION
+     QUIZ ORIENTATION
   ===================================================== */
   const quizQuestions = [
     { question: "Quel environnement vous attire le plus ?",
@@ -310,14 +370,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const quizContent = document.getElementById("quizContent");
   const quizStep = document.getElementById("quizStep");
   const quizProgress = document.getElementById("quizProgress");
-
   let currentQuestion = 0;
   let quizScores = { commerce: 0, engineering: 0, health: 0 };
 
   function renderQuiz() {
     if (!quizContent) return;
     const question = quizQuestions[currentQuestion];
-
     if (quizStep) quizStep.textContent = `Question ${currentQuestion + 1} / ${quizQuestions.length}`;
     if (quizProgress) quizProgress.style.width = `${((currentQuestion + 1) / quizQuestions.length) * 100}%`;
 
@@ -325,17 +383,20 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="quiz-question">
         <h3>${question.question}</h3>
         <div class="quiz-options">
-          ${question.options.map((opt, i) => `
-            <button class="quiz-option" data-option="${i}">${opt.label}</button>
+          ${question.options.map((option, index) => `
+            <button class="quiz-option" type="button" data-option="${index}">
+              <span>${option.label}</span>
+              <i class="ri-arrow-right-line"></i>
+            </button>
           `).join("")}
         </div>
       </div>
     `;
 
-    quizContent.querySelectorAll(".quiz-option").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const opt = question.options[Number(btn.dataset.option)];
-        Object.entries(opt.scores).forEach(([k, v]) => { quizScores[k] += v; });
+    quizContent.querySelectorAll(".quiz-option").forEach(button => {
+      button.addEventListener("click", () => {
+        const option = question.options[Number(button.dataset.option)];
+        Object.entries(option.scores).forEach(([key, value]) => { quizScores[key] += value; });
         currentQuestion++;
         if (currentQuestion < quizQuestions.length) renderQuiz();
         else showQuizResult();
@@ -348,45 +409,41 @@ document.addEventListener("DOMContentLoaded", () => {
     if (quizProgress) quizProgress.style.width = "100%";
 
     const ranking = Object.entries(quizScores).sort((a, b) => b[1] - a[1]);
-    const winner = ranking[0][0];
+    const highest = ranking[0][1];
+    const winners = ranking.filter(item => item[1] === highest).map(item => item[0]);
 
     const resultData = {
-      commerce: {
-        title: "Commerce & Gestion",
+      commerce: { title: "Commerce & Gestion",
         description: "Vos réponses correspondent aux parcours de l'École de Commerce et Gestion.",
-        programs: programs.filter(p => p.school === "commerce")
-      },
-      engineering: {
-        title: "Ingénierie",
+        programs: programs.filter(p => p.school === "commerce") },
+      engineering: { title: "Ingénierie",
         description: "Vos réponses correspondent aux parcours de l'École d'Ingénierie.",
-        programs: programs.filter(p => p.school === "engineering")
-      },
-      health: {
-        title: "Santé",
+        programs: programs.filter(p => p.school === "engineering") },
+      health: { title: "Santé",
         description: "Vos réponses correspondent aux parcours de l'École Santé.",
-        programs: programs.filter(p => p.school === "health")
-      }
+        programs: programs.filter(p => p.school === "health") }
     };
-
-    const result = resultData[winner];
+    const results = winners.map(key => resultData[key]);
 
     quizContent.innerHTML = `
       <div class="quiz-result">
-        <span class="quiz-result-label">PISTE D'ORIENTATION</span>
-        <h3>${result.title}</h3>
-        <p>${result.description}</p>
+        <span class="quiz-result-label">PISTE(S) D'ORIENTATION</span>
+        <h3>${results.map(r => r.title).join(" · ")}</h3>
+        <p>${results.map(r => r.description).join(" ")}</p>
         <div class="quiz-result-links">
-          ${result.programs.map(p => `
-            <button data-result-program="${p.id}">${p.title}</button>
+          ${results.flatMap(r => r.programs).map(program => `
+            <button type="button" data-result-program="${program.id}">
+              ${program.title}
+            </button>
           `).join("")}
         </div>
-        <button class="quiz-restart" id="quizRestart">Refaire le test</button>
+        <button class="quiz-restart" id="quizRestart" type="button">Refaire le test</button>
       </div>
     `;
 
-    quizContent.querySelectorAll("[data-result-program]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const program = programs.find(p => p.id === btn.dataset.resultProgram);
+    quizContent.querySelectorAll("[data-result-program]").forEach(button => {
+      button.addEventListener("click", () => {
+        const program = programs.find(p => p.id === button.dataset.resultProgram);
         if (program) openProgramModal(program);
       });
     });
@@ -400,11 +457,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-
   renderQuiz();
 
   /* =====================================================
-     FORMULAIRE CONTACT
+     FORMULAIRE
   ===================================================== */
   const contactForm = document.getElementById("ismtaContactForm");
   const formSuccess = document.getElementById("formSuccess");
@@ -412,15 +468,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener("submit", event => {
       event.preventDefault();
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
-
+      if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
       const submitButton = contactForm.querySelector(".form-submit");
       if (!submitButton) return;
 
-      const originalContent = submitButton.innerHTML;
+      const original = submitButton.innerHTML;
       submitButton.disabled = true;
       submitButton.innerHTML = `Envoi en cours… <i class="ri-loader-4-line"></i>`;
 
@@ -428,10 +480,9 @@ document.addEventListener("DOMContentLoaded", () => {
         submitButton.style.display = "none";
         if (formSuccess) formSuccess.hidden = false;
         contactForm.reset();
-
         setTimeout(() => {
           submitButton.disabled = false;
-          submitButton.innerHTML = originalContent;
+          submitButton.innerHTML = original;
           submitButton.style.display = "";
           if (formSuccess) formSuccess.hidden = true;
         }, 5000);
@@ -439,5 +490,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  console.log("%cISMTA · Groupe Pékékue", "font-size:16px;font-weight:700;color:#D97706;");
+  /* =====================================================
+     PAGE HIDE
+  ===================================================== */
+  window.addEventListener("pagehide", () => unlockBody());
+
+  /* =====================================================
+     CONSOLE
+  ===================================================== */
+  console.log("%cISMTA · Groupe Pékékue", "font-size:16px;font-weight:700;color:#f1b51a;");
 });
