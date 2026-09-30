@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
       programmes: 'Nos programmes',
       galerie: 'Galerie',
       faq: 'FAQ',
-      contact: 'Contact',      
+      contact: 'Contact',
       inscription: 'Inscription',
     },
     en: {
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       programmes: 'Our programs',
       galerie: 'Gallery',
       faq: 'FAQ',
-      contact: 'Contact',      
+      contact: 'Contact',
       inscription: 'Enrollment',
     }
   };
@@ -434,12 +434,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 10. COMPTEURS ANIMÉS (CHIFFRES CLÉS)
+    // 10. COMPTEURS ANIMÉS (CHIFFRES CLÉS)
   const statNumbers = document.querySelectorAll('.stat-number');
 
   if (statNumbers.length > 0) {
     const animateCounter = (el) => {
       const target = parseInt(el.getAttribute('data-target'), 10);
+      const noFormat = el.getAttribute('data-no-format') === 'true';
       const duration = 1800;
       const startTime = performance.now();
 
@@ -448,11 +449,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const progress = Math.min(elapsed / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 4);
         const current = Math.floor(eased * target);
-        el.textContent = current.toLocaleString('fr-FR');
+        el.textContent = noFormat ? current : current.toLocaleString('fr-FR');
         if (progress < 1) {
           requestAnimationFrame(updateCount);
         } else {
-          el.textContent = target.toLocaleString('fr-FR');
+          el.textContent = noFormat ? target : target.toLocaleString('fr-FR');
         }
       };
       requestAnimationFrame(updateCount);
@@ -475,6 +476,208 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.stat-card').forEach(card => {
       statsObserver.observe(card);
     });
+  }
+  
+
+  // 11. PAGE FOURNITURES — ONGLETS PAR NIVEAU
+  const ftabBtns = document.querySelectorAll('.ftab-btn');
+  const fournituresContents = document.querySelectorAll('.fournitures-content');
+
+  if (ftabBtns.length > 0) {
+    ftabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetLevel = btn.getAttribute('data-level');
+
+        ftabBtns.forEach(b => b.classList.remove('active'));
+        fournituresContents.forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        const targetContent = document.getElementById('level-' + targetLevel);
+        if (targetContent) {
+          targetContent.classList.add('active');
+          setTimeout(() => {
+            targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      });
+    });
+  }
+
+  // 12. TÉLÉCHARGEMENT DE LA LISTE DES FOURNITURES (niveau actif uniquement)
+  const btnDownloadFournitures = document.getElementById('btnDownloadFournitures');
+
+  if (btnDownloadFournitures) {
+    btnDownloadFournitures.addEventListener('click', () => {
+      const activeTab = document.querySelector('.ftab-btn.active');
+
+      if (activeTab) {
+        const levelName = activeTab.textContent.trim();
+        const originalTitle = document.title;
+        document.title = `Fournitures ${levelName} — Collège Bilingue PÉKÉKUÉ`;
+
+        window.print();
+
+        setTimeout(() => {
+          document.title = originalTitle;
+        }, 500);
+      } else {
+        window.print();
+      }
+    });
+  }
+
+    // 13. TÉMOIGNAGES — SLIDER (2 cartes visibles, 1 sur mobile)
+  const testimonialTrack = document.getElementById('testimonialTrack');
+  const testimonialDots = document.querySelectorAll('#testimonialDots .tdot');
+  const prevTestimonial = document.getElementById('prevTestimonial');
+  const nextTestimonial = document.getElementById('nextTestimonial');
+  const testimonialSlider = document.getElementById('testimonialSlider');
+  const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+
+  if (testimonialTrack && testimonialSlides.length > 0) {
+    let currentTestimonial = 0;
+    let testimonialTimer = null;
+    const AUTOPLAY_DELAY = 6000;
+
+    // Nombre de cartes visibles selon la largeur
+    function getVisibleCount() {
+      return window.innerWidth <= 768 ? 1 : 2;
+    }
+
+    // Combien d'étapes de navigation on a (index max)
+    function getMaxIndex() {
+      const visible = getVisibleCount();
+      return Math.max(0, testimonialSlides.length - visible);
+    }
+
+    function updateSliderPosition() {
+      if (!testimonialSlides[0]) return;
+
+      const slide = testimonialSlides[0];
+      const slideWidth = slide.offsetWidth;
+      const gap = 25; // doit correspondre au gap du CSS
+      const offset = currentTestimonial * (slideWidth + gap);
+
+      testimonialTrack.style.transform = `translateX(-${offset}px)`;
+    }
+
+    function updateDots() {
+      testimonialDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentTestimonial);
+      });
+    }
+
+    function showTestimonial(index) {
+      const maxIndex = getMaxIndex();
+      if (index > maxIndex) index = 0;
+      if (index < 0) index = maxIndex;
+
+      currentTestimonial = index;
+      updateSliderPosition();
+      updateDots();
+    }
+
+    function nextTestimonialSlide() {
+      const maxIndex = getMaxIndex();
+      const next = currentTestimonial >= maxIndex ? 0 : currentTestimonial + 1;
+      showTestimonial(next);
+    }
+
+    function prevTestimonialSlide() {
+      const maxIndex = getMaxIndex();
+      const prev = currentTestimonial <= 0 ? maxIndex : currentTestimonial - 1;
+      showTestimonial(prev);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      testimonialTimer = setInterval(nextTestimonialSlide, AUTOPLAY_DELAY);
+    }
+
+    function stopAutoplay() {
+      if (testimonialTimer) {
+        clearInterval(testimonialTimer);
+        testimonialTimer = null;
+      }
+    }
+
+    // Cacher les dots inutiles (si on a 3 slides et 2 visibles → 2 positions : 0 et 1)
+    function updateDotsVisibility() {
+      const maxIndex = getMaxIndex();
+      testimonialDots.forEach((dot, i) => {
+        dot.style.display = i <= maxIndex ? '' : 'none';
+      });
+      // Si l'index actuel dépasse, revenir au début
+      if (currentTestimonial > maxIndex) {
+        showTestimonial(0);
+      }
+    }
+
+    if (nextTestimonial) {
+      nextTestimonial.addEventListener('click', () => {
+        nextTestimonialSlide();
+        startAutoplay();
+      });
+    }
+
+    if (prevTestimonial) {
+      prevTestimonial.addEventListener('click', () => {
+        prevTestimonialSlide();
+        startAutoplay();
+      });
+    }
+
+    testimonialDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'), 10);
+        if (!isNaN(index)) {
+          showTestimonial(index);
+          startAutoplay();
+        }
+      });
+    });
+
+    // Pause au survol
+    if (testimonialSlider) {
+      testimonialSlider.addEventListener('mouseenter', stopAutoplay);
+      testimonialSlider.addEventListener('mouseleave', startAutoplay);
+
+      // Swipe tactile (mobile)
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      testimonialSlider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+      }, { passive: true });
+
+      testimonialSlider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) nextTestimonialSlide();
+          else prevTestimonialSlide();
+        }
+        startAutoplay();
+      }, { passive: true });
+    }
+
+    // Navigation clavier
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevTestimonialSlide();
+      if (e.key === 'ArrowRight') nextTestimonialSlide();
+    });
+
+    // Recalcul au redimensionnement
+    window.addEventListener('resize', () => {
+      updateDotsVisibility();
+      updateSliderPosition();
+    });
+
+    // Init
+    updateDotsVisibility();
+    updateSliderPosition();
+    startAutoplay();
   }
 
 });

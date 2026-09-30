@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fournitures scolaires — Collège Bilingue PÉKÉKUÉ</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/collège.css">
+  <link rel="stylesheet" href="../css/fournituresCollege.css">
+
+</head>
+
+<body>
+
+  <!-- BANDEAU D'ANNONCE -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="announcement-content">
+      <span class="announcement-pulse"></span>
+      <p>
+        <strong>📢 Inscriptions 2025-2026 ouvertes</strong>
+        — Concours d'entrée bientôt — <em>Places limitées</em>
+        <a href="collège.html#contact" class="announcement-link">S'informer <i class="fa-solid fa-arrow-right"></i></a>
+      </p>
+    </div>
+    <button class="announcement-close" id="announcementClose" aria-label="Fermer le bandeau">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <!-- HERO DE LA PAGE FOURNITURES (sans navbar) -->
+  <section class="fournitures-hero">
+    <div class="fournitures-hero-overlay"></div>
+    <div class="fournitures-hero-content">
+      <a href="collège.html#preparation" class="back-link">
+        <i class="fa-solid fa-arrow-left"></i> Retour à la préparation
+      </a>
+
+      <div class="hero-logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Collège Bilingue PÉKÉKUÉ</span>
+      </div>
+
+      <span class="hero-subtitle">PRÉPARER LA RENTRÉE</span>
+      <h1>Liste des fournitures scolaires</h1>
+      <p>
+        Retrouvez ici la liste complète des cahiers, livres et petites fournitures nécessaires pour chaque niveau.
+        Préparez la rentrée de votre enfant en toute sérénité.
+      </p>
+
+      <div class="fournitures-hero-actions">
+        <button class="btn-print" id="btnDownloadFournitures">
+          <i class="fa-solid fa-download"></i> Télécharger la liste
+        </button>
+        <a href="https://wa.me/?text=Liste%20des%20fournitures%20-%20Coll%C3%A8ge%20Bilingue%20P%C3%89K%C3%89KU%C3%89" target="_blank" rel="noopener" class="btn-share-wa">
+          <i class="fa-brands fa-whatsapp"></i> Partager sur WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+        <path d="M0,32 C180,120 360,0 540,64 C720,128 900,16 1080,80 C1260,144 1380,48 1440,32 L1440,161 L0,161 Z" fill="#eaf4ed"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION + AVERTISSEMENT -->
+  <section class="fournitures-intro">
+    <div class="fournitures-intro-box">
+      <div class="fournitures-intro-icon">
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+      <div class="fournitures-intro-text">
+        <h3>À lire avant de commencer vos achats</h3>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Les quantités indiquées sont données à titre indicatif pour l'année scolaire complète.</li>
+          <li><i class="fa-solid fa-check"></i> Certains cahiers doivent être <strong>grands formats (TP)</strong> pour les matières scientifiques.</li>
+          <li><i class="fa-solid fa-check"></i> Les livres peuvent être achetés neufs ou d'occasion, à condition d'être en bon état.</li>
+          <li><i class="fa-solid fa-check"></i> Pour toute question, contactez le secrétariat : <strong>+237 6 96 42 96 48</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SÉLECTEUR DE NIVEAU -->
+  <section class="fournitures-section">
+    <div class="fournitures-tabs">
+      <button class="ftab-btn active" data-level="6e"><i class="fa-solid fa-graduation-cap"></i> 6ᵉ</button>
+      <button class="ftab-btn" data-level="5e"><i class="fa-solid fa-graduation-cap"></i> 5ᵉ</button>
+      <button class="ftab-btn" data-level="4e"><i class="fa-solid fa-graduation-cap"></i> 4ᵉ</button>
+      <button class="ftab-btn" data-level="3e"><i class="fa-solid fa-graduation-cap"></i> 3ᵉ</button>
+      <button class="ftab-btn" data-level="2nde"><i class="fa-solid fa-graduation-cap"></i> 2ⁿᵈᵉ</button>
+      <button class="ftab-btn" data-level="1ere"><i class="fa-solid fa-graduation-cap"></i> 1ʳᵉ</button>
+      <button class="ftab-btn" data-level="terminale"><i class="fa-solid fa-graduation-cap"></i> Term.</button>
+    </div>
+
+    <!-- CATÉGORIES (filtres visuels) -->
+    <div class="fournitures-categories">
+      <span class="fcat-chip"><i class="fa-solid fa-book"></i> Cahiers</span>
+      <span class="fcat-chip"><i class="fa-solid fa-book-open"></i> Livres</span>
+      <span class="fcat-chip"><i class="fa-solid fa-pen"></i> Écriture</span>
+      <span class="fcat-chip"><i class="fa-solid fa-ruler"></i> Géométrie</span>
+      <span class="fcat-chip"><i class="fa-solid fa-calculator"></i> Calculatrice</span>
+      <span class="fcat-chip"><i class="fa-solid fa-box"></i> Boîte académique</span>
+    </div>
+
+    <!-- ============================================
+         NIVEAU : 6ᵉ
+    ============================================ -->
+    <div class="fournitures-content active" id="level-6e">
+      <div class="fournitures-level-header">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Fournitures — Classe de 6ᵉ</h2>
+        <p>Liste complète des articles à prévoir pour l'année de 6ᵉ.</p>
+      </div>
+
+      <!-- CATÉGORIE : CAHIERS -->
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book"></i> Cahiers</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière / Usage</span>
+            <span>Quantité</span>
+            <span>Format / Pages</span>
+            <span>Type</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Histoire-Géographie</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>SVT</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Informatique</span>
+            <span>1</span>
+            <span>100 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Cahier de brouillon</span>
+            <span>2</span>
+            <span>100 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Cahier de textes / correspondance</span>
+            <span>1</span>
+            <span>100 pages</span>
+            <span>Cahier normal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATÉGORIE : LIVRES -->
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book-open"></i> Livres scolaires</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière</span>
+            <span>Titre du livre</span>
+            <span>Édition</span>
+            <span>Obligatoire</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>English for Cameroon 6ᵉ</span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Histoire-Géographie</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>SVT</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATÉGORIE : PETITES FOURNITURES -->
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-pen"></i> Petites fournitures</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 2 stylos à bille bleus</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 1 stylo à bille rouge</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 1 stylo à bille noir</div>
+          <div class="fitem"><i class="fa-solid fa-pencil"></i> 2 crayons HB</div>
+          <div class="fitem"><i class="fa-solid fa-eraser"></i> 1 gomme</div>
+          <div class="fitem"><i class="fa-solid fa-ruler"></i> 1 règle graduée 30 cm</div>
+          <div class="fitem"><i class="fa-solid fa-pencil"></i> 1 taille-crayon</div>
+          <div class="fitem"><i class="fa-solid fa-highlighter"></i> 1 jeu de surligneurs</div>
+          <div class="fitem"><i class="fa-solid fa-box"></i> 1 ardoise + craies</div>
+        </div>
+      </div>
+
+      <!-- CATÉGORIE : GÉOMÉTRIE -->
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-ruler"></i> Géométrie</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 équerre</div>
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 rapporteur</div>
+          <div class="fitem"><i class="fa-solid fa-compass"></i> 1 compas</div>
+          <div class="fitem"><i class="fa-solid fa-ruler"></i> 1 double décimètre</div>
+        </div>
+      </div>
+
+      <!-- CATÉGORIE : CALCULATRICE & BOÎTE -->
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-calculator"></i> Calculatrice & Boîte académique</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-calculator"></i> 1 calculatrice scientifique</div>
+          <div class="fitem"><i class="fa-solid fa-box"></i> 1 boîte académique complète</div>
+          <div class="fitem"><i class="fa-solid fa-brush"></i> 1 jeu de crayons de couleur</div>
+          <div class="fitem"><i class="fa-solid fa-palette"></i> 1 pochette de feutres</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         NIVEAU : 5ᵉ
+    ============================================ -->
+    <div class="fournitures-content" id="level-5e">
+      <div class="fournitures-level-header">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Fournitures — Classe de 5ᵉ</h2>
+        <p>Liste complète des articles à prévoir pour l'année de 5ᵉ.</p>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book"></i> Cahiers</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière / Usage</span>
+            <span>Quantité</span>
+            <span>Format / Pages</span>
+            <span>Type</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Histoire-Géographie</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>SVT</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Physique-Chimie</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Cahier de brouillon</span>
+            <span>2</span>
+            <span>100 pages</span>
+            <span>Cahier normal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book-open"></i> Livres scolaires</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière</span>
+            <span>Titre du livre</span>
+            <span>Édition</span>
+            <span>Obligatoire</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>English for Cameroon 5ᵉ</span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Physique-Chimie</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-pen"></i> Petites fournitures</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 2 stylos bleus</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 1 stylo rouge</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 1 stylo noir</div>
+          <div class="fitem"><i class="fa-solid fa-pencil"></i> 2 crayons HB</div>
+          <div class="fitem"><i class="fa-solid fa-eraser"></i> 1 gomme</div>
+          <div class="fitem"><i class="fa-solid fa-ruler"></i> 1 règle 30 cm</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-ruler"></i> Géométrie</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 équerre</div>
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 rapporteur</div>
+          <div class="fitem"><i class="fa-solid fa-compass"></i> 1 compas</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-calculator"></i> Calculatrice & Boîte académique</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-calculator"></i> 1 calculatrice scientifique</div>
+          <div class="fitem"><i class="fa-solid fa-box"></i> 1 boîte académique</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         NIVEAU : 4ᵉ
+    ============================================ -->
+    <div class="fournitures-content" id="level-4e">
+      <div class="fournitures-level-header">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Fournitures — Classe de 4ᵉ</h2>
+        <p>Liste complète des articles à prévoir pour l'année de 4ᵉ.</p>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book"></i> Cahiers</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière / Usage</span>
+            <span>Quantité</span>
+            <span>Format / Pages</span>
+            <span>Type</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Histoire-Géographie</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>SVT</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Physique-Chimie</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>TP SVT</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+          <div class="ft-row">
+            <span>TP Physique-Chimie</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book-open"></i> Livres scolaires</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière</span>
+            <span>Titre du livre</span>
+            <span>Édition</span>
+            <span>Obligatoire</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>English for Cameroon 4ᵉ</span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Physique-Chimie</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>SVT</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-pen"></i> Petites fournitures</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 2 stylos bleus</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 1 stylo rouge</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 1 stylo noir</div>
+          <div class="fitem"><i class="fa-solid fa-pencil"></i> 2 crayons HB</div>
+          <div class="fitem"><i class="fa-solid fa-eraser"></i> 1 gomme</div>
+          <div class="fitem"><i class="fa-solid fa-ruler"></i> 1 règle 30 cm</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-ruler"></i> Géométrie</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 équerre</div>
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 rapporteur</div>
+          <div class="fitem"><i class="fa-solid fa-compass"></i> 1 compas</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-calculator"></i> Calculatrice & Boîte académique</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-calculator"></i> 1 calculatrice scientifique</div>
+          <div class="fitem"><i class="fa-solid fa-box"></i> 1 boîte académique</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         NIVEAU : 3ᵉ
+    ============================================ -->
+    <div class="fournitures-content" id="level-3e">
+      <div class="fournitures-level-header">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Fournitures — Classe de 3ᵉ (BEPC)</h2>
+        <p>Liste complète des articles à prévoir pour l'année de 3ᵉ — année d'examen du BEPC.</p>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book"></i> Cahiers</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière / Usage</span>
+            <span>Quantité</span>
+            <span>Format / Pages</span>
+            <span>Type</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Histoire-Géographie</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>SVT</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Physique-Chimie</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>TP SVT</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+          <div class="ft-row">
+            <span>TP Physique-Chimie</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+          <div class="ft-row">
+            <span>Cahier de brouillon</span>
+            <span>3</span>
+            <span>100 pages</span>
+            <span>Cahier normal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book-open"></i> Livres scolaires</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière</span>
+            <span>Titre du livre</span>
+            <span>Édition</span>
+            <span>Obligatoire</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>English for Cameroon 3ᵉ</span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Physique-Chimie</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>SVT</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Oui</span>
+          </div>
+          <div class="ft-row">
+            <span>Annales BEPC</span>
+            <span><em>À préciser par l'établissement</em></span>
+            <span>—</span>
+            <span>Recommandé</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-pen"></i> Petites fournitures</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 3 stylos bleus</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 2 stylos rouges</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 1 stylo noir</div>
+          <div class="fitem"><i class="fa-solid fa-pencil"></i> 2 crayons HB</div>
+          <div class="fitem"><i class="fa-solid fa-eraser"></i> 1 gomme</div>
+          <div class="fitem"><i class="fa-solid fa-ruler"></i> 1 règle 30 cm</div>
+          <div class="fitem"><i class="fa-solid fa-highlighter"></i> 1 jeu de surligneurs</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-ruler"></i> Géométrie</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 équerre</div>
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 rapporteur</div>
+          <div class="fitem"><i class="fa-solid fa-compass"></i> 1 compas</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-calculator"></i> Calculatrice & Boîte académique</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-calculator"></i> 1 calculatrice scientifique</div>
+          <div class="fitem"><i class="fa-solid fa-box"></i> 1 boîte académique</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         NIVEAU : 2ⁿᵈᵉ
+    ============================================ -->
+    <div class="fournitures-content" id="level-2nde">
+      <div class="fournitures-level-header">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Fournitures — Classe de 2ⁿᵈᵉ</h2>
+        <p>Liste complète des articles à prévoir pour l'année de 2ⁿᵈᵉ.</p>
+      </div>
+
+      <div class="fournitures-notice">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>La liste des fournitures dépend de la <strong>série choisie</strong> (A, C, D, G…). Renseignez-vous auprès du secrétariat.</span>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book"></i> Cahiers</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière / Usage</span>
+            <span>Quantité</span>
+            <span>Format / Pages</span>
+            <span>Type</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Physique-Chimie</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>SVT</span>
+            <span>1</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>TP SVT</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+          <div class="ft-row">
+            <span>TP Physique-Chimie</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book-open"></i> Livres scolaires</h3>
+        <p class="fournitures-note"><em>Livres à confirmer selon la série choisie.</em></p>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-pen"></i> Petites fournitures</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 3 stylos bleus</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 2 stylos rouges</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 1 stylo noir</div>
+          <div class="fitem"><i class="fa-solid fa-pencil"></i> 2 crayons HB</div>
+          <div class="fitem"><i class="fa-solid fa-eraser"></i> 1 gomme</div>
+          <div class="fitem"><i class="fa-solid fa-ruler"></i> 1 règle 30 cm</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-ruler"></i> Géométrie</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 équerre</div>
+          <div class="fitem"><i class="fa-solid fa-ruler-combined"></i> 1 rapporteur</div>
+          <div class="fitem"><i class="fa-solid fa-compass"></i> 1 compas</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-calculator"></i> Calculatrice & Boîte académique</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-calculator"></i> 1 calculatrice scientifique</div>
+          <div class="fitem"><i class="fa-solid fa-box"></i> 1 boîte académique</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         NIVEAU : 1ʳᵉ
+    ============================================ -->
+    <div class="fournitures-content" id="level-1ere">
+      <div class="fournitures-level-header">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Fournitures — Classe de 1ʳᵉ</h2>
+        <p>Liste complète des articles à prévoir pour l'année de 1ʳᵉ.</p>
+      </div>
+
+      <div class="fournitures-notice">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>La liste des fournitures dépend de la <strong>série choisie</strong>. Renseignez-vous auprès du secrétariat.</span>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book"></i> Cahiers</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière / Usage</span>
+            <span>Quantité</span>
+            <span>Format / Pages</span>
+            <span>Type</span>
+          </div>
+          <div class="ft-row">
+            <span>Français</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>TP SVT</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+          <div class="ft-row">
+            <span>TP Physique-Chimie</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book-open"></i> Livres scolaires</h3>
+        <p class="fournitures-note"><em>Livres à confirmer selon la série choisie.</em></p>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-pen"></i> Petites fournitures</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 3 stylos bleus</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 2 stylos rouges</div>
+          <div class="fitem"><i class="fa-solid fa-pencil"></i> 2 crayons HB</div>
+          <div class="fitem"><i class="fa-solid fa-eraser"></i> 1 gomme</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-calculator"></i> Calculatrice & Boîte académique</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-calculator"></i> 1 calculatrice scientifique</div>
+          <div class="fitem"><i class="fa-solid fa-box"></i> 1 boîte académique</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         NIVEAU : Terminale
+    ============================================ -->
+    <div class="fournitures-content" id="level-terminale">
+      <div class="fournitures-level-header">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Fournitures — Classe de Terminale</h2>
+        <p>Liste complète des articles à prévoir pour l'année de Terminale — année d'examen du Baccalauréat.</p>
+      </div>
+
+      <div class="fournitures-notice">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>La liste des fournitures dépend de la <strong>série choisie</strong>. Renseignez-vous auprès du secrétariat.</span>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book"></i> Cahiers</h3>
+        <div class="fournitures-table">
+          <div class="ft-row ft-header">
+            <span>Matière / Usage</span>
+            <span>Quantité</span>
+            <span>Format / Pages</span>
+            <span>Type</span>
+          </div>
+          <div class="ft-row">
+            <span>Français / Philosophie</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Mathématiques</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>Anglais</span>
+            <span>2</span>
+            <span>200 pages</span>
+            <span>Cahier normal</span>
+          </div>
+          <div class="ft-row">
+            <span>TP SVT</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+          <div class="ft-row">
+            <span>TP Physique-Chimie</span>
+            <span>1</span>
+            <span>96 pages</span>
+            <span>Grand cahier TP</span>
+          </div>
+          <div class="ft-row">
+            <span>Cahier de brouillon</span>
+            <span>3</span>
+            <span>100 pages</span>
+            <span>Cahier normal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-book-open"></i> Livres scolaires</h3>
+        <p class="fournitures-note"><em>Livres à confirmer selon la série choisie. Annales du Baccalauréat recommandées.</em></p>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-pen"></i> Petites fournitures</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 3 stylos bleus</div>
+          <div class="fitem"><i class="fa-solid fa-pen"></i> 2 stylos rouges</div>
+          <div class="fitem"><i class="fa-solid fa-pencil"></i> 2 crayons HB</div>
+          <div class="fitem"><i class="fa-solid fa-eraser"></i> 1 gomme</div>
+        </div>
+      </div>
+
+      <div class="fournitures-category-block">
+        <h3 class="fournitures-cat-title"><i class="fa-solid fa-calculator"></i> Calculatrice & Boîte académique</h3>
+        <div class="fournitures-grid">
+          <div class="fitem"><i class="fa-solid fa-calculator"></i> 1 calculatrice scientifique</div>
+          <div class="fitem"><i class="fa-solid fa-box"></i> 1 boîte académique</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="fournitures-cta">
+    <div class="fournitures-cta-box">
+      <div class="fournitures-cta-icon">
+        <i class="fa-solid fa-circle-question"></i>
+      </div>
+      <div class="fournitures-cta-text">
+        <h3>Une question sur les fournitures ?</h3>
+        <p>Notre secrétariat est à votre disposition pour vous accompagner dans la préparation de la rentrée.</p>
+      </div>
+      <a href="collège.html#contact" class="fournitures-cta-btn">
+        Nous contacter <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+        <path d="M0,64 C180,0 360,112 540,48 C720,-16 900,96 1080,32 C1260,-32 1380,64 1440,48 L1440,0 L0,0 Z" fill="#ffffff"></path>
+      </svg>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-col">
+
+        <div class="footer-logo">
+          <img src="../img/collège_logo.jpeg" alt="Logo Collège Bilingue PÉKÉKUÉ" class="footer-logo-img">
+          <span>Collège Bilingue PÉKÉKUÉ</span>
+        </div>
+
+        <p class="slogan">Former aujourd'hui les leaders de demain.</p>
+        <div class="contact-info">
+          <p><i class="fa-solid fa-phone"></i> +237 6 96 42 96 48</p>
+          <p><i class="fa-solid fa-phone"></i> +237 6 99 12 36 55</p>
+          <p><i class="fa-solid fa-clock"></i> Lun - Ven : 7h30 - 16h00</p>
+          <p><i class="fa-solid fa-envelope"></i> contact@cbp-cm.com</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="collège.html#accueil"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
+          <li><a href="collège.html#about"><i class="fa-solid fa-chevron-right"></i> À propos</a></li>
+          <li><a href="collège.html#programmes"><i class="fa-solid fa-chevron-right"></i> Nos programmes</a></li>
+          <li><a href="collège.html#galerie"><i class="fa-solid fa-chevron-right"></i> Galerie</a></li>
+          <li><a href="collège.html#faq"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+          <li><a href="collège.html#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Notre Valeur</h3>
+        <ul class="footer-values">
+          <li><i class="fa-solid fa-circle-check"></i> Excellence</li>
+          <li><i class="fa-solid fa-circle-check"></i> Discipline</li>
+          <li><i class="fa-solid fa-circle-check"></i> Respect</li>
+          <li><i class="fa-solid fa-circle-check"></i> Responsabilité</li>
+          <li><i class="fa-solid fa-circle-check"></i> Solidarité</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2025 Collège Bilingue PÉKÉKUÉ. Tous droits réservés.</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="location-footer">
+          <i class="fa-solid fa-location-dot"></i> Foumban, Cameroun
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOUTON RETOUR EN HAUT -->
+  <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="../js/collège.js"></script>
+</body>
+</html>
