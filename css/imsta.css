@@ -1891,3 +1891,2386 @@ body.page-ismta a:not([class]) { color: var(--ismta-green-primary); }
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* =========================================================
+   RESPONSIVE AVANCÉ — Petits écrans (< 480px, 400px, 340px, 300px)
+   Correctifs spécifiques pour ultra-mobile — ISMTA
+========================================================= */
+
+/* =========================================================
+   1. PETITS MOBILES (< 480px) — Base solide
+========================================================= */
+@media (max-width: 480px) {
+
+  /* --- Anti-débordement global --- */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  * {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .container {
+    padding-inline: 15px;
+  }
+
+  /* ================= LOADER ================= */
+  .ismta-loader__inner {
+    width: min(92%, 320px);
+  }
+  .ismta-loader__mark {
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    font-size: 28px;
+  }
+  .ismta-loader__mark img {
+    border-radius: 18px;
+  }
+  .ismta-loader__brand {
+    margin-top: 20px;
+    gap: 4px;
+  }
+  .ismta-loader__brand strong {
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+  }
+  .ismta-loader__brand span {
+    font-size: 0.7rem;
+  }
+  .ismta-loader__line {
+    width: 120px;
+    margin-top: 22px;
+  }
+  .ismta-loader__inner > small {
+    margin-top: 14px;
+    font-size: 0.56rem;
+    line-height: 1.4;
+    padding: 0 8px;
+  }
+
+  /* ================= GROUP BAR ================= */
+  .group-bar-inner {
+    min-height: 44px;
+    gap: 10px;
+  }
+  .group-brand {
+    gap: 10px;
+  }
+  .group-brand-mark {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+  .group-brand strong {
+    font-size: 11.5px;
+    line-height: 1.15;
+  }
+  .group-brand small {
+    font-size: 9.5px;
+    line-height: 1.25;
+    margin-top: 2px;
+  }
+
+  /* ================= HEADER ================= */
+  .site-header {
+    top: 8px;
+    max-width: calc(100% - 16px);
+  }
+  .header-inner {
+    min-height: 62px;
+    padding: 9px 12px 9px 14px;
+    border-radius: 18px;
+    gap: 10px;
+  }
+  .ismta-brand {
+    gap: 10px;
+  }
+  .ismta-logo {
+    width: 42px;
+    height: 42px;
+    padding: 4px;
+    border-radius: 12px;
+  }
+  .ismta-logo-fallback {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+  .ismta-brand-text strong {
+    font-size: 16px;
+    line-height: 1.1;
+  }
+  .ismta-brand-text small {
+    font-size: 9.5px;
+    line-height: 1.25;
+    margin-top: 3px;
+    max-width: 180px;
+  }
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  /* --- Menu mobile --- */
+  .main-nav {
+    padding: 12px;
+    gap: 2px;
+    border-radius: 18px;
+    top: calc(100% + 8px);
+  }
+  .nav-link {
+    padding: 12px 14px;
+    font-size: 13.5px;
+    border-radius: 10px;
+    line-height: 1.3;
+  }
+  .nav-cta {
+    padding: 12px 18px;
+    font-size: 13px;
+    margin: 6px 0 0;
+    gap: 6px;
+  }
+
+  /* ================= HERO ================= */
+  .hero {
+    padding: 42px 0 60px;
+  }
+  .hero-grid {
+    gap: 40px;
+  }
+  .breadcrumb {
+    font-size: 11.5px;
+    gap: 6px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .eyebrow,
+  .section-kicker {
+    padding: 5px 11px;
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+  }
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.1;
+    margin-top: 14px;
+    letter-spacing: -0.03em;
+  }
+  .hero-text {
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 26px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 20px;
+    font-size: 13.5px;
+  }
+  .hero-meta {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 22px;
+  }
+  .hero-meta-item {
+    font-size: 12.5px;
+  }
+
+  /* --- Hero visual --- */
+  .hero-image {
+    height: 300px;
+    border-radius: 20px;
+  }
+  .hero-info-card {
+    left: 10px;
+    bottom: 10px;
+    min-width: 0;
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+  .hero-info-number {
+    font-size: 28px;
+  }
+  .hero-info-card strong {
+    font-size: 11.5px;
+    line-height: 1.15;
+  }
+  .hero-info-card span {
+    font-size: 10px;
+  }
+  .hero-side-note {
+    top: 10px;
+    right: 10px;
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+  .hero-side-note strong { font-size: 10.5px; }
+  .hero-side-note span { font-size: 9.5px; }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* ================= GROUP CONTEXT ================= */
+  .group-context-inner {
+    min-height: auto;
+    padding: 20px 0;
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .group-context-title span {
+    font-size: 9.5px;
+    margin-bottom: 5px;
+  }
+  .group-context-title strong {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .branch-list {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 5px;
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+  .branch-list::-webkit-scrollbar { display: none; }
+  .branch-list a {
+    padding: 8px 12px;
+    font-size: 11px;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .branch-list a span { font-size: 9px; }
+
+  /* ================= SECTIONS ================= */
+  .section {
+    padding: 50px 0;
+  }
+  .intro-section {
+    padding-bottom: 45px;
+  }
+  .intro-grid {
+    gap: 30px;
+  }
+  .section-heading h2,
+  .section-top h2,
+  .orientation-intro h2,
+  .campus-content h2,
+  .faq-intro h2,
+  .contact-intro h2 {
+    font-size: 26px;
+    line-height: 1.15;
+    margin-top: 12px;
+  }
+  .section-top {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .section-top > p {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .intro-copy p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .centered p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin-top: 14px;
+  }
+
+  /* ================= SCHOOLS (Écoles) ================= */
+  .school-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .school-card {
+    border-radius: 18px;
+  }
+  .school-image {
+    height: 180px;
+  }
+  .school-number {
+    left: 14px;
+    top: 14px;
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
+  }
+  .school-body {
+    padding: 22px 20px;
+  }
+  .school-label {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+  }
+  .school-body h3 {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-top: 10px;
+  }
+  .school-body p {
+    min-height: 0;
+    margin-top: 12px;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .school-count {
+    margin-top: 18px;
+    padding-top: 16px;
+    font-size: 11.5px;
+    gap: 6px;
+  }
+  .school-count strong {
+    font-size: 26px;
+  }
+  .text-button {
+    margin-top: 18px;
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  /* ================= PROGRAMS ================= */
+  .program-filters {
+    gap: 8px;
+    margin-bottom: 26px;
+  }
+  .filter-button {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+  .program-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .program-card {
+    padding: 22px 20px;
+    border-radius: 14px;
+  }
+  .program-school {
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+  .program-school span:first-child {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+  .program-duration {
+    padding: 5px 10px;
+    font-size: 9.5px;
+  }
+  .program-card h3 {
+    min-height: 0;
+    font-size: 18px;
+    line-height: 1.25;
+  }
+  .program-card p {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .program-footer {
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+  .program-type {
+    font-size: 10px;
+  }
+  .program-view {
+    font-size: 11.5px;
+  }
+  .programs-cta {
+    margin-top: 32px;
+    gap: 14px;
+  }
+  .programs-cta .btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 20px;
+    font-size: 13px;
+    white-space: normal;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .programs-cta-note {
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  /* ================= ORIENTATION ================= */
+  .orientation-layout {
+    gap: 30px;
+  }
+  .orientation-intro p {
+    font-size: 14px;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+  .orientation-intro small {
+    font-size: 11.5px;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+  .orientation-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+  .quiz-progress > span {
+    font-size: 11.5px;
+    margin-bottom: 10px;
+  }
+  .quiz-question {
+    margin-top: 24px;
+  }
+  .quiz-question h3 {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+  .quiz-options {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .quiz-option {
+    min-height: 60px;
+    padding: 14px 16px;
+    font-size: 13px;
+    border-radius: 12px;
+  }
+  .quiz-result h3 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  .quiz-result p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+  .quiz-result-links {
+    margin-top: 18px;
+    gap: 8px;
+  }
+  .quiz-result-links button {
+    padding: 10px 14px;
+    font-size: 11.5px;
+  }
+  .quiz-restart {
+    margin-top: 18px;
+    padding: 8px 14px;
+    font-size: 11.5px;
+  }
+
+  /* ================= OPPORTUNITIES ================= */
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 30px;
+  }
+  .opportunity-card {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+  .opportunity-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    font-size: 20px;
+    border-radius: 12px;
+  }
+  .opportunity-card h3 {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+  .opportunity-card p {
+    min-height: 0;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* ================= ADMISSION ================= */
+  .admission-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 30px;
+  }
+  .admission-card {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+  .admission-index {
+    top: 18px;
+    right: 18px;
+    font-size: 22px;
+  }
+  .admission-label {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+  }
+  .admission-card h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .admission-card > p {
+    min-height: 0;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .check-list {
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+  .check-list li {
+    gap: 8px;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .check-list i {
+    font-size: 14px;
+    margin-top: 1px;
+  }
+  .admission-note {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 18px;
+    margin-top: 18px;
+    border-radius: 14px;
+  }
+  .admission-note > i {
+    font-size: 22px;
+  }
+  .admission-note strong { font-size: 13.5px; }
+  .admission-note p {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .admission-note .btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+
+  /* ================= CALENDAR ================= */
+  .calendar-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+  .calendar-card h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-top: 10px;
+  }
+  .calendar-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  .calendar-status {
+    min-width: 0;
+    padding: 18px 18px;
+    gap: 6px 10px;
+    border-radius: 14px;
+  }
+  .calendar-status strong {
+    font-size: 13px;
+  }
+  .calendar-status small {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  /* ================= CAMPUS ================= */
+  .campus-grid {
+    gap: 30px;
+  }
+  .campus-image {
+    height: 280px;
+    border-radius: 20px;
+  }
+  .campus-content > p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    margin-top: 18px;
+  }
+  .campus-facts {
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .campus-facts div {
+    gap: 10px;
+    padding-bottom: 12px;
+    font-size: 13px;
+  }
+  .campus-facts i { font-size: 18px; }
+
+  /* ================= FAQ ================= */
+  .faq-layout {
+    gap: 32px;
+  }
+  .faq-intro p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+  .faq-intro .btn {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 20px;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+  .faq-item summary {
+    padding: 18px 0;
+    font-size: 14px;
+    line-height: 1.4;
+    gap: 14px;
+  }
+  .faq-item summary i {
+    font-size: 18px;
+  }
+  .faq-answer {
+    padding: 0 0 20px 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  /* ================= CONTACT ================= */
+  .contact-section {
+    padding-bottom: 80px;
+  }
+  .contact-layout {
+    gap: 34px;
+  }
+  .contact-intro > p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+  .contact-details {
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .contact-detail {
+    padding: 14px 16px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+    border-radius: 10px;
+  }
+  .contact-detail small { font-size: 9.5px; }
+  .contact-detail strong {
+    font-size: 13px;
+    word-break: break-word;
+  }
+
+  /* --- Formulaire --- */
+  .contact-form {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+  .form-header > span {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+  }
+  .form-header h3 {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-top: 10px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .form-group {
+    margin-top: 16px;
+    gap: 6px;
+  }
+  .form-group label {
+    font-size: 12px;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+  .form-group textarea {
+    min-height: 100px;
+  }
+  .form-submit {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 20px;
+    font-size: 13.5px;
+    margin-top: 20px;
+  }
+  .form-success {
+    padding: 14px 16px;
+    gap: 10px;
+    border-radius: 12px;
+    margin-top: 16px;
+  }
+  .form-success > i { font-size: 18px; }
+  .form-success strong { font-size: 13px; }
+  .form-success span { font-size: 12px; }
+
+  /* ================= FOOTER ================= */
+  .site-footer {
+    padding: 50px 0 24px;
+  }
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 30px;
+  }
+  .footer-brand {
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .footer-brand img {
+    width: 52px;
+    height: 52px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+  .footer-logo-fallback {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+  .footer-brand strong {
+    font-size: 18px;
+    line-height: 1.15;
+  }
+  .footer-brand p {
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin-top: 6px;
+    max-width: 100%;
+  }
+  .footer-column {
+    gap: 8px;
+  }
+  .footer-column h4 {
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+  .footer-column a,
+  .footer-column span {
+    font-size: 13px;
+  }
+  .footer-bottom {
+    padding-top: 20px;
+    gap: 12px;
+    font-size: 11.5px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* ================= MODAL ================= */
+  .modal-overlay {
+    padding: 12px;
+  }
+  .program-modal {
+    padding: 26px 20px;
+    border-radius: 20px;
+    max-height: 92vh;
+  }
+  .modal-close {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    top: 14px;
+    right: 14px;
+  }
+  .modal-top {
+    padding-right: 44px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .modal-top span:first-child {
+    font-size: 9.5px;
+  }
+  .modal-top span:last-child {
+    padding: 6px 11px;
+    font-size: 10px;
+  }
+  .program-modal h2 {
+    font-size: 22px;
+    line-height: 1.15;
+    margin-top: 14px;
+  }
+  .program-modal > p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-top: 14px;
+  }
+  .modal-columns {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 22px;
+  }
+  .modal-columns h3 {
+    font-size: 10.5px;
+    margin-bottom: 12px;
+  }
+  .modal-list {
+    gap: 9px;
+  }
+  .modal-list li {
+    padding-left: 16px;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .modal-list li::before {
+    width: 5px;
+    height: 5px;
+    top: 8px;
+  }
+  .modal-evaluation {
+    gap: 12px;
+    padding: 16px 18px;
+    margin-top: 22px;
+    border-radius: 12px;
+  }
+  .modal-evaluation i { font-size: 18px; }
+  .modal-evaluation strong { font-size: 12.5px; }
+  .modal-evaluation span {
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+  .modal-action {
+    margin-top: 20px;
+    min-height: 46px;
+    font-size: 13px;
+  }
+
+  /* ================= WHATSAPP ================= */
+  .whatsapp-float {
+    right: 14px;
+    bottom: 14px;
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+  }
+
+  /* ================= BOUTONS GLOBAUX ================= */
+  .btn {
+    min-height: 46px;
+    padding: 0 22px;
+    font-size: 13.5px;
+    gap: 8px;
+  }
+  .btn-large {
+    min-height: 50px;
+    padding: 0 26px;
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   2. TRÈS PETITS MOBILES (< 400px)
+========================================================= */
+@media (max-width: 400px) {
+
+  .container { padding-inline: 12px; }
+
+  /* --- Loader --- */
+  .ismta-loader__mark {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    font-size: 24px;
+  }
+  .ismta-loader__mark img {
+    border-radius: 14px;
+  }
+  .ismta-loader__brand strong { font-size: 0.92rem; }
+  .ismta-loader__brand span { font-size: 0.64rem; }
+  .ismta-loader__line {
+    width: 100px;
+    margin-top: 18px;
+  }
+  .ismta-loader__inner > small {
+    font-size: 0.5rem;
+    margin-top: 12px;
+    letter-spacing: 0.15em;
+  }
+
+  /* --- Group bar --- */
+  .group-bar-inner { gap: 8px; }
+  .group-brand-mark {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+    border-radius: 7px;
+  }
+  .group-brand strong { font-size: 11px; }
+  .group-brand small { font-size: 9px; }
+
+  /* --- Header --- */
+  .header-inner {
+    min-height: 58px;
+    padding: 8px 10px 8px 12px;
+    border-radius: 16px;
+    gap: 8px;
+  }
+  .ismta-logo,
+  .ismta-logo-fallback {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+  .ismta-logo-fallback { font-size: 14px; }
+  .ismta-brand-text strong { font-size: 15px; }
+  .ismta-brand-text small { font-size: 9px; max-width: 150px; }
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+    border-radius: 9px;
+  }
+
+  /* --- Nav mobile --- */
+  .main-nav { padding: 10px; }
+  .nav-link {
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+  .nav-cta {
+    padding: 11px 16px;
+    font-size: 12.5px;
+  }
+
+  /* --- Hero --- */
+  .hero { padding: 36px 0 52px; }
+  .hero h1 { font-size: 29px; }
+  .hero-text { font-size: 14px; margin-top: 16px; }
+  .hero-actions { margin-top: 22px; gap: 8px; }
+  .hero-actions .btn {
+    min-height: 46px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+  .hero-meta { margin-top: 24px; padding-top: 18px; gap: 10px; }
+  .hero-meta-item { font-size: 12px; }
+
+  .hero-image { height: 260px; }
+  .hero-info-card {
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+  .hero-info-number { font-size: 24px; }
+  .hero-info-card strong { font-size: 11px; }
+  .hero-info-card span { font-size: 9.5px; }
+  .hero-side-note {
+    padding: 8px 10px;
+    gap: 6px;
+    border-radius: 10px;
+  }
+  .hero-side-note strong { font-size: 10px; }
+  .hero-side-note span { font-size: 9px; }
+
+  /* --- Group context --- */
+  .group-context-inner { padding: 18px 0; gap: 14px; }
+  .group-context-title span { font-size: 9px; }
+  .group-context-title strong { font-size: 15px; }
+  .branch-list a {
+    padding: 7px 10px;
+    font-size: 10.5px;
+  }
+  .branch-list a span { font-size: 8.5px; }
+
+  /* --- Sections --- */
+  .section { padding: 42px 0; }
+  .section-heading h2,
+  .section-top h2,
+  .orientation-intro h2,
+  .campus-content h2,
+  .faq-intro h2,
+  .contact-intro h2 {
+    font-size: 22px;
+    line-height: 1.15;
+  }
+  .section-top { margin-bottom: 24px; }
+  .section-top > p { font-size: 13px; }
+  .intro-copy p { font-size: 13.5px; }
+
+  /* --- Schools --- */
+  .school-image { height: 160px; }
+  .school-number {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+  .school-body { padding: 18px 16px; }
+  .school-body h3 { font-size: 18px; }
+  .school-body p { font-size: 12.5px; }
+  .school-count strong { font-size: 24px; }
+  .text-button { padding: 9px 14px; font-size: 11.5px; }
+
+  /* --- Programs --- */
+  .filter-button { padding: 9px 14px; font-size: 11.5px; }
+  .program-card { padding: 18px 16px; }
+  .program-card h3 { font-size: 17px; }
+  .program-card p { font-size: 12.5px; }
+  .program-type { font-size: 9.5px; }
+  .program-view { font-size: 11px; }
+
+  /* --- Orientation --- */
+  .orientation-card { padding: 22px 16px; }
+  .quiz-question h3 { font-size: 17px; }
+  .quiz-option {
+    min-height: 56px;
+    padding: 13px 14px;
+    font-size: 12.5px;
+  }
+  .quiz-result h3 { font-size: 20px; }
+  .quiz-result p { font-size: 13px; }
+
+  /* --- Opportunities --- */
+  .opportunity-card { padding: 20px 16px; }
+  .opportunity-card h3 { font-size: 17px; }
+  .opportunity-card p { font-size: 12.5px; }
+
+  /* --- Admission --- */
+  .admission-card { padding: 20px 16px; }
+  .admission-card h3 { font-size: 18px; }
+  .admission-card > p { font-size: 12.5px; }
+  .check-list li { font-size: 12px; }
+  .admission-note { padding: 16px 14px; }
+  .admission-note strong { font-size: 12.5px; }
+  .admission-note p { font-size: 12px; }
+
+  /* --- Calendar --- */
+  .calendar-card { padding: 22px 16px; }
+  .calendar-card h2 { font-size: 20px; }
+  .calendar-card p { font-size: 12.5px; }
+  .calendar-status { padding: 16px 14px; }
+  .calendar-status strong { font-size: 12.5px; }
+  .calendar-status small { font-size: 10.5px; }
+
+  /* --- Campus --- */
+  .campus-image { height: 240px; }
+  .campus-content > p { font-size: 13px; }
+  .campus-facts div { font-size: 12.5px; }
+  .campus-facts i { font-size: 16px; }
+
+  /* --- FAQ --- */
+  .faq-layout { gap: 26px; }
+  .faq-intro p { font-size: 13px; }
+  .faq-item summary {
+    padding: 15px 0;
+    font-size: 13.5px;
+  }
+  .faq-item summary i { font-size: 16px; }
+  .faq-answer {
+    padding: 0 0 16px 0;
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  /* --- Contact --- */
+  .contact-section { padding-bottom: 70px; }
+  .contact-layout { gap: 28px; }
+  .contact-intro > p { font-size: 13px; }
+  .contact-detail { padding: 12px 14px; gap: 10px; }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+    border-radius: 9px;
+  }
+  .contact-detail small { font-size: 9px; }
+  .contact-detail strong { font-size: 12.5px; }
+
+  /* --- Form --- */
+  .contact-form { padding: 20px 14px; }
+  .form-header h3 { font-size: 18px; }
+  .form-group label { font-size: 11.5px; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 11px 12px;
+    font-size: 13px;
+    border-radius: 9px;
+  }
+  .form-submit {
+    min-height: 46px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+
+  /* --- Footer --- */
+  .footer-brand img {
+    width: 46px;
+    height: 46px;
+  }
+  .footer-logo-fallback {
+    width: 46px;
+    height: 46px;
+    font-size: 16px;
+  }
+  .footer-brand strong { font-size: 16px; }
+  .footer-brand p { font-size: 12px; }
+  .footer-column h4 { font-size: 10px; }
+  .footer-column a,
+  .footer-column span { font-size: 12.5px; }
+  .footer-bottom { font-size: 11px; }
+
+  /* --- Modal --- */
+  .program-modal { padding: 22px 16px; }
+  .program-modal h2 { font-size: 20px; }
+  .program-modal > p { font-size: 13px; }
+
+  /* --- WhatsApp --- */
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  /* --- Boutons --- */
+  .btn {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+  .btn-large {
+    min-height: 48px;
+    padding: 0 22px;
+    font-size: 13.5px;
+  }
+}
+
+/* =========================================================
+   3. TRÈS TRÈS PETITS MOBILES (< 340px)
+========================================================= */
+@media (max-width: 340px) {
+
+  .container { padding-inline: 10px; }
+
+  /* --- Loader --- */
+  .ismta-loader__inner { width: min(94%, 280px); }
+  .ismta-loader__mark {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    font-size: 22px;
+  }
+  .ismta-loader__brand strong { font-size: 0.82rem; letter-spacing: 0.12em; }
+  .ismta-loader__brand span { font-size: 0.6rem; }
+  .ismta-loader__line {
+    width: 88px;
+    margin-top: 16px;
+  }
+  .ismta-loader__inner > small {
+    font-size: 0.46rem;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+  }
+
+  /* --- Group bar --- */
+  .group-bar-inner { min-height: 42px; gap: 6px; }
+  .group-brand { gap: 8px; }
+  .group-brand-mark {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    border-radius: 7px;
+  }
+  .group-brand strong { font-size: 10.5px; }
+  .group-brand small { font-size: 8.5px; }
+
+  /* --- Header --- */
+  .site-header { max-width: calc(100% - 12px); }
+  .header-inner {
+    min-height: 54px;
+    padding: 7px 9px 7px 10px;
+    border-radius: 14px;
+    gap: 6px;
+  }
+  .ismta-brand { gap: 7px; }
+  .ismta-logo,
+  .ismta-logo-fallback {
+    width: 34px;
+    height: 34px;
+    padding: 3px;
+    border-radius: 9px;
+  }
+  .ismta-logo-fallback { font-size: 13px; }
+  .ismta-brand-text strong { font-size: 14px; }
+  .ismta-brand-text small {
+    font-size: 8.5px;
+    line-height: 1.2;
+    max-width: 120px;
+  }
+  .menu-toggle {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  /* --- Nav --- */
+  .main-nav { padding: 8px; border-radius: 14px; }
+  .nav-link {
+    padding: 10px 11px;
+    font-size: 12.5px;
+    border-radius: 8px;
+  }
+  .nav-cta {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  /* --- Hero --- */
+  .hero { padding: 30px 0 44px; }
+  .breadcrumb { font-size: 10.5px; gap: 4px; margin-bottom: 14px; }
+  .eyebrow,
+  .section-kicker {
+    padding: 4px 9px;
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+  }
+  .hero h1 {
+    font-size: 25px;
+    line-height: 1.1;
+    margin-top: 10px;
+  }
+  .hero-text {
+    font-size: 13px;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+  .hero-actions { margin-top: 20px; gap: 6px; }
+  .hero-actions .btn {
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .hero-meta { margin-top: 20px; padding-top: 16px; gap: 8px; }
+  .hero-meta-item { font-size: 11.5px; gap: 8px; }
+  .hero-meta-item i { font-size: 15px; }
+
+  .hero-image { height: 220px; border-radius: 16px; }
+  .hero-info-card {
+    left: 8px;
+    bottom: 8px;
+    padding: 8px 10px;
+    gap: 6px;
+    border-radius: 10px;
+  }
+  .hero-info-number { font-size: 20px; }
+  .hero-info-card strong { font-size: 10px; line-height: 1.1; }
+  .hero-info-card span { font-size: 9px; }
+  .hero-side-note {
+    top: 8px;
+    right: 8px;
+    padding: 6px 9px;
+    gap: 5px;
+    border-radius: 9px;
+  }
+  .hero-side-note strong { font-size: 9.5px; }
+  .hero-side-note span { font-size: 8.5px; }
+
+  /* --- Group context --- */
+  .group-context-inner { padding: 16px 0; gap: 12px; }
+  .group-context-title span { font-size: 8.5px; }
+  .group-context-title strong { font-size: 14px; }
+  .branch-list { padding: 4px; gap: 3px; }
+  .branch-list a {
+    padding: 6px 9px;
+    font-size: 10px;
+    gap: 3px;
+  }
+  .branch-list a span { font-size: 8px; }
+
+  /* --- Sections --- */
+  .section { padding: 36px 0; }
+  .section-heading h2,
+  .section-top h2,
+  .orientation-intro h2,
+  .campus-content h2,
+  .faq-intro h2,
+  .contact-intro h2 {
+    font-size: 19px;
+    line-height: 1.15;
+  }
+  .section-top { margin-bottom: 20px; }
+  .section-top > p { font-size: 12.5px; }
+  .intro-copy p { font-size: 13px; }
+
+  /* --- Schools --- */
+  .school-grid { gap: 14px; }
+  .school-image { height: 145px; }
+  .school-number {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+    left: 12px;
+    top: 12px;
+  }
+  .school-body { padding: 16px 14px; }
+  .school-body h3 { font-size: 16px; }
+  .school-body p { font-size: 12px; }
+  .school-count strong { font-size: 22px; }
+  .text-button { padding: 8px 12px; font-size: 11px; }
+
+  /* --- Programs --- */
+  .filter-button { padding: 8px 12px; font-size: 11px; }
+  .program-card { padding: 16px 14px; }
+  .program-card h3 { font-size: 16px; }
+  .program-card p { font-size: 12px; }
+  .program-view { font-size: 10.5px; }
+
+  /* --- Orientation --- */
+  .orientation-card { padding: 18px 14px; border-radius: 14px; }
+  .quiz-question h3 { font-size: 16px; }
+  .quiz-option {
+    min-height: 52px;
+    padding: 12px 13px;
+    font-size: 12px;
+  }
+  .quiz-result h3 { font-size: 18px; }
+  .quiz-result p { font-size: 12.5px; }
+  .quiz-result-links button { padding: 9px 12px; font-size: 11px; }
+
+  /* --- Opportunities --- */
+  .opportunity-card { padding: 18px 14px; }
+  .opportunity-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  .opportunity-card h3 { font-size: 16px; }
+  .opportunity-card p { font-size: 12px; }
+
+  /* --- Admission --- */
+  .admission-card { padding: 18px 14px; }
+  .admission-index { font-size: 20px; top: 16px; right: 16px; }
+  .admission-card h3 { font-size: 17px; }
+  .admission-card > p { font-size: 12px; }
+  .check-list li { font-size: 11.5px; gap: 6px; }
+  .check-list i { font-size: 13px; }
+  .admission-note { padding: 14px 12px; gap: 12px; }
+  .admission-note > i { font-size: 18px; }
+  .admission-note strong { font-size: 12px; }
+  .admission-note p { font-size: 11.5px; }
+  .admission-note .btn {
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+
+  /* --- Calendar --- */
+  .calendar-card { padding: 18px 14px; gap: 18px; }
+  .calendar-card h2 { font-size: 18px; }
+  .calendar-card p { font-size: 12px; }
+  .calendar-status { padding: 14px 12px; }
+  .calendar-status strong { font-size: 12px; }
+  .calendar-status small { font-size: 10px; }
+
+  /* --- Campus --- */
+  .campus-image { height: 200px; border-radius: 16px; }
+  .campus-content > p { font-size: 12.5px; }
+  .campus-facts div { font-size: 12px; }
+  .campus-facts i { font-size: 15px; }
+
+  /* --- FAQ --- */
+  .faq-layout { gap: 22px; }
+  .faq-intro p { font-size: 12.5px; }
+  .faq-item summary {
+    padding: 13px 0;
+    font-size: 13px;
+    gap: 10px;
+  }
+  .faq-item summary i { font-size: 15px; }
+  .faq-answer {
+    padding: 0 0 14px 0;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* --- Contact --- */
+  .contact-section { padding-bottom: 60px; }
+  .contact-layout { gap: 24px; }
+  .contact-intro > p { font-size: 12.5px; }
+  .contact-details { gap: 8px; margin-top: 18px; }
+  .contact-detail { padding: 11px 12px; gap: 9px; border-radius: 10px; }
+  .contact-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  .contact-detail small { font-size: 8.5px; }
+  .contact-detail strong { font-size: 12px; }
+
+  /* --- Form --- */
+  .contact-form { padding: 18px 12px; border-radius: 14px; }
+  .form-header > span { font-size: 9px; }
+  .form-header h3 { font-size: 16px; }
+  .form-group { margin-top: 14px; gap: 5px; }
+  .form-group label { font-size: 11px; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 10px 11px;
+    font-size: 12.5px;
+    border-radius: 8px;
+  }
+  .form-group textarea { min-height: 90px; }
+  .form-submit {
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 12.5px;
+    margin-top: 16px;
+  }
+
+  /* --- Footer --- */
+  .site-footer { padding: 40px 0 20px; }
+  .footer-main { gap: 24px; padding-bottom: 24px; }
+  .footer-brand img,
+  .footer-logo-fallback {
+    width: 42px;
+    height: 42px;
+  }
+  .footer-logo-fallback { font-size: 15px; }
+  .footer-brand strong { font-size: 15px; }
+  .footer-brand p { font-size: 11.5px; }
+  .footer-column h4 { font-size: 9.5px; }
+  .footer-column a,
+  .footer-column span { font-size: 12px; }
+  .footer-bottom { font-size: 10.5px; }
+
+  /* --- Modal --- */
+  .program-modal { padding: 20px 14px; }
+  .program-modal h2 { font-size: 18px; }
+  .program-modal > p { font-size: 12.5px; }
+  .modal-close {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  /* --- WhatsApp --- */
+  .whatsapp-float {
+    width: 44px;
+    height: 44px;
+    font-size: 19px;
+  }
+
+  /* --- Boutons --- */
+  .btn {
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 12.5px;
+  }
+  .btn-large {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   4. ULTRA PETITS ÉCRANS (< 300px) — Le cas critique
+========================================================= */
+@media (max-width: 300px) {
+
+  /* --- Reset anti-débordement --- */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 13px;
+  }
+  * {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .container {
+    padding-inline: 8px !important;
+  }
+
+  /* ================= LOADER ================= */
+  .ismta-loader__inner { width: min(96%, 260px); }
+  .ismta-loader__mark {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    padding: 3px;
+  }
+  .ismta-loader__mark.is-fallback::before { font-size: 22px; }
+  .ismta-loader__brand { margin-top: 14px; gap: 3px; }
+  .ismta-loader__brand strong {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+  .ismta-loader__brand span {
+    font-size: 0.54rem;
+    line-height: 1.4;
+  }
+  .ismta-loader__line {
+    width: 80px;
+    margin-top: 14px;
+    height: 2px;
+  }
+  .ismta-loader__inner > small {
+    font-size: 0.42rem;
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
+    padding: 0 6px;
+  }
+
+  /* ================= GROUP BAR ================= */
+  .group-bar-inner {
+    min-height: 40px;
+    gap: 5px;
+    padding-block: 6px;
+  }
+  .group-brand {
+    gap: 6px;
+    min-width: 0;
+  }
+  .group-brand-mark {
+    width: 22px;
+    height: 22px;
+    font-size: 9px;
+    border-radius: 6px;
+  }
+  .group-brand strong {
+    font-size: 10px;
+    line-height: 1.1;
+  }
+  .group-brand small {
+    display: none; /* trop serré */
+  }
+
+  /* ================= HEADER ================= */
+  .site-header {
+    top: 6px;
+    max-width: calc(100% - 10px);
+  }
+  .header-inner {
+    min-height: 50px;
+    padding: 6px 8px;
+    border-radius: 12px;
+    gap: 5px;
+  }
+  .ismta-brand {
+    gap: 6px;
+    min-width: 0;
+  }
+  .ismta-logo,
+  .ismta-logo-fallback {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 8px;
+  }
+  .ismta-logo-fallback { font-size: 12px; }
+  .ismta-brand-text strong {
+    font-size: 12.5px;
+    line-height: 1.1;
+  }
+  .ismta-brand-text small {
+    display: none; /* trop serré */
+  }
+  .menu-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  /* --- Nav mobile plein écran --- */
+  .main-nav {
+    padding: 8px;
+    border-radius: 12px;
+    gap: 2px;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+  }
+  .nav-link {
+    padding: 9px 10px;
+    font-size: 12px;
+    border-radius: 7px;
+    line-height: 1.3;
+  }
+  .nav-cta {
+    padding: 9px 12px;
+    font-size: 11.5px;
+    gap: 5px;
+    margin-top: 4px;
+  }
+
+  /* ================= HERO ================= */
+  .hero {
+    padding: 26px 0 38px !important;
+  }
+  .hero-grid { gap: 20px; }
+  .breadcrumb {
+    font-size: 10px;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  .breadcrumb i { font-size: 10px; }
+  .eyebrow,
+  .section-kicker {
+    padding: 3px 7px;
+    font-size: 7.5px;
+    letter-spacing: 0.1em;
+  }
+  .hero h1 {
+    font-size: 21px;
+    line-height: 1.1;
+    margin-top: 8px;
+    letter-spacing: -0.02em;
+    word-break: break-word;
+  }
+  .hero-text {
+    font-size: 12px;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+  .hero-actions {
+    margin-top: 16px;
+    gap: 5px;
+  }
+  .hero-actions .btn {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 11.5px;
+    gap: 5px;
+  }
+  .hero-actions .btn i { font-size: 12px; }
+  .hero-meta {
+    margin-top: 16px;
+    padding-top: 12px;
+    gap: 6px;
+  }
+  .hero-meta-item {
+    font-size: 10.5px;
+    gap: 6px;
+  }
+  .hero-meta-item i { font-size: 13px; }
+
+  /* --- Hero visual --- */
+  .hero-image {
+    height: 180px;
+    border-radius: 14px;
+  }
+  .hero-info-card {
+    left: 6px;
+    bottom: 6px;
+    padding: 6px 8px;
+    gap: 5px;
+    border-radius: 8px;
+    min-width: 0;
+  }
+  .hero-info-number { font-size: 16px; }
+  .hero-info-card strong {
+    font-size: 9px;
+    line-height: 1.1;
+  }
+  .hero-info-card span { font-size: 8px; }
+  .hero-side-note {
+    top: 6px;
+    right: 6px;
+    padding: 5px 7px;
+    gap: 4px;
+    border-radius: 8px;
+  }
+  .hero-side-note strong { font-size: 8.5px; }
+  .hero-side-note span { font-size: 7.5px; }
+  .status-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* ================= GROUP CONTEXT ================= */
+  .group-context-inner {
+    padding: 14px 0;
+    gap: 10px;
+  }
+  .group-context-title span {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .group-context-title strong {
+    font-size: 12.5px;
+    line-height: 1.2;
+  }
+  .branch-list {
+    padding: 4px;
+    gap: 3px;
+  }
+  .branch-list a {
+    padding: 5px 7px;
+    font-size: 9px;
+    gap: 3px;
+  }
+  .branch-list a span { font-size: 7px; }
+
+  /* ================= SECTIONS ================= */
+  .section {
+    padding: 28px 0 !important;
+  }
+  .intro-section { padding-bottom: 28px; }
+  .intro-grid { gap: 18px; }
+  .section-heading h2,
+  .section-top h2,
+  .orientation-intro h2,
+  .campus-content h2,
+  .faq-intro h2,
+  .contact-intro h2 {
+    font-size: 16px;
+    line-height: 1.15;
+    margin-top: 8px;
+  }
+  .section-top {
+    margin-bottom: 16px;
+  }
+  .section-top > p {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-top: 10px;
+  }
+  .intro-copy p {
+    font-size: 11.5px;
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .centered p {
+    font-size: 11.5px;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+
+  /* ================= SCHOOLS ================= */
+  .school-grid { gap: 12px; }
+  .school-card { border-radius: 14px; }
+  .school-image { height: 120px; }
+  .school-number {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+    left: 10px;
+    top: 10px;
+  }
+  .school-body { padding: 14px 12px; }
+  .school-label {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+  .school-body h3 {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 7px;
+  }
+  .school-body p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+  .school-count {
+    margin-top: 12px;
+    padding-top: 10px;
+    font-size: 10px;
+    gap: 5px;
+  }
+  .school-count strong { font-size: 18px; }
+  .text-button {
+    margin-top: 12px;
+    padding: 7px 10px;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  /* ================= PROGRAMS ================= */
+  .program-filters {
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  .filter-button {
+    padding: 7px 11px;
+    font-size: 10.5px;
+  }
+  .program-grid { gap: 10px; }
+  .program-card {
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+  .program-school { margin-bottom: 12px; }
+  .program-school span:first-child {
+    font-size: 7.5px;
+    letter-spacing: 0.06em;
+  }
+  .program-duration {
+    padding: 4px 8px;
+    font-size: 8.5px;
+  }
+  .program-card h3 {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  .program-card p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 7px;
+  }
+  .program-footer {
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+  .program-type { font-size: 9px; }
+  .program-view { font-size: 10px; }
+  .programs-cta {
+    margin-top: 22px;
+    gap: 10px;
+  }
+  .programs-cta .btn {
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+  .programs-cta-note {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  /* ================= ORIENTATION ================= */
+  .orientation-layout { gap: 20px; }
+  .orientation-intro p {
+    font-size: 11.5px;
+    margin-top: 10px;
+  }
+  .orientation-intro small {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+  .orientation-card {
+    padding: 14px 10px;
+    border-radius: 12px;
+  }
+  .quiz-progress > span {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+  .progress-track { height: 3px; }
+  .quiz-question { margin-top: 16px; }
+  .quiz-question h3 {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  .quiz-options {
+    gap: 7px;
+    margin-top: 14px;
+  }
+  .quiz-option {
+    min-height: 46px;
+    padding: 10px 11px;
+    font-size: 11px;
+    border-radius: 10px;
+    border-width: 1.5px;
+  }
+  .quiz-result h3 {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+  .quiz-result p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  .quiz-result-links {
+    margin-top: 12px;
+    gap: 6px;
+  }
+  .quiz-result-links button {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+  .quiz-restart {
+    margin-top: 12px;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  /* ================= OPPORTUNITIES ================= */
+  .opportunity-grid {
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .opportunity-card {
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+  .opportunity-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .opportunity-card h3 {
+    font-size: 13.5px;
+    line-height: 1.25;
+  }
+  .opportunity-card p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 7px;
+  }
+
+  /* ================= ADMISSION ================= */
+  .admission-grid {
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .admission-card {
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+  .admission-index {
+    font-size: 16px;
+    top: 12px;
+    right: 12px;
+  }
+  .admission-label {
+    font-size: 7.5px;
+    letter-spacing: 0.08em;
+  }
+  .admission-card h3 {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  .admission-card > p {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-top: 7px;
+  }
+  .check-list {
+    gap: 6px;
+    margin-top: 11px;
+    padding-top: 10px;
+  }
+  .check-list li {
+    gap: 5px;
+    font-size: 10.5px;
+    line-height: 1.4;
+  }
+  .check-list i { font-size: 11px; }
+  .admission-note {
+    padding: 11px 10px;
+    gap: 8px;
+    margin-top: 11px;
+    border-radius: 10px;
+  }
+  .admission-note > i { font-size: 15px; }
+  .admission-note strong { font-size: 11px; }
+  .admission-note p {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+  .admission-note .btn {
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 10.5px;
+    gap: 4px;
+  }
+
+  /* ================= CALENDAR ================= */
+  .calendar-card {
+    padding: 14px 10px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+  .calendar-card h2 {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 6px;
+  }
+  .calendar-card p {
+    font-size: 10.5px;
+    line-height: 1.5;
+    margin-top: 7px;
+  }
+  .calendar-status {
+    padding: 11px 10px;
+    gap: 5px 8px;
+    border-radius: 10px;
+  }
+  .calendar-status .status-dot {
+    width: 8px;
+    height: 8px;
+    margin-top: 2px;
+  }
+  .calendar-status strong { font-size: 11px; }
+  .calendar-status small {
+    font-size: 9.5px;
+    line-height: 1.35;
+  }
+
+  /* ================= CAMPUS ================= */
+  .campus-grid { gap: 18px; }
+  .campus-image {
+    height: 170px;
+    border-radius: 14px;
+  }
+  .campus-content > p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  .campus-facts {
+    gap: 7px;
+    margin-top: 12px;
+  }
+  .campus-facts div {
+    gap: 7px;
+    padding-bottom: 7px;
+    font-size: 10.5px;
+  }
+  .campus-facts i { font-size: 13px; }
+
+  /* ================= FAQ ================= */
+  .faq-layout { gap: 16px; }
+  .faq-intro p {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-top: 10px;
+  }
+  .faq-intro .btn {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 11px;
+    margin-top: 12px;
+    gap: 5px;
+  }
+  .faq-item summary {
+    padding: 10px 0;
+    font-size: 11.5px;
+    gap: 7px;
+    line-height: 1.35;
+  }
+  .faq-item summary i { font-size: 13px; }
+  .faq-answer {
+    padding: 0 0 10px 0;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+
+  /* ================= CONTACT ================= */
+  .contact-section { padding-bottom: 50px; }
+  .contact-layout { gap: 18px; }
+  .contact-intro > p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  .contact-details {
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .contact-detail {
+    padding: 8px 9px;
+    gap: 7px;
+    border-radius: 9px;
+  }
+  .contact-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+  .contact-detail small {
+    font-size: 7.5px;
+    letter-spacing: 0.03em;
+  }
+  .contact-detail strong {
+    font-size: 10.5px;
+    word-break: break-all;
+  }
+
+  /* ================= FORM ================= */
+  .contact-form {
+    padding: 14px 10px !important;
+    border-radius: 12px;
+  }
+  .form-header > span {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+  .form-header h3 {
+    font-size: 13.5px;
+    line-height: 1.2;
+    margin-top: 6px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .form-group {
+    margin-top: 10px;
+    gap: 4px;
+  }
+  .form-group label { font-size: 10px; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 8px 9px;
+    font-size: 11px;
+    border-radius: 7px;
+    border-width: 1px;
+  }
+  .form-group textarea { min-height: 70px; }
+  .form-submit {
+    min-height: 38px;
+    padding: 0 10px;
+    font-size: 11px;
+    margin-top: 12px;
+    gap: 5px;
+  }
+  .form-success {
+    padding: 10px 10px;
+    gap: 7px;
+    border-radius: 10px;
+    margin-top: 12px;
+  }
+  .form-success > i { font-size: 14px; }
+  .form-success strong { font-size: 11px; }
+  .form-success span { font-size: 10px; }
+
+  /* ================= FOOTER ================= */
+  .site-footer {
+    padding: 30px 0 14px !important;
+  }
+  .footer-main {
+    gap: 18px;
+    padding-bottom: 16px;
+  }
+  .footer-brand { gap: 9px; }
+  .footer-brand img,
+  .footer-logo-fallback {
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+    border-radius: 9px;
+  }
+  .footer-logo-fallback { font-size: 12px; }
+  .footer-brand strong {
+    font-size: 13px;
+    line-height: 1.15;
+  }
+  .footer-brand p {
+    font-size: 10.5px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }
+  .footer-column { gap: 6px; }
+  .footer-column h4 {
+    font-size: 9px;
+    margin-bottom: 4px;
+    letter-spacing: 0.08em;
+  }
+  .footer-column a,
+  .footer-column span {
+    font-size: 10.5px;
+    line-height: 1.4;
+  }
+  .footer-bottom {
+    padding-top: 12px;
+    font-size: 9.5px;
+    gap: 7px;
+    line-height: 1.4;
+  }
+  .footer-bottom a { font-size: 9.5px; }
+
+  /* ================= MODAL ================= */
+  .modal-overlay { padding: 8px; }
+  .program-modal {
+    padding: 16px 12px;
+    border-radius: 14px;
+    max-height: 94vh;
+  }
+  .modal-close {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    top: 10px;
+    right: 10px;
+  }
+  .modal-top {
+    padding-right: 40px;
+    gap: 6px;
+  }
+  .modal-top span:first-child {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+  .modal-top span:last-child {
+    padding: 4px 8px;
+    font-size: 8.5px;
+  }
+  .program-modal h2 {
+    font-size: 14.5px;
+    line-height: 1.2;
+    margin-top: 10px;
+  }
+  .program-modal > p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  .modal-columns {
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .modal-columns h3 {
+    font-size: 9.5px;
+    margin-bottom: 8px;
+  }
+  .modal-list { gap: 6px; }
+  .modal-list li {
+    padding-left: 12px;
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+  .modal-list li::before {
+    width: 4px;
+    height: 4px;
+    top: 7px;
+  }
+  .modal-evaluation {
+    gap: 8px;
+    padding: 11px 12px;
+    margin-top: 14px;
+    border-radius: 10px;
+  }
+  .modal-evaluation i { font-size: 15px; }
+  .modal-evaluation strong { font-size: 11px; }
+  .modal-evaluation span {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+  .modal-action {
+    margin-top: 14px;
+    min-height: 40px;
+    font-size: 11.5px;
+  }
+
+  /* ================= WHATSAPP ================= */
+  .whatsapp-float {
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+    right: 8px;
+    bottom: 8px;
+  }
+
+  /* ================= BOUTONS GLOBAUX ================= */
+  .btn {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 11px;
+    gap: 5px;
+  }
+  .btn i { font-size: 12px; }
+  .btn-large {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 11.5px;
+  }
+
+  /* --- Images : jamais plus larges que l'écran --- */
+  img {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  /* --- Empêcher les boutons longs de déborder --- */
+  .btn,
+  .nav-cta,
+  .nav-link,
+  .branch-list a,
+  .contact-detail strong,
+  .footer-column a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* =========================================================
+   5. SÉCURITÉ GLOBALE — Anti-débordement horizontal
+========================================================= */
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
+  }
+
+  section, header, footer, div, article, aside, nav, main, form {
+    max-width: 100vw;
+  }
+
+  /* Neutraliser les éléments décoratifs qui peuvent déborder */
+  .hero-info-card,
+  .hero-side-note,
+  .group-context::before,
+  .hero::before,
+  .modal-overlay,
+  .program-modal,
+  .whatsapp-float__pulse {
+    max-width: 100vw;
+  }
+}

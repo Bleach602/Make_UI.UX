@@ -6119,3 +6119,2191 @@ blockquote em {
     transition: none !important;
   }
 }
+
+/* =========================================================
+   RESPONSIVE AVANCÉ — Petits écrans (< 480px, 400px, 340px, 300px)
+   Correctifs spécifiques pour ultra-mobile — Groupe Pékékue
+========================================================= */
+
+/* =========================================================
+   1. PETITS MOBILES (< 480px) — Base solide
+========================================================= */
+@media (max-width: 480px) {
+
+  /* --- Anti-débordement global --- */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  * {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .container { padding-inline: 15px; }
+
+  /* ================= LOADER ================= */
+  .loader-logo {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    font-size: 26px;
+  }
+  .loader span {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+  }
+  .loader i { width: 90px; }
+
+  /* ================= HEADER ================= */
+  .header-inner {
+    min-height: 68px;
+    gap: 10px;
+  }
+  .brand { gap: 10px; }
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  .brand-text small {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+  }
+  .brand-text strong {
+    font-size: 12.5px;
+    letter-spacing: 0.05em;
+  }
+  .header-actions { gap: 6px; }
+  .btn-login {
+    padding: 8px 14px;
+    font-size: 12px;
+    gap: 6px;
+    min-height: 38px;
+  }
+  .btn-login i { font-size: 14px; }
+  .btn-apply {
+    padding: 10px 16px;
+    font-size: 12px;
+    gap: 6px;
+    min-height: 40px;
+  }
+  .burger {
+    width: 40px;
+    height: 40px;
+  }
+  .burger span {
+    width: 17px;
+    height: 2px;
+  }
+
+  /* --- Menu mobile --- */
+  .mobile-menu {
+    padding: 16px 15px 22px;
+  }
+  .mobile-menu > a {
+    padding: 14px 0;
+    font-size: 14px;
+  }
+  .mobile-actions {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  /* ================= HERO ================= */
+  .hero { min-height: 100svh; }
+  .hero-inner {
+    padding-top: 96px;
+    padding-bottom: 30px;
+  }
+  .hero-copy { max-width: 100%; }
+  .eyebrow {
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    gap: 10px;
+  }
+  .eyebrow span:first-child {
+    width: 20px;
+    height: 2px;
+  }
+  .hero h1 {
+    margin-top: 18px;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+  }
+  .hero-copy > p {
+    margin-top: 22px;
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .actions .btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 20px;
+    font-size: 13px;
+  }
+  .hero-bottom {
+    flex-wrap: wrap;
+    gap: 22px;
+    padding-top: 32px;
+  }
+  .hero-stat b { font-size: 26px; }
+  .hero-stat span { font-size: 9.5px; }
+  .hero-bottom p {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+
+  /* ================= TICKER ================= */
+  .ticker { padding: 14px 0; }
+  .ticker__content {
+    gap: 26px;
+    padding-left: 26px;
+  }
+  .ticker__item {
+    font-size: 16px;
+  }
+  .ticker__sep { font-size: 15px; }
+
+  /* ================= SECTIONS ================= */
+  .section,
+  .portal,
+  .founder,
+  .experiences,
+  .creds,
+  .next-step {
+    padding: 60px 0;
+  }
+  .section h2,
+  .portal h2 {
+    margin-top: 12px;
+    font-size: 30px;
+    line-height: 1.1;
+  }
+  .section-head {
+    display: block;
+    margin-bottom: 36px;
+    gap: 0;
+  }
+  .section-head > p {
+    margin: 16px 0 0;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .values-intro,
+  .experience-head {
+    margin-bottom: 32px;
+  }
+  .values-intro p,
+  .experience-head p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin-top: 16px;
+  }
+  .experience-head h2 { font-size: 30px; }
+
+  /* ================= INTRO / LE GROUPE ================= */
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .intro-copy { max-width: 100%; }
+  .intro-copy > p {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .link {
+    margin-top: 22px;
+    font-size: 12px;
+    gap: 7px;
+  }
+  .intro-media > img {
+    height: 320px;
+    border-radius: 18px;
+  }
+  .intro-media figcaption {
+    left: 14px;
+    bottom: 14px;
+    padding: 8px 14px;
+    font-size: 10.5px;
+  }
+  .intro-media aside {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 14px;
+    padding: 20px;
+    border-radius: 18px;
+    gap: 8px;
+  }
+  .intro-media aside b {
+    font-size: 32px;
+  }
+  .intro-media aside span {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* ================= PORTAIL / JOURNEY ================= */
+  .center-head {
+    margin-bottom: 34px;
+  }
+  .center-head p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin-top: 16px;
+  }
+  .journey {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .journey-card {
+    min-height: 280px;
+    padding: 22px;
+    border-radius: 20px;
+  }
+  .journey-head {
+    margin-bottom: 20px;
+    min-height: 60px;
+  }
+  .journey-num {
+    font-size: 10.5px;
+  }
+  .journey-logo {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+  }
+  .journey-card b { font-size: 18px; }
+  .journey-card small {
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .journey-cta {
+    padding: 11px 16px;
+    font-size: 12px;
+    gap: 8px;
+  }
+  .journey-result {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 18px;
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+  }
+  .journey-result > strong {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+    border-radius: 14px;
+  }
+  .journey-result small {
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+  }
+  .journey-result h3 {
+    font-size: 18px;
+    margin-top: 4px;
+  }
+  .journey-result p {
+    font-size: 12.5px;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+  .journey-result .btn {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 42px;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  /* ================= ÉTABLISSEMENTS ================= */
+  .institutions { gap: 16px; }
+  .inst,
+  .inst:nth-child(even) {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .inst:nth-child(even) .inst-img { order: 0; }
+  .inst-img {
+    height: 220px;
+    min-height: 220px;
+  }
+  .inst-logo {
+    width: 68px;
+    height: 68px;
+    top: 14px;
+    right: 14px;
+    border-width: 2px;
+  }
+  .inst-copy {
+    padding: 22px 20px 26px;
+  }
+  .inst-copy small {
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+  }
+  .inst-copy h3 {
+    margin-top: 10px;
+    font-size: 28px;
+    line-height: 1.05;
+  }
+  .inst-hook {
+    margin-top: 14px;
+    padding: 12px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .inst-copy p {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .inst-link {
+    margin-top: 18px;
+    padding: 11px 18px;
+    font-size: 12px;
+  }
+
+  /* ================= ADN ================= */
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .value-item {
+    padding: 26px 22px;
+    border-radius: 18px;
+  }
+  .value-item i {
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+  .value-item h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .value-item p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* ================= FONDATEUR ================= */
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .founder-frame {
+    aspect-ratio: 4 / 5;
+    border-radius: 20px;
+  }
+  .founder-photo > span {
+    left: 14px;
+    bottom: 14px;
+    padding: 8px 12px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+  .founder-copy blockquote {
+    margin-top: 20px;
+    font-size: 28px;
+    line-height: 1.1;
+  }
+  .founder-copy > p {
+    margin-top: 20px;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .signature {
+    margin-top: 24px;
+    font-size: 20px;
+  }
+  .signature small {
+    font-size: 10px;
+  }
+  .founder-copy .btn {
+    margin-top: 22px;
+    width: 100%;
+    min-height: 48px;
+    font-size: 13px;
+  }
+
+  /* ================= ADMINISTRATION ================= */
+  .admin-slider-head { margin-bottom: 14px; }
+  .admin-nav { gap: 8px; }
+  .admin-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .admin-track {
+    padding: 6px 15px 18px;
+    gap: 14px;
+    justify-content: flex-start;
+  }
+  .admin-card {
+    flex: 0 0 82vw;
+    max-width: 300px;
+    border-radius: 18px;
+  }
+  .admin-photo {
+    aspect-ratio: 1 / 1;
+  }
+  .admin-body {
+    padding: 16px 14px 18px;
+    gap: 5px;
+  }
+  .admin-body h3 {
+    font-size: 15px;
+  }
+  .admin-role { font-size: 9.5px; }
+  .admin-bio {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .admin-contact {
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 12px;
+  }
+  .admin-contact a {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  .admin-dots-wrap { margin-top: 12px; }
+
+  /* ================= AGRÉMENTS ================= */
+  .creds-head {
+    display: block;
+    margin-bottom: 32px;
+    gap: 0;
+  }
+  .creds-head > p {
+    margin: 16px 0 0;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .creds-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .cred-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 20px;
+    border-radius: 18px;
+  }
+  .cred-logo {
+    width: 66px;
+    height: 66px;
+    padding: 8px;
+    border-radius: 14px;
+  }
+  .cred-logo-dual {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .cred-logo--half {
+    width: 66px;
+    height: 36px;
+    padding: 5px;
+  }
+  .cred-label {
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+  }
+  .cred-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .cred-text {
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .cred-badge {
+    padding: 6px 12px;
+    font-size: 10.5px;
+  }
+  .creds-foot {
+    margin-top: 22px;
+    padding: 18px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 14px;
+  }
+  .creds-foot i { font-size: 18px; }
+  .creds-foot p {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  /* ================= EXPÉRIENCES ================= */
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .exp-card {
+    border-radius: 18px;
+  }
+  .exp-media {
+    aspect-ratio: 16 / 9;
+  }
+  .exp-badge {
+    top: 12px;
+    left: 12px;
+    padding: 5px 11px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .exp-play {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    left: 14px;
+    bottom: 14px;
+  }
+  .exp-body {
+    padding: 18px 18px 20px;
+    gap: 8px;
+  }
+  .exp-cat {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+  }
+  .exp-body h3 {
+    font-size: 17px;
+    line-height: 1.25;
+  }
+  .exp-body p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .exp-link {
+    padding: 9px 15px;
+    font-size: 11.5px;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .exp-card--text .exp-body {
+    padding: 24px 20px;
+  }
+  .exp-card--text h3 { font-size: 19px; }
+
+  /* ================= CAMPUS MOSAIC ================= */
+  .mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: 260px 180px 180px 130px;
+    gap: 12px;
+  }
+  .main-photo { grid-column: 1; grid-row: 1; }
+  .small-photo:nth-of-type(2) { grid-column: 1; grid-row: 2; }
+  .small-photo:nth-of-type(3) { grid-column: 1; grid-row: 3; }
+  .campus-video { grid-column: 1; grid-row: 4; }
+  .mosaic figure,
+  .campus-video {
+    border-radius: 14px;
+  }
+  .mosaic figcaption {
+    left: 14px;
+    bottom: 14px;
+    font-size: 11.5px;
+  }
+  .main-photo figcaption {
+    font-size: 14px;
+    gap: 10px;
+  }
+  .campus-video {
+    padding: 20px;
+    gap: 14px;
+  }
+  .campus-video > i {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .campus-video small {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .campus-video b { font-size: 14px; }
+
+  /* ================= FAQ ================= */
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .faq-grid > div:first-child p {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .faq-grid .btn {
+    margin-top: 20px;
+    width: 100%;
+    min-height: 46px;
+    font-size: 13px;
+  }
+  .faq summary {
+    min-height: 68px;
+    padding: 16px 0;
+    font-size: 14.5px;
+    gap: 14px;
+  }
+  .faq summary i { font-size: 18px; }
+  .faq details p {
+    padding-bottom: 20px;
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  /* ================= IMPLANTATIONS ================= */
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .location-card {
+    border-radius: 18px;
+  }
+  .location-map {
+    aspect-ratio: 16 / 10;
+  }
+  .location-info {
+    padding: 20px 20px 24px;
+  }
+  .location-num {
+    padding: 3px 10px;
+    font-size: 10px;
+  }
+  .location-info h3 {
+    margin-top: 12px;
+    font-size: 22px;
+  }
+  .location-info p {
+    font-size: 12.5px;
+    margin-top: 6px;
+  }
+  .location-link {
+    margin-top: 16px;
+    font-size: 11.5px;
+    gap: 7px;
+  }
+
+  /* ================= NEXT STEP ================= */
+  .next-step {
+    min-height: 520px;
+  }
+  .next-step-inner h2 {
+    margin-top: 20px;
+    font-size: 34px;
+    line-height: 1.05;
+  }
+  .next-step-inner p {
+    margin-top: 18px;
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+  .next-step-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 26px;
+  }
+  .next-step-actions .btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 13px;
+  }
+
+  /* ================= FOOTER ================= */
+  .footer { padding: 45px 0 0; }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 32px;
+  }
+  .footer-brand { grid-column: auto; }
+  .footer-brand > p {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .footer-socials {
+    margin-top: 18px;
+    gap: 8px;
+  }
+  .footer-socials a {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+  .footer-col { gap: 9px; }
+  .footer-col h4 {
+    margin-bottom: 8px;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+  }
+  .footer-col a,
+  .footer-col span {
+    font-size: 12.5px;
+    gap: 7px;
+  }
+  .footer-col a i { font-size: 13px; }
+  .footer-bottom {
+    padding: 22px 0;
+    gap: 10px;
+    font-size: 11px;
+    line-height: 1.5;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-bottom-links {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .footer-bottom-links a { font-size: 11px; }
+
+  /* ================= MODALES ================= */
+  .modal { padding: 12px; }
+  .modal-box {
+    padding: 26px 20px;
+    border-radius: 22px;
+    max-height: 92vh;
+  }
+  .modal-box h2 {
+    margin-top: 14px;
+    font-size: 26px;
+    line-height: 1.1;
+  }
+  .modal-box > p {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .modal-links {
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .modal-links a {
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+  .modal-links a > i:first-child {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  .modal-links a > i:last-child { font-size: 16px; }
+  .modal-links b { font-size: 13px; }
+  .modal-links small { font-size: 11.5px; }
+  .modal-box blockquote {
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .modal-box > strong {
+    margin-top: 20px;
+    font-size: 17px;
+  }
+  .modal-box > strong small { font-size: 10px; }
+  .close {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    top: 14px;
+    right: 14px;
+  }
+
+  /* ================= WHATSAPP ================= */
+  .whatsapp {
+    right: 14px;
+    bottom: 14px;
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  /* ================= BOUTONS GLOBAUX ================= */
+  .btn {
+    min-height: 48px;
+    padding: 0 22px;
+    font-size: 13px;
+    gap: 9px;
+  }
+  .btn.small {
+    min-height: 42px;
+    padding: 0 18px;
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   2. TRÈS PETITS MOBILES (< 400px)
+========================================================= */
+@media (max-width: 400px) {
+
+  .container { padding-inline: 12px; }
+
+  /* --- Loader --- */
+  .loader-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    font-size: 22px;
+  }
+  .loader span {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+  .loader i { width: 80px; }
+
+  /* --- Header --- */
+  .header-inner { min-height: 62px; }
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+    border-radius: 9px;
+  }
+  .brand-text small { font-size: 7.5px; }
+  .brand-text strong { font-size: 11.5px; }
+  .btn-login {
+    padding: 7px 12px;
+    font-size: 11.5px;
+    min-height: 36px;
+  }
+  .btn-apply {
+    padding: 9px 14px;
+    font-size: 11.5px;
+    min-height: 38px;
+  }
+  .burger {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* --- Hero --- */
+  .hero-inner { padding-top: 88px; }
+  .hero h1 { font-size: 34px; }
+  .hero-copy > p {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .actions .btn {
+    min-height: 46px;
+    font-size: 12.5px;
+  }
+  .hero-stat b { font-size: 22px; }
+  .hero-stat span { font-size: 9px; }
+  .hero-bottom p { font-size: 8.5px; letter-spacing: 0.18em; }
+
+  /* --- Ticker --- */
+  .ticker__item { font-size: 14px; }
+  .ticker__content { gap: 22px; }
+
+  /* --- Sections --- */
+  .section,
+  .portal,
+  .founder,
+  .experiences,
+  .creds,
+  .next-step {
+    padding: 50px 0;
+  }
+  .section h2,
+  .portal h2 { font-size: 26px; }
+  .experience-head h2 { font-size: 26px; }
+  .center-head p,
+  .section-head > p,
+  .creds-head > p,
+  .experience-head p,
+  .values-intro p {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  /* --- Journey --- */
+  .journey-card {
+    min-height: 265px;
+    padding: 20px;
+  }
+  .journey-logo {
+    width: 54px;
+    height: 54px;
+  }
+  .journey-card b { font-size: 17px; }
+  .journey-card small { font-size: 11.5px; }
+  .journey-result {
+    padding: 16px;
+    grid-template-columns: 48px 1fr;
+  }
+  .journey-result > strong {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+  .journey-result h3 { font-size: 16px; }
+  .journey-result p { font-size: 12px; }
+
+  /* --- Inst --- */
+  .inst-img {
+    height: 190px;
+    min-height: 190px;
+  }
+  .inst-logo {
+    width: 60px;
+    height: 60px;
+    top: 12px;
+    right: 12px;
+  }
+  .inst-copy { padding: 20px 18px 22px; }
+  .inst-copy h3 { font-size: 25px; }
+  .inst-hook {
+    padding: 10px 12px;
+    font-size: 12.5px;
+  }
+  .inst-copy p { font-size: 12.5px; }
+
+  /* --- Values --- */
+  .value-item { padding: 22px 18px; }
+  .value-item i { font-size: 25px; margin-bottom: 14px; }
+  .value-item h3 { font-size: 16px; }
+  .value-item p { font-size: 12.5px; }
+
+  /* --- Founder --- */
+  .founder-copy blockquote { font-size: 24px; }
+  .founder-copy > p { font-size: 13.5px; }
+  .signature { font-size: 18px; }
+
+  /* --- Admin slider --- */
+  .admin-card {
+    flex: 0 0 86vw;
+    max-width: 280px;
+  }
+  .admin-body h3 { font-size: 14px; }
+  .admin-bio { font-size: 11.5px; }
+
+  /* --- Creds --- */
+  .cred-card { padding: 18px; }
+  .cred-logo {
+    width: 60px;
+    height: 60px;
+    padding: 7px;
+  }
+  .cred-logo--half {
+    width: 60px;
+    height: 32px;
+  }
+  .cred-card h3 { font-size: 15px; }
+  .cred-text { font-size: 12px; }
+  .cred-badge { padding: 5px 10px; font-size: 10px; }
+
+  /* --- Exp --- */
+  .exp-body { padding: 16px 16px 18px; }
+  .exp-body h3 { font-size: 16px; }
+  .exp-body p { font-size: 12.5px; }
+  .exp-link { padding: 8px 13px; font-size: 11px; }
+  .exp-play {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  /* --- Mosaic --- */
+  .mosaic {
+    grid-template-rows: 220px 155px 155px 110px;
+    gap: 10px;
+  }
+  .campus-video {
+    padding: 16px;
+    gap: 12px;
+  }
+  .campus-video > i {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+  .campus-video b { font-size: 13px; }
+
+  /* --- FAQ --- */
+  .faq summary {
+    min-height: 62px;
+    padding: 14px 0;
+    font-size: 13.5px;
+    gap: 10px;
+  }
+  .faq summary i { font-size: 16px; }
+  .faq details p {
+    padding-bottom: 18px;
+    font-size: 12.5px;
+  }
+
+  /* --- Locations --- */
+  .location-info { padding: 18px 18px 22px; }
+  .location-info h3 { font-size: 20px; }
+  .location-info p { font-size: 12px; }
+  .location-link { font-size: 11px; }
+
+  /* --- Next step --- */
+  .next-step { min-height: 480px; }
+  .next-step-inner h2 { font-size: 30px; }
+  .next-step-inner p { font-size: 13.5px; }
+  .next-step-actions .btn {
+    min-height: 46px;
+    font-size: 12.5px;
+  }
+
+  /* --- Footer --- */
+  .footer { padding: 38px 0 0; }
+  .footer-top { gap: 24px; padding-bottom: 26px; }
+  .footer-brand > p { font-size: 12.5px; }
+  .footer-col h4 { font-size: 10px; }
+  .footer-col a,
+  .footer-col span { font-size: 12px; }
+  .footer-bottom { font-size: 10.5px; }
+
+  /* --- Modales --- */
+  .modal-box {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+  .modal-box h2 { font-size: 22px; }
+  .modal-box > p { font-size: 13px; }
+  .modal-links a { padding: 12px; gap: 10px; }
+  .modal-links a > i:first-child {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+  .modal-links b { font-size: 12.5px; }
+  .modal-links small { font-size: 11px; }
+  .modal-box blockquote { font-size: 15px; }
+  .modal-box > strong { font-size: 15px; }
+
+  /* --- WhatsApp --- */
+  .whatsapp {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+  /* --- Boutons --- */
+  .btn {
+    min-height: 46px;
+    padding: 0 18px;
+    font-size: 12.5px;
+  }
+  .btn.small {
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 11.5px;
+  }
+}
+
+/* =========================================================
+   3. TRÈS TRÈS PETITS MOBILES (< 340px)
+========================================================= */
+@media (max-width: 340px) {
+
+  .container { padding-inline: 10px; }
+
+  /* --- Loader --- */
+  .loader-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    font-size: 20px;
+  }
+  .loader span { font-size: 8.5px; letter-spacing: 0.12em; }
+  .loader i { width: 70px; }
+
+  /* --- Header --- */
+  .header-inner {
+    min-height: 56px;
+    gap: 6px;
+  }
+  .brand { gap: 8px; }
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  .brand-text small { display: none; }
+  .brand-text strong { font-size: 11px; }
+  .btn-login {
+    padding: 6px 10px;
+    font-size: 11px;
+    min-height: 34px;
+  }
+  .btn-login span { display: none; }
+  .btn-apply {
+    padding: 8px 12px;
+    font-size: 11px;
+    min-height: 36px;
+  }
+  .btn-apply span { display: none; }
+  .burger {
+    width: 34px;
+    height: 34px;
+  }
+  .burger span { width: 16px; }
+
+  /* --- Menu --- */
+  .mobile-menu { padding: 14px 10px 18px; }
+  .mobile-menu > a {
+    padding: 12px 0;
+    font-size: 13px;
+  }
+  .mobile-actions { gap: 6px; margin-top: 14px; }
+
+  /* --- Hero --- */
+  .hero-inner { padding-top: 78px; }
+  .hero h1 { font-size: 28px; }
+  .hero-copy > p {
+    font-size: 12.5px;
+    margin-top: 16px;
+  }
+  .actions { margin-top: 22px; gap: 8px; }
+  .actions .btn {
+    min-height: 44px;
+    font-size: 12px;
+    padding: 0 14px;
+  }
+  .hero-stat b { font-size: 20px; }
+  .hero-stat span { font-size: 8.5px; }
+
+  /* --- Ticker --- */
+  .ticker { padding: 12px 0; }
+  .ticker__item { font-size: 13px; }
+  .ticker__content { gap: 18px; }
+
+  /* --- Sections --- */
+  .section,
+  .portal,
+  .founder,
+  .experiences,
+  .creds,
+  .next-step {
+    padding: 42px 0;
+  }
+  .section h2,
+  .portal h2,
+  .experience-head h2 { font-size: 22px; }
+  .center-head p,
+  .section-head > p,
+  .creds-head > p,
+  .experience-head p,
+  .values-intro p,
+  .intro-copy > p {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .eyebrow {
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
+  }
+  .eyebrow span:first-child { width: 16px; }
+
+  /* --- Intro --- */
+  .intro-media > img { height: 260px; }
+  .intro-media aside b { font-size: 26px; }
+  .intro-media aside span { font-size: 11px; }
+  .intro-media aside { padding: 16px; }
+
+  /* --- Journey --- */
+  .journey-card {
+    min-height: 250px;
+    padding: 18px;
+    border-radius: 16px;
+  }
+  .journey-head {
+    margin-bottom: 16px;
+    min-height: 52px;
+  }
+  .journey-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+  .journey-card b { font-size: 16px; }
+  .journey-card small { font-size: 11px; margin-bottom: 12px; }
+  .journey-cta { padding: 9px 13px; font-size: 11px; }
+
+  .journey-result {
+    padding: 14px;
+    grid-template-columns: 42px 1fr;
+    gap: 10px;
+  }
+  .journey-result > strong {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+  .journey-result h3 { font-size: 15px; }
+  .journey-result p { font-size: 11.5px; }
+  .journey-result .btn {
+    min-height: 40px;
+    font-size: 11px;
+  }
+
+  /* --- Inst --- */
+  .inst-img {
+    height: 170px;
+    min-height: 170px;
+  }
+  .inst-logo {
+    width: 54px;
+    height: 54px;
+    top: 10px;
+    right: 10px;
+  }
+  .inst-copy { padding: 18px 15px 20px; }
+  .inst-copy h3 { font-size: 22px; }
+  .inst-hook {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+  .inst-copy p { font-size: 12px; }
+  .inst-link { padding: 10px 15px; font-size: 11.5px; }
+
+  /* --- Values --- */
+  .value-item { padding: 18px 15px; }
+  .value-item i { font-size: 22px; margin-bottom: 12px; }
+  .value-item h3 { font-size: 15px; }
+  .value-item p { font-size: 12px; }
+
+  /* --- Founder --- */
+  .founder-copy blockquote { font-size: 21px; margin-top: 16px; }
+  .founder-copy > p {
+    margin-top: 16px;
+    font-size: 12.5px;
+  }
+  .signature { font-size: 16px; margin-top: 18px; }
+
+  /* --- Admin --- */
+  .admin-card { flex: 0 0 90vw; max-width: 250px; }
+  .admin-body { padding: 14px 12px 16px; }
+  .admin-body h3 { font-size: 13px; }
+  .admin-role { font-size: 9px; }
+  .admin-bio { font-size: 11px; }
+  .admin-contact a {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  /* --- Creds --- */
+  .cred-card { padding: 16px; }
+  .cred-logo {
+    width: 54px;
+    height: 54px;
+    padding: 6px;
+  }
+  .cred-logo--half {
+    width: 54px;
+    height: 28px;
+  }
+  .cred-card h3 { font-size: 14px; }
+  .cred-text { font-size: 11.5px; }
+  .cred-badge { font-size: 9.5px; padding: 4px 9px; }
+
+  /* --- Exp --- */
+  .exp-body { padding: 14px 14px 16px; }
+  .exp-body h3 { font-size: 15px; }
+  .exp-body p { font-size: 12px; }
+  .exp-link { font-size: 10.5px; padding: 7px 11px; }
+  .exp-play {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    left: 12px;
+    bottom: 12px;
+  }
+  .exp-badge {
+    top: 10px;
+    left: 10px;
+    padding: 4px 9px;
+    font-size: 8px;
+  }
+
+  /* --- Mosaic --- */
+  .mosaic {
+    grid-template-rows: 190px 135px 135px 95px;
+    gap: 8px;
+  }
+  .campus-video {
+    padding: 12px;
+    gap: 10px;
+  }
+  .campus-video > i {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+  .campus-video small { font-size: 8px; letter-spacing: 0.1em; }
+  .campus-video b { font-size: 12px; }
+
+  /* --- FAQ --- */
+  .faq summary {
+    min-height: 58px;
+    padding: 12px 0;
+    font-size: 12.5px;
+    gap: 8px;
+  }
+  .faq summary i { font-size: 14px; }
+  .faq details p { font-size: 11.5px; padding-bottom: 14px; }
+
+  /* --- Locations --- */
+  .location-info { padding: 16px 16px 20px; }
+  .location-info h3 { font-size: 18px; }
+  .location-info p { font-size: 11.5px; }
+  .location-link { font-size: 10.5px; }
+
+  /* --- Next --- */
+  .next-step { min-height: 440px; }
+  .next-step-inner h2 { font-size: 26px; margin-top: 14px; }
+  .next-step-inner p { font-size: 12.5px; margin-top: 14px; }
+  .next-step-actions { margin-top: 20px; }
+  .next-step-actions .btn {
+    min-height: 44px;
+    font-size: 12px;
+  }
+
+  /* --- Footer --- */
+  .footer { padding: 32px 0 0; }
+  .footer-top { gap: 20px; padding-bottom: 22px; }
+  .footer-socials a {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  .footer-col h4 { font-size: 9.5px; }
+  .footer-col a,
+  .footer-col span { font-size: 11.5px; }
+  .footer-bottom { font-size: 10px; }
+
+  /* --- Modal --- */
+  .modal-box {
+    padding: 20px 14px;
+    border-radius: 18px;
+  }
+  .modal-box h2 { font-size: 20px; }
+  .modal-box > p { font-size: 12.5px; }
+  .modal-links a { padding: 10px; gap: 8px; }
+  .modal-links a > i:first-child {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  .modal-links b { font-size: 11.5px; }
+  .modal-links small { font-size: 10px; }
+  .modal-box blockquote { font-size: 13.5px; }
+  .modal-box > strong { font-size: 14px; }
+  .close {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    top: 10px;
+    right: 10px;
+  }
+
+  /* --- WhatsApp --- */
+  .whatsapp {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  /* --- Boutons --- */
+  .btn {
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 12px;
+  }
+  .btn.small {
+    min-height: 38px;
+    padding: 0 14px;
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   4. ULTRA PETITS ÉCRANS (< 300px) — Le cas critique
+========================================================= */
+@media (max-width: 300px) {
+
+  /* --- Reset anti-débordement --- */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 12.5px;
+  }
+  * {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .container { padding-inline: 8px !important; }
+
+  /* ================= LOADER ================= */
+  .loader-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 17px;
+  }
+  .loader span {
+    font-size: 7.5px;
+    letter-spacing: 0.1em;
+  }
+  .loader i {
+    width: 60px;
+    height: 2px;
+  }
+
+  /* ================= HEADER ================= */
+  .header-inner {
+    min-height: 50px;
+    gap: 4px;
+  }
+  .brand {
+    gap: 6px;
+    min-width: 0;
+  }
+  .brand-mark {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+    border-radius: 7px;
+  }
+  .brand-text {
+    min-width: 0;
+  }
+  .brand-text small { display: none; }
+  .brand-text strong {
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+  }
+  .header-actions { gap: 4px; }
+  .btn-login {
+    display: none; /* trop serré */
+  }
+  .btn-apply {
+    padding: 7px 10px;
+    font-size: 10.5px;
+    min-height: 32px;
+    gap: 4px;
+  }
+  .btn-apply span { display: none; }
+  .btn-apply i { font-size: 13px; }
+  .burger {
+    width: 30px;
+    height: 30px;
+    gap: 4px;
+  }
+  .burger span {
+    width: 14px;
+    height: 1.5px;
+  }
+
+  /* --- Menu --- */
+  .mobile-menu {
+    padding: 12px 8px 16px;
+  }
+  .mobile-menu > a {
+    padding: 10px 0;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .mobile-actions {
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .mobile-actions .btn-login,
+  .mobile-actions .btn-apply {
+    padding: 9px 12px;
+    font-size: 11px;
+    min-height: 36px;
+  }
+  .lang-switcher--mobile { padding: 4px; }
+  .lang-switcher--mobile .lang-btn {
+    padding: 5px 8px;
+    font-size: 9.5px;
+  }
+
+  /* ================= HERO ================= */
+  .hero-inner {
+    padding-top: 68px;
+    padding-bottom: 20px;
+  }
+  .eyebrow {
+    font-size: 7.5px;
+    letter-spacing: 0.1em;
+    gap: 6px;
+  }
+  .eyebrow span:first-child { width: 12px; }
+  .hero h1 {
+    margin-top: 12px;
+    font-size: 22px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    word-break: break-word;
+  }
+  .hero-copy > p {
+    margin-top: 12px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .actions {
+    margin-top: 16px;
+    gap: 6px;
+  }
+  .actions .btn {
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 11px;
+    gap: 6px;
+  }
+  .actions .btn i { font-size: 13px; }
+  .hero-bottom {
+    padding-top: 22px;
+    gap: 14px;
+  }
+  .hero-stat b { font-size: 17px; }
+  .hero-stat span {
+    font-size: 7.5px;
+    letter-spacing: 0.03em;
+  }
+  .hero-bottom p {
+    font-size: 7px;
+    letter-spacing: 0.14em;
+    margin-top: 6px;
+  }
+
+  /* ================= TICKER ================= */
+  .ticker { padding: 10px 0; }
+  .ticker__content {
+    gap: 14px;
+    padding-left: 14px;
+  }
+  .ticker__item { font-size: 11.5px; }
+  .ticker__sep { font-size: 11px; }
+
+  /* ================= SECTIONS ================= */
+  .section,
+  .portal,
+  .founder,
+  .experiences,
+  .creds,
+  .next-step {
+    padding: 34px 0 !important;
+  }
+  .section h2,
+  .portal h2,
+  .experience-head h2 {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 1.1;
+    word-break: break-word;
+  }
+  .center-head p,
+  .section-head > p,
+  .creds-head > p,
+  .experience-head p,
+  .values-intro p,
+  .intro-copy > p {
+    margin-top: 10px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+
+  /* --- Intro --- */
+  .intro-media > img { height: 200px; border-radius: 14px; }
+  .intro-media figcaption {
+    left: 10px;
+    bottom: 10px;
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+  .intro-media aside {
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+  .intro-media aside b { font-size: 22px; }
+  .intro-media aside span { font-size: 10px; line-height: 1.45; }
+  .link { font-size: 10px; gap: 5px; margin-top: 16px; }
+
+  /* --- Journey --- */
+  .journey { gap: 10px; }
+  .journey-card {
+    min-height: 220px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+  .journey-head {
+    min-height: 42px;
+    margin-bottom: 12px;
+  }
+  .journey-num { font-size: 9px; }
+  .journey-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+  .journey-card b { font-size: 14px; line-height: 1.2; }
+  .journey-card small {
+    font-size: 10px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .journey-cta {
+    padding: 8px 10px;
+    font-size: 10px;
+    gap: 5px;
+  }
+  .journey-cta i { font-size: 12px; }
+  .journey-result {
+    padding: 12px;
+    grid-template-columns: 38px 1fr;
+    gap: 8px;
+    border-radius: 14px;
+  }
+  .journey-result > strong {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+  .journey-result small { font-size: 8px; letter-spacing: 0.1em; }
+  .journey-result h3 { font-size: 13px; margin-top: 3px; }
+  .journey-result p { font-size: 10.5px; line-height: 1.4; }
+  .journey-result .btn {
+    min-height: 36px;
+    font-size: 10.5px;
+    padding: 0 12px;
+  }
+
+  /* --- Inst --- */
+  .institutions { gap: 12px; }
+  .inst-img {
+    height: 145px;
+    min-height: 145px;
+  }
+  .inst-logo {
+    width: 48px;
+    height: 48px;
+    top: 8px;
+    right: 8px;
+    border-width: 2px;
+  }
+  .inst-copy {
+    padding: 14px 12px 16px;
+  }
+  .inst-copy small { font-size: 8px; letter-spacing: 0.1em; }
+  .inst-copy h3 {
+    font-size: 18px;
+    margin-top: 6px;
+    line-height: 1.05;
+  }
+  .inst-hook {
+    margin-top: 10px;
+    padding: 8px 10px;
+    font-size: 10.5px;
+    line-height: 1.4;
+    border-left-width: 2px;
+  }
+  .inst-copy p {
+    margin-top: 8px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .inst-link {
+    margin-top: 12px;
+    padding: 8px 12px;
+    font-size: 10px;
+    gap: 6px;
+  }
+  .inst-link i { font-size: 12px; }
+
+  /* --- Values --- */
+  .values-grid { gap: 10px; }
+  .value-item {
+    padding: 15px 12px;
+    border-radius: 14px;
+  }
+  .value-item i {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+  .value-item h3 { font-size: 13px; margin-bottom: 6px; }
+  .value-item p { font-size: 10.5px; line-height: 1.45; }
+
+  /* --- Founder --- */
+  .founder-grid { gap: 22px; }
+  .founder-frame { border-radius: 14px; }
+  .founder-photo > span {
+    left: 10px;
+    bottom: 10px;
+    padding: 5px 9px;
+    font-size: 8px;
+  }
+  .founder-copy blockquote {
+    margin-top: 12px;
+    font-size: 17px;
+    line-height: 1.1;
+  }
+  .founder-copy > p {
+    margin-top: 12px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .signature {
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+  .signature small { font-size: 8.5px; }
+  .founder-copy .btn {
+    margin-top: 14px;
+    min-height: 40px;
+    font-size: 11px;
+    padding: 0 12px;
+  }
+
+  /* --- Admin --- */
+  .admin-slider-head { margin-bottom: 10px; }
+  .admin-nav { gap: 6px; }
+  .admin-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+  .admin-track {
+    padding: 4px 8px 14px;
+    gap: 10px;
+  }
+  .admin-card {
+    flex: 0 0 92vw;
+    max-width: 230px;
+    border-radius: 14px;
+  }
+  .admin-body {
+    padding: 12px 10px 14px;
+    gap: 4px;
+  }
+  .admin-body h3 {
+    font-size: 11.5px;
+    gap: 4px;
+  }
+  .admin-body h3 i { font-size: 11px; }
+  .admin-role { font-size: 8px; letter-spacing: 0.06em; }
+  .admin-bio {
+    font-size: 10px;
+    line-height: 1.45;
+  }
+  .admin-contact {
+    gap: 6px;
+    margin-top: 8px;
+    padding-top: 10px;
+  }
+  .admin-contact a {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+  .admin-dots button {
+    width: 5px;
+    height: 5px;
+  }
+  .admin-dots button.is-active {
+    width: 18px;
+  }
+
+  /* --- Creds --- */
+  .creds-grid { gap: 10px; }
+  .cred-card {
+    padding: 14px 12px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+  .cred-logo {
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+    border-radius: 11px;
+  }
+  .cred-logo--half {
+    width: 48px;
+    height: 26px;
+    padding: 4px;
+  }
+  .cred-label {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+  .cred-card h3 {
+    font-size: 12.5px;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .cred-text {
+    font-size: 10.5px;
+    line-height: 1.45;
+    margin-bottom: 9px;
+  }
+  .cred-badge {
+    padding: 4px 8px;
+    font-size: 9px;
+    gap: 4px;
+  }
+  .cred-badge i { font-size: 11px; }
+  .creds-foot {
+    margin-top: 16px;
+    padding: 12px 12px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+  .creds-foot i { font-size: 15px; }
+  .creds-foot p {
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+
+  /* --- Experience --- */
+  .experience-grid { gap: 12px; margin-bottom: 22px; }
+  .exp-card { border-radius: 14px; }
+  .exp-badge {
+    top: 10px;
+    left: 10px;
+    padding: 4px 8px;
+    font-size: 7.5px;
+    letter-spacing: 0.08em;
+  }
+  .exp-play {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+    left: 10px;
+    bottom: 10px;
+  }
+  .exp-body {
+    padding: 12px 12px 14px;
+    gap: 6px;
+  }
+  .exp-cat { font-size: 8px; letter-spacing: 0.1em; }
+  .exp-body h3 {
+    font-size: 13.5px;
+    line-height: 1.2;
+  }
+  .exp-body p {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+  .exp-link {
+    margin-top: 8px;
+    padding: 7px 10px;
+    font-size: 10px;
+    gap: 5px;
+  }
+  .exp-link i { font-size: 11px; }
+  .exp-card--text .exp-body { padding: 18px 14px; }
+  .exp-card--text h3 { font-size: 15px; }
+  .experience-cta .btn {
+    min-height: 40px;
+    font-size: 11px;
+    padding: 0 14px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Mosaic --- */
+  .mosaic {
+    grid-template-rows: 165px 115px 115px 80px;
+    gap: 7px;
+  }
+  .mosaic figure,
+  .campus-video { border-radius: 11px; }
+  .mosaic figcaption {
+    left: 10px;
+    bottom: 10px;
+    padding: 5px 9px;
+    font-size: 9px;
+  }
+  .main-photo figcaption {
+    font-size: 11px;
+    gap: 7px;
+  }
+  .campus-video {
+    padding: 10px;
+    gap: 8px;
+  }
+  .campus-video > i {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+  .campus-video small {
+    font-size: 7px;
+    letter-spacing: 0.08em;
+  }
+  .campus-video b { font-size: 10.5px; }
+
+  /* --- FAQ --- */
+  .faq-grid { gap: 20px; }
+  .faq-grid > div:first-child p {
+    margin-top: 12px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .faq-grid .btn {
+    margin-top: 14px;
+    min-height: 40px;
+    font-size: 11px;
+    padding: 0 12px;
+    width: 100%;
+    justify-content: center;
+  }
+  .faq summary {
+    min-height: 48px;
+    padding: 10px 0;
+    font-size: 11px;
+    gap: 6px;
+    line-height: 1.3;
+  }
+  .faq summary i { font-size: 13px; }
+  .faq details p {
+    padding-bottom: 12px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+
+  /* --- Locations --- */
+  .locations-grid { gap: 12px; }
+  .location-card { border-radius: 14px; }
+  .location-info {
+    padding: 14px 14px 16px;
+  }
+  .location-num {
+    padding: 3px 8px;
+    font-size: 8.5px;
+  }
+  .location-info h3 {
+    margin-top: 8px;
+    font-size: 15px;
+  }
+  .location-info p {
+    margin-top: 4px;
+    font-size: 10px;
+  }
+  .location-link {
+    margin-top: 10px;
+    font-size: 10px;
+    gap: 5px;
+  }
+
+  /* --- Next step --- */
+  .next-step { min-height: 400px; }
+  .next-step-inner h2 {
+    margin-top: 12px;
+    font-size: 20px;
+    line-height: 1.1;
+  }
+  .next-step-inner p {
+    margin-top: 10px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .next-step-actions {
+    margin-top: 16px;
+    gap: 6px;
+  }
+  .next-step-actions .btn {
+    min-height: 40px;
+    font-size: 11px;
+    padding: 0 12px;
+  }
+
+  /* --- Footer --- */
+  .footer { padding: 26px 0 0; }
+  .footer-top {
+    gap: 16px;
+    padding-bottom: 18px;
+  }
+  .footer-brand > p {
+    margin-top: 12px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .footer-socials {
+    margin-top: 12px;
+    gap: 6px;
+  }
+  .footer-socials a {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  .footer-col { gap: 7px; }
+  .footer-col h4 {
+    margin-bottom: 6px;
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
+  }
+  .footer-col a,
+  .footer-col span {
+    font-size: 10.5px;
+    gap: 5px;
+    line-height: 1.4;
+  }
+  .footer-col a i { font-size: 11px; }
+  .footer-bottom {
+    padding: 14px 0;
+    gap: 8px;
+    font-size: 9.5px;
+    line-height: 1.4;
+  }
+  .footer-bottom-links {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .footer-bottom-links a { font-size: 9.5px; }
+
+  /* --- Modales --- */
+  .modal { padding: 8px; }
+  .modal-box {
+    padding: 18px 14px;
+    border-radius: 16px;
+    max-height: 94vh;
+  }
+  .modal-box h2 {
+    margin-top: 10px;
+    font-size: 17px;
+    line-height: 1.1;
+  }
+  .modal-box > p {
+    margin-top: 10px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .modal-links {
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .modal-links a {
+    padding: 9px 10px;
+    gap: 8px;
+    border-radius: 11px;
+  }
+  .modal-links a > i:first-child {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+  .modal-links a > i:last-child { font-size: 13px; }
+  .modal-links b { font-size: 11px; }
+  .modal-links small {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+  .modal-box blockquote {
+    margin-top: 14px;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .modal-box > strong {
+    margin-top: 14px;
+    font-size: 12.5px;
+  }
+  .modal-box > strong small { font-size: 8.5px; }
+  .close {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    top: 8px;
+    right: 8px;
+  }
+
+  /* --- WhatsApp --- */
+  .whatsapp {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    right: 8px;
+    bottom: 8px;
+  }
+
+  /* --- Boutons globaux --- */
+  .btn {
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 11px;
+    gap: 5px;
+  }
+  .btn i { font-size: 12px; }
+  .btn.small {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   5. SÉCURITÉ GLOBALE — Anti-débordement horizontal
+========================================================= */
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
+  }
+
+  section, header, footer, div, article, aside, nav, main, form {
+    max-width: 100vw;
+  }
+
+  /* Éléments décoratifs qui peuvent déborder */
+  .intro-media aside,
+  .hero-bg,
+  .next-step-bg,
+  .next-step-overlay,
+  .founder-frame,
+  .loader::before {
+    max-width: 100vw;
+  }
+
+  /* Empêcher les iframes de déborder */
+  iframe {
+    max-width: 100%;
+  }
+}

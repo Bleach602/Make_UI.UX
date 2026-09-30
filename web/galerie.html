@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Galerie photo du Groupe Pékékue — Campus, soutenances, sorties pédagogiques, vie étudiante.">
+<meta name="theme-color" content="#0F3D2E">
+<title>Galerie · Campus Pékékue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="../css/galerie.css">
+</head>
+<body class="page-galerie">
+
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+
+<!-- GROUP BAR -->
+<div class="group-bar">
+  <div class="container group-bar-inner">
+    <a href="index.html" class="group-brand" aria-label="Retour au portail Groupe Pékékue">
+      <span class="group-brand-mark">P</span>
+      <span>
+        <strong>Groupe Pékékue</strong>
+        <small>Campus scolaire &amp; supérieur</small>
+      </span>
+    </a>
+    <div class="campus-navigation">
+      <span class="campus-label">Galeries</span>
+      <a href="#defile" class="current">Défilé</a>
+      <a href="#soutenances">Soutenances</a>
+      <a href="#sorties">Sorties</a>
+      <a href="#vie">Vie étudiante</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="galerie-brand" aria-label="Retour accueil">
+      <img src="../img/logo_imsta.png" alt="Logo Groupe Pékékue" class="galerie-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <span class="galerie-logo-fallback">P</span>
+      <span class="galerie-brand-text">
+        <strong>GALERIE</strong>
+        <small>Campus en images</small>
+      </span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <i class="ri-menu-3-line"></i>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#hero" class="nav-link active">Accueil</a>
+      <a href="#defile" class="nav-link">Défilé</a>
+      <a href="#soutenances" class="nav-link">Soutenances</a>
+      <a href="#sorties" class="nav-link">Sorties</a>
+      <a href="#vie" class="nav-link">Vie</a>
+      <a href="index.html" class="nav-cta">
+        <i class="ri-arrow-left-line"></i>
+        Retour
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero-galerie" id="hero">
+  <div class="hero-galerie__bg"></div>
+  <div class="hero-galerie__overlay"></div>
+  <div class="container hero-galerie__inner">
+    <div class="breadcrumb">
+      <a href="index.html">Groupe Pékékue</a>
+      <i class="ri-arrow-right-s-line"></i>
+      <span>Galerie Campus</span>
+    </div>
+    <span class="eyebrow">GALERIE PHOTO</span>
+    <h1>
+      Le campus comme
+      <em>vous ne l'avez jamais vu.</em>
+    </h1>
+    <p class="hero-galerie__text">
+      Défilés, soutenances, sorties pédagogiques, vie étudiante — plongez dans
+      les moments forts qui font vibrer nos établissements.
+    </p>
+    <div class="hero-galerie__stats">
+      <div>
+        <strong>06</strong>
+        <span>Catégories</span>
+      </div>
+      <div>
+        <strong>120+</strong>
+        <span>Photos</span>
+      </div>
+      <div>
+        <strong>4</strong>
+        <span>Établissements</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTRES STICKY -->
+<div class="filtres-sticky" id="filtresSticky">
+  <div class="container filtres-inner">
+    <span class="filtres-label">Explorer</span>
+    <div class="filtres-buttons">
+      <button class="filtre-btn active" data-filtre="all">
+        <i class="ri-apps-2-line"></i>
+        Tout
+      </button>
+      <button class="filtre-btn" data-filtre="defile">
+        <i class="ri-walk-line"></i>
+        Défilé
+      </button>
+      <button class="filtre-btn" data-filtre="soutenances">
+        <i class="ri-presentation-line"></i>
+        Soutenances
+      </button>
+      <button class="filtre-btn" data-filtre="sorties">
+        <i class="ri-roadster-line"></i>
+        Sorties
+      </button>
+      <button class="filtre-btn" data-filtre="sport">
+        <i class="ri-basketball-line"></i>
+        Sport
+      </button>
+      <button class="filtre-btn" data-filtre="culture">
+        <i class="ri-palette-line"></i>
+        Culture
+      </button>
+      <button class="filtre-btn" data-filtre="vie">
+        <i class="ri-community-line"></i>
+        Vie étudiante
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- GALERIE MASONRY -->
+<section class="galerie-section">
+  <div class="container">
+    <div class="galerie-grid" id="galerieGrid">
+
+      <!-- DÉFILÉ -->
+      <article class="galerie-item galerie-item--large" data-cat="defile">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               alt="Défilé des étudiants" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-walk-line"></i> Défilé</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Défilé d'ouverture 2025</h3>
+          <p>Le traditionnel défilé des nouveaux étudiants sur le campus.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Octobre 2025 · Foumban</span>
+        </div>
+      </article>
+
+      <article class="galerie-item" data-cat="defile">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/2422293/pexels-photo-2422293.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Étudiants en parade" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-walk-line"></i> Défilé</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Parade des écoles</h3>
+          <p>Chaque école représentée fièrement.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Octobre 2025</span>
+        </div>
+      </article>
+
+      <article class="galerie-item" data-cat="defile">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Fanfare estudiantine" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-walk-line"></i> Défilé</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Fanfare & couleurs</h3>
+          <p>Les couleurs du Groupe Pékékue à l'honneur.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Octobre 2025</span>
+        </div>
+      </article>
+
+      <!-- SOUTENANCES -->
+      <article class="galerie-item galerie-item--tall" data-cat="soutenances">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/8617769/pexels-photo-8617769.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Soutenance de mémoire" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-presentation-line"></i> Soutenance</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Soutenance de fin d'études</h3>
+          <p>Présentation devant le jury académique.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Juin 2025 · ISMTA</span>
+        </div>
+      </article>
+
+      <article class="galerie-item" data-cat="soutenances">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Étudiante présentant son projet" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-presentation-line"></i> Soutenance</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Présentation de projet</h3>
+          <p>Défense orale devant enseignants et pairs.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Juin 2025</span>
+        </div>
+      </article>
+
+      <article class="galerie-item" data-cat="soutenances">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Jury académique" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-presentation-line"></i> Soutenance</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Jury & délibération</h3>
+          <p>Les enseignants réunis pour évaluer les candidats.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Juin 2025</span>
+        </div>
+      </article>
+
+      <!-- SORTIES -->
+      <article class="galerie-item galerie-item--wide" data-cat="sorties">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               alt="Sortie pédagogique" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-roadster-line"></i> Sortie</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Sortie pédagogique à Bafoussam</h3>
+          <p>Immersion professionnelle dans une entreprise partenaire.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Mars 2025</span>
+        </div>
+      </article>
+
+      <article class="galerie-item" data-cat="sorties">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Visite d'entreprise" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-roadster-line"></i> Sortie</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Visite d'entreprise</h3>
+          <p>Découverte des réalités du monde professionnel.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Février 2025</span>
+        </div>
+      </article>
+
+      <!-- SPORT -->
+      <article class="galerie-item" data-cat="sport">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Tournoi de football" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-basketball-line"></i> Sport</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Tournoi inter-écoles</h3>
+          <p>Compétition sportive annuelle du Groupe.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Avril 2025</span>
+        </div>
+      </article>
+
+      <article class="galerie-item galerie-item--tall" data-cat="sport">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Match de basket" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-basketball-line"></i> Sport</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Finale basket-ball</h3>
+          <p>Les équipes s'affrontent dans une ambiance électrique.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Avril 2025</span>
+        </div>
+      </article>
+
+      <!-- CULTURE -->
+      <article class="galerie-item" data-cat="culture">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Soirée culturelle" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-palette-line"></i> Culture</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Soirée culturelle</h3>
+          <p>Danses, théâtre et musique sur scène.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Décembre 2024</span>
+        </div>
+      </article>
+
+      <article class="galerie-item galerie-item--wide" data-cat="culture">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               alt="Exposition artistique" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-palette-line"></i> Culture</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Exposition des talents</h3>
+          <p>Peinture, photographie et artisanat étudiant.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> Décembre 2024</span>
+        </div>
+      </article>
+
+      <!-- VIE ÉTUDIANTE -->
+      <article class="galerie-item" data-cat="vie">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1181534/pexels-photo-1181534.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Bibliothèque universitaire" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-community-line"></i> Vie</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Bibliothèque & étude</h3>
+          <p>Espaces d'apprentissage et de concentration.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> 2025</span>
+        </div>
+      </article>
+
+      <article class="galerie-item" data-cat="vie">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Restauration universitaire" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-community-line"></i> Vie</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Espace restauration</h3>
+          <p>Pauses déjeuner entre étudiants et enseignants.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> 2025</span>
+        </div>
+      </article>
+
+      <article class="galerie-item galerie-item--large" data-cat="vie">
+        <figure class="galerie-media">
+          <img src="https://images.pexels.com/photos/159775/library-la-trobe-study-students-159775.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               alt="Étudiants sur le campus" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing');">
+          <span class="galerie-badge"><i class="ri-community-line"></i> Vie</span>
+          <button class="galerie-zoom" aria-label="Agrandir la photo">
+            <i class="ri-zoom-in-line"></i>
+          </button>
+        </figure>
+        <div class="galerie-caption">
+          <h3>Les couloirs du savoir</h3>
+          <p>Des échanges informels aux grands projets.</p>
+          <span class="galerie-meta"><i class="ri-calendar-line"></i> 2025</span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- État vide -->
+    <div class="galerie-vide" id="galerieVide" hidden>
+      <i class="ri-image-2-line"></i>
+      <h3>Aucune photo dans cette catégorie</h3>
+      <p>Sélectionnez une autre catégorie ou affichez tout.</p>
+      <button class="btn btn-copper" id="resetFiltre">
+        <i class="ri-refresh-line"></i>
+        Afficher toutes les photos
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="galerie-cta">
+  <div class="container galerie-cta__inner">
+    <div>
+      <span class="section-kicker light">ENVIE DE NOUS REJOINDRE ?</span>
+      <h2>Vivez ces moments <em>en vrai.</em></h2>
+      <p>Découvrez nos établissements et construisez votre parcours.</p>
+    </div>
+    <div class="galerie-cta__actions">
+      <a href="index.html#etablissements" class="btn btn-copper">
+        Découvrir les établissements
+        <i class="ri-arrow-right-line"></i>
+      </a>
+      <a href="index.html#contact" class="btn btn-secondary">
+        Nous contacter
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER SIMPLE -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-simple">
+      <span>© <span id="currentYear"></span> Groupe Pékékue · Galerie Campus</span>
+      <a href="index.html">← Retour au portail principal</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">
+    <i class="ri-close-line"></i>
+  </button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Précédent">
+    <i class="ri-arrow-left-s-line"></i>
+  </button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Suivant">
+    <i class="ri-arrow-right-s-line"></i>
+  </button>
+  <div class="lightbox-content">
+    <img src="" alt="" id="lightboxImg">
+    <div class="lightbox-caption">
+      <span id="lightboxCat"></span>
+      <h3 id="lightboxTitle"></h3>
+      <p id="lightboxDesc"></p>
+    </div>
+  </div>
+  <div class="lightbox-counter">
+    <span id="lightboxIndex">1</span> / <span id="lightboxTotal">1</span>
+  </div>
+</div>
+
+<script src="../js/galerie.js"></script>
+</body>
+</html>
