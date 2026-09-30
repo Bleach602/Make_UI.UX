@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = messageInput.value.trim();
 
       const lines = [
-        '*NOUVELLE DEMANDE — Collège Bilingue Pékékudé*',
+        '*NOUVELLE DEMANDE — Collège Bilingue PÉKÉKUÉ*',
         '',
         `👤 *Nom :* ${nom}`,
         `📞 *Téléphone :* ${tel}`,
